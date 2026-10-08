@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IIT Bombay Student Wellness</title>
+<meta name="description" content="Student Wellness at IIT Bombay: current status, ongoing plans and future goals. An update from the Office of the Associate Dean, Student Wellness, October 2026.">
+<meta name="theme-color" content="#1f4fa0">
+<script>
+  (function () {
+    var d = document.documentElement; d.classList.add('js');
+    try { var t = localStorage.getItem('sw-theme'); if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t); } catch (e) {}
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduced');
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231f4fa0'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%23ffffff'/%3E%3Ccircle cx='52' cy='18' r='5' fill='%233d8fe6'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><rect x="7" y="13" width="3" height="3"/></symbol>
+    <symbol id="i-door" viewBox="0 0 24 24"><path d="M5 21V4a1 1 0 0 1 1-1h9v18M3 21h18M15 3l4 2v16"/><circle cx="12" cy="12" r=".8"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></symbol>
+    <symbol id="i-hospital" viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12z"/><path d="M12 10v6M9 13h6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9a4.8 4.8 0 0 1 9-3 4.8 4.8 0 0 1 9 3c-2 4.6-9 9-9 9z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.2 5 2.6 5 5.8"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M11 7.2 6.2 15.8M13 7.2l4.8 8.6M7.5 18h9"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15z"/><path d="M5 19 13 11"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1z"/><path d="M12 6v14"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+    <symbol id="i-yoga" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2"/><path d="M12 7v7M5 9l7 2 7-2M8 21l4-7 4 7"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17v.5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M3 16v-4l2.5-5h13L21 12v4z"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/></symbol>
+    <symbol id="i-sitemap" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="2" y="16" width="6" height="5" rx="1"/><rect x="16" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M5 16v-4h14v4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-sunny" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol>
+  </defs>
+</svg>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="brand" href="#hero" aria-label="Student Wellness, IIT Bombay — home">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span class="brand-text"><b>Student Wellness</b><small>IIT Bombay</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Sections">
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#current">Current status</a>
+      <a href="#ongoing">Ongoing plans</a>
+      <a href="#future">Future targets</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
+        <svg class="ic"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Office of the Dean, Student Affairs · An update</p>
+      <h1>Student Wellness <span>at IIT Bombay</span></h1>
+      <p class="lede">Current status, ongoing plans and future goals. One office, five units and one continuum of care, so that every student knows where to turn.</p>
+      <div class="hero-meta">
+        <span class="pill pill-soft">October 2026</span>
+        <span class="author"><span class="avatar" aria-hidden="true"><svg class="ic"><use href="#i-user"/></svg></span><span><b>Prof. Deepak Marla</b><small>Associate Dean of Student Wellness</small></span></span>
+      </div>
+      <div class="parts">
+        <a class="part" href="#current"><b>A</b><span><strong>A strong foundation</strong><small>Current status</small></span></a>
+        <a class="part" href="#ongoing"><b>B</b><span><strong>Decisive action</strong><small>Ongoing plans</small></span></a>
+        <a class="part" href="#future"><b>C</b><span><strong>Clear next steps</strong><small>Future targets</small></span></a>
+      </div>
+    </div>
+    <div class="orbit-wrap">
+      <svg class="orbit" id="orbit" viewBox="0 0 520 520" role="img" aria-label="The Office of the Associate Dean, Student Wellness at the centre, with five units around it: Students Wellness Centre, Flourishing Hub, Yogastha, NSS and Student Mentorship Program">
+        <circle class="ring r1" cx="260" cy="260" r="110"/>
+        <circle class="ring r2" cx="260" cy="260" r="170"/>
+        <circle class="ring r3" cx="260" cy="260" r="232"/>
+        <g id="orbitLinks"></g>
+        <circle class="core-halo" cx="260" cy="260" r="86"/>
+        <circle class="core" cx="260" cy="260" r="72"/>
+        <text class="core-small" x="260" y="242" text-anchor="middle">OFFICE OF THE</text>
+        <text class="core-big" x="260" y="266" text-anchor="middle">Associate Dean,</text>
+        <text class="core-big" x="260" y="288" text-anchor="middle">Student Wellness</text>
+        <g id="orbitNodes"></g>
+      </svg>
+      <p class="orbit-hint">Tap a unit to explore it</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY NOW ============ -->
+<section class="why">
+  <div class="wrap why-grid">
+    <div class="why-text">
+      <p class="eyebrow">Why now</p>
+      <h2>Student wellbeing is now a national priority.</h2>
+      <p>The Supreme Court of India (<em>Sukdeb Saha v. State of Andhra Pradesh</em>, 2025) and the Ministry of Education's 2026 committee report both ask institutions to move from reactive counselling to proactive, institution-wide support.</p>
+    </div>
+    <div class="timeline-mini" aria-label="Key dates">
+      <div class="tm"><span class="tm-year">Mar 2025</span><span>Flourishing Hub launched with alumni support</span></div>
+      <div class="tm"><span class="tm-year">2025</span><span>Supreme Court: <em>Sukdeb Saha v. State of Andhra Pradesh</em></span></div>
+      <div class="tm"><span class="tm-year">2026</span><span>Ministry of Education committee report</span></div>
+      <div class="tm tm-now"><span class="tm-year">Sep 2026</span><span>IIT Bombay creates the post of <b>Associate Dean, Student Wellness</b></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECOSYSTEM ============ -->
+<section class="section" id="ecosystem">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Overview</p>
+      <h2>The Student Wellness Ecosystem</h2>
+      <p class="sub">One office, five units, one continuum of care</p>
+    </header>
+    <p class="callout">In September 2026, IIT Bombay took the initiative of creating a new post: <b>Associate Dean, Student Wellness</b>. This office has been created specifically for the overall wellbeing of students. It brings five units together under one roof, so that prevention, support and care work as one coordinated system.</p>
+
+    <div class="units" role="tablist" aria-label="Wellness units">
+      <button class="unit" role="tab" data-unit="swc" aria-selected="true"><svg class="ic"><use href="#i-hospital"/></svg><b>Students Wellness Centre</b><small>Counselling and clinical care</small></button>
+      <button class="unit" role="tab" data-unit="fh" aria-selected="false"><svg class="ic"><use href="#i-leaf"/></svg><b>Flourishing Hub</b><small>Wellbeing skills for all</small></button>
+      <button class="unit" role="tab" data-unit="yoga" aria-selected="false"><svg class="ic"><use href="#i-yoga"/></svg><b>Yogastha</b><small>Yoga and mindfulness</small></button>
+      <button class="unit" role="tab" data-unit="nss" aria-selected="false"><svg class="ic"><use href="#i-heart"/></svg><b>NSS</b><small>Service and community</small></button>
+      <button class="unit" role="tab" data-unit="smp" aria-selected="false"><svg class="ic"><use href="#i-users"/></svg><b>Student Mentorship Program</b><small>Peer mentoring and belonging</small></button>
+    </div>
+    <div class="unit-panel" id="unitPanel" role="tabpanel" aria-live="polite"></div>
+
+    <h3 class="mini-title">A continuum of care</h3>
+    <div class="continuum">
+      <div class="c-band" aria-hidden="true"><span></span></div>
+      <div class="c-stage" data-stage="flourish"><b>Flourish</b><span>For every student</span><small>Flourishing Hub, Yogastha, NSS</small></div>
+      <div class="c-stage" data-stage="support"><b>Support</b><span>For those who need help</span><small>Mentors, ambassadors, counsellors</small></div>
+      <div class="c-stage" data-stage="care"><b>Care</b><span>For those in crisis</span><small>SWC, psychiatry, hospitals</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART A ============ -->
+<div class="part-divider" id="current">
+  <div class="wrap"><span class="pd-letter">A</span><div><p class="eyebrow">Part A</p><h2>Current status</h2><p>A strong foundation: the Students Wellness Centre and the Flourishing Hub.</p></div></div>
+</div>
+
+<section class="section" id="swc">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part A · Current status</p>
+      <h2>Students Wellness Centre</h2>
+      <p class="sub">Professional counselling and clinical care, on campus and online</p>
+    </header>
+    <p class="body-lg">The Students Wellness Centre (SWC) is the institute's clinical front door. A dedicated team of mental-health professionals offers confidential one-to-one counselling, group sessions and crisis support to every student.</p>
+
+    <h3 class="mini-title">The team</h3>
+    <div class="team">
+      <div class="team-lead"><b>In-charge</b><small>Leads the Centre</small></div>
+      <div class="team-row">
+        <div class="team-card"><div class="team-num"><span class="count" data-to="10">10</span></div><b>Counsellors</b><div class="people" data-n="10"></div></div>
+        <div class="team-card"><div class="team-num"><span class="count" data-to="1">1</span></div><b>Clinical Psychologist</b><div class="people" data-n="1" data-dark="1"></div><small>Assessment and clinical care</small></div>
+        <div class="team-card"><div class="team-num"><span class="count" data-to="4">4</span></div><b>Outreach Counsellors</b><div class="people" data-n="4"></div><small>Taking support to hostels</small></div>
+      </div>
+    </div>
+
+    <h3 class="mini-title">How a student gets help today</h3>
+    <div class="channels">
+      <article class="channel"><span class="ic-badge"><svg class="ic"><use href="#i-calendar"/></svg></span><b>One-to-one counselling</b><p>Confidential sessions by booking a slot online</p></article>
+      <article class="channel"><span class="ic-badge"><svg class="ic"><use href="#i-door"/></svg></span><b>Walk-in counselling</b><p>Available on weekdays and on weekends</p></article>
+      <article class="channel"><span class="ic-badge"><svg class="ic"><use href="#i-clock"/></svg></span><b>24/7 crisis support</b><p>Round-the-clock help in a crisis</p></article>
+      <article class="channel"><span class="ic-badge"><svg class="ic"><use href="#i-laptop"/></svg></span><b>Online counselling</b><p>Through the Talk to Angel platform</p></article>
+      <article class="channel"><span class="ic-badge"><svg class="ic"><use href="#i-hospital"/></svg></span><b>Empanelled hospitals</b><p>Treatment at listed hospitals, with bills reimbursed</p></article>
+    </div>
+
+    <div class="also">
+      <p class="label">Also offered by SWC</p>
+      <ul class="ticks two">
+        <li>Gatekeeper training for hostel wardens and security staff</li>
+        <li>Workshops for faculty</li>
+        <li>Counselling sessions held in hostels</li>
+        <li>Group sessions and mindfulness workshops</li>
+        <li>Peer-support networks for students</li>
+        <li>Wellbeing events and campus outreach</li>
+      </ul>
+    </div>
+    <a class="ext" href="https://swc.iitb.ac.in" target="_blank" rel="noopener">More at swc.iitb.ac.in <svg class="ic"><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<section class="section alt" id="flourishing">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part A · Current status</p>
+      <h2>Flourishing Hub</h2>
+      <p class="sub">Building wellbeing and life skills for every student, before problems arise</p>
+    </header>
+    <div class="fh-intro">
+      <p class="body-lg">Launched in March 2025 with alumni support, the Flourishing Hub takes a preventive, strengths-based approach. Rather than waiting for students to reach a crisis, it equips every student with skills for resilience, wellbeing, and personal and professional growth.</p>
+      <div class="big-stats">
+        <div class="big-stat"><span class="num"><span class="count" data-to="700">700</span>+</span><span>workshops in its inaugural year</span></div>
+        <div class="big-stat"><span class="num"><span class="count" data-to="15">15</span></span><span>instructors</span></div>
+      </div>
+    </div>
+
+    <h3 class="mini-title">Wellness built into the curriculum</h3>
+    <div class="curriculum">
+      <div class="cur-step cur-start"><svg class="ic"><use href="#i-users"/></svg><b>Every first-year student</b></div>
+      <span class="cur-arrow" aria-hidden="true"></span>
+      <div class="cur-step"><b class="code">NOCS 01</b><small>Mandatory course</small></div>
+      <span class="cur-arrow" aria-hidden="true"></span>
+      <div class="cur-step"><b class="code">NOCS 02</b><small>Mandatory course</small></div>
+      <span class="cur-arrow" aria-hidden="true"></span>
+      <div class="cur-step cur-end"><b>Skills for life</b></div>
+    </div>
+
+    <h3 class="mini-title">Courses · students reached</h3>
+    <div class="reach">
+      <article class="reach-card"><p class="num"><span class="count" data-to="1400">1,400</span>+ <small>students</small></p><b>Wellness Courses</b><p>NOCS 01 and NOCS 02, mandatory for all first-year students</p><div class="meter"><span style="--w:100%"></span></div></article>
+      <article class="reach-card"><p class="num"><span class="count" data-to="1000">1,000</span>+ <small>students</small></p><b>Mentorship Training Courses</b><p>Eligibility and training courses for student mentors</p><div class="meter"><span style="--w:71.4%"></span></div></article>
+      <article class="reach-card"><p class="num"><span class="count" data-to="500">500</span>+ <small>students</small></p><b>Flourishing Leadership Course</b><p>Mandatory for all students aspiring to become General Secretaries and Overall Coordinators</p><div class="meter"><span style="--w:35.7%"></span></div></article>
+    </div>
+
+    <div class="ws-head">
+      <h3 class="mini-title">Workshop series &amp; programmes</h3>
+      <div class="chips" role="group" aria-label="Filter workshops">
+        <button class="chip is-on" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="wellbeing" type="button">Wellbeing</button>
+        <button class="chip" data-filter="career" type="button">Career &amp; communication</button>
+        <button class="chip" data-filter="programme" type="button">Programmes</button>
+      </div>
+    </div>
+    <div class="workshops" id="workshops">
+      <div class="ws" data-cat="wellbeing"><svg class="ic"><use href="#i-leaf"/></svg>Foundation of a Flourishing Life</div>
+      <div class="ws" data-cat="wellbeing"><svg class="ic"><use href="#i-heart"/></svg>Stress Management</div>
+      <div class="ws" data-cat="wellbeing"><svg class="ic"><use href="#i-sun"/></svg>Emotional Fitness</div>
+      <div class="ws" data-cat="wellbeing"><svg class="ic"><use href="#i-plus"/></svg>Psychological First Aid</div>
+      <div class="ws" data-cat="career"><svg class="ic"><use href="#i-clock"/></svg>Improving Productivity</div>
+      <div class="ws" data-cat="career"><svg class="ic"><use href="#i-chat"/></svg>Confident Communication</div>
+      <div class="ws" data-cat="career"><svg class="ic"><use href="#i-book"/></svg>Communication for Researchers</div>
+      <div class="ws" data-cat="career"><svg class="ic"><use href="#i-user"/></svg>Interview Psychology</div>
+      <div class="ws" data-cat="career"><svg class="ic"><use href="#i-flag"/></svg>Career Readiness</div>
+      <div class="ws ws-prog" data-cat="programme"><svg class="ic"><use href="#i-yoga"/></svg>Yoga and Meditation<em>Programme</em></div>
+      <div class="ws ws-prog" data-cat="programme"><svg class="ic"><use href="#i-leaf"/></svg>Flourishing Retreats<em>Programme</em></div>
+      <div class="ws ws-prog" data-cat="programme"><svg class="ic"><use href="#i-users"/></svg>Alumni Connect<em>Programme</em></div>
+    </div>
+    <a class="ext" href="https://flourishing-iitb.org" target="_blank" rel="noopener">More at flourishing-iitb.org <svg class="ic"><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<!-- ============ PART B ============ -->
+<div class="part-divider" id="ongoing">
+  <div class="wrap"><span class="pd-letter">B</span><div><p class="eyebrow">Part B</p><h2>Ongoing plans</h2><p>Decisive action: four measures completed or under way.</p></div></div>
+</div>
+
+<section class="section" id="plans">
+  <div class="wrap">
+    <div class="plans">
+      <article class="plan" data-status="done">
+        <span class="ic-badge"><svg class="ic"><use href="#i-plus"/></svg></span>
+        <div class="plan-body"><b>24/7 psychiatry support at the IIT Bombay Hospital</b><p>A psychiatrist is now available round the clock on campus.</p></div>
+        <span class="status s-done">Done</span>
+      </article>
+      <article class="plan">
+        <span class="ic-badge"><svg class="ic"><use href="#i-users"/></svg></span>
+        <div class="plan-body"><b>Hostel and Department Wellbeing Ambassadors</b><p>Trained students in every hostel and department, promoting wellbeing on the ground.</p></div>
+        <span class="status s-process">Under process</span>
+      </article>
+      <article class="plan">
+        <span class="ic-badge"><svg class="ic"><use href="#i-shield"/></svg></span>
+        <div class="plan-body"><b>SHINE Committee</b><p>A structured, case-by-case pathway for students who need sustained support.</p></div>
+        <span class="status s-approved">Approved in IFM</span>
+      </article>
+      <article class="plan">
+        <span class="ic-badge"><svg class="ic"><use href="#i-network"/></svg></span>
+        <div class="plan-body"><b>Peer Circles with Faculty Advisors</b><p>Mentor-anchored circles nested under each Faculty Advisor.</p></div>
+        <span class="status s-restructure">Restructuring</span>
+      </article>
+    </div>
+
+    <div class="feature-note">
+      <svg class="ic"><use href="#i-clock"/></svg>
+      <div><b>Psychiatric care, any hour</b><p>With a psychiatrist available at the campus hospital day and night, no student in acute distress has to wait until morning or travel off campus for specialist care.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="ambassadors">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part B · Ongoing plans <span class="status s-process sm">Under process</span></p>
+      <h2>Wellbeing Ambassadors</h2>
+      <p class="sub">A three-tier student network embedded in every hostel and department</p>
+    </header>
+    <div class="tree">
+      <div class="tree-top"><b>Institute Wellbeing Ambassadors</b><small>UG and PG, gender-balanced · work with the Associate Dean</small></div>
+      <div class="tree-branches">
+        <div class="tree-node"><b>Hostel Wellbeing Ambassadors</b><small>1–2 in every hostel</small><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="tree-node"><b>Department Wellbeing Ambassadors</b><small>1 in every department</small><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="box"><p class="label">Role</p><ul class="ticks"><li>Promote a culture of wellbeing on the ground</li><li>A friendly first point of contact for peers</li><li>Connect students to mentors and SWC</li></ul></div>
+      <div class="box"><p class="label">Selection</p><ul class="ticks"><li>Hostel: by Warden, Hostel GSec and FH psychologist</li><li>Department: by HoD and Department GSec</li><li>Trained by the Flourishing Hub</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shine">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part B · Ongoing plans <span class="status s-approved sm">Approved in IFM</span></p>
+      <h2 class="shine-title">SHINE Committee</h2>
+      <p class="acronym" aria-label="Support, Help and Intervention for Nurturing Empowerment"><span><b>S</b>upport,</span> <span><b>H</b>elp and</span> <span><b>I</b>ntervention for</span> <span><b>N</b>urturing</span> <span><b>E</b>mpowerment</span></p>
+    </header>
+    <p class="body-lg">Some students go through periods when they cannot cope alone: a mental-health condition, the loss of a parent or loved one, a long illness, a family crisis, or a slide into academic difficulty. Too often these students withdraw quietly, fall behind, and are noticed only when the situation has become serious. SHINE makes sure that every such student is identified early, receives coordinated care, and is given a genuine opportunity to recover and complete their degree.</p>
+
+    <h3 class="mini-title">Who SHINE is for</h3>
+    <div class="grid3">
+      <article class="who"><span class="ic-badge"><svg class="ic"><use href="#i-heart"/></svg></span><div><b>Mental-health concerns</b><p>Depression, anxiety or other conditions affecting daily life and studies</p></div></article>
+      <article class="who"><span class="ic-badge"><svg class="ic"><use href="#i-heart"/></svg></span><div><b>Personal loss</b><p>Bereavement, family crises, serious illness or extended absence</p></div></article>
+      <article class="who"><span class="ic-badge"><svg class="ic"><use href="#i-book"/></svg></span><div><b>Academic distress</b><p>Multiple backlogs or a sharp decline in grades</p></div></article>
+      <article class="who"><span class="ic-badge"><svg class="ic"><use href="#i-alert"/></svg></span><div><b>Addiction and behaviour</b><p>Substance use, digital addiction or behavioural concerns</p></div></article>
+      <article class="who"><span class="ic-badge"><svg class="ic"><use href="#i-calendar"/></svg></span><div><b>Disengagement</b><p>Missing classes, or not registering for a semester</p></div></article>
+      <article class="who"><span class="ic-badge"><svg class="ic"><use href="#i-chat"/></svg></span><div><b>Referral by others</b><p>Concerns raised by friends, mentors, faculty or wardens</p></div></article>
+    </div>
+
+    <h3 class="mini-title">How it works</h3>
+    <div class="stepper" id="shineSteps">
+      <button class="step is-on" type="button" data-i="0"><span class="step-n">Stage 1</span><b>Identify</b></button>
+      <button class="step" type="button" data-i="1"><span class="step-n">Stage 2</span><b>Department review</b></button>
+      <button class="step" type="button" data-i="2"><span class="step-n">Stage 3</span><b>Institute committee</b></button>
+    </div>
+    <div class="step-detail" id="shineDetail" aria-live="polite"></div>
+
+    <h3 class="mini-title">How SHINE helps the student</h3>
+    <div class="grid2">
+      <article class="help"><svg class="ic"><use href="#i-user"/></svg><div><b>One case owner</b><p>A single person coordinates counselling, academics and advising, so the student does not have to navigate the system alone</p></div></article>
+      <article class="help"><svg class="ic"><use href="#i-plus"/></svg><div><b>Care that is connected</b><p>Counselling and psychiatric care are linked to the student's academic plan</p></div></article>
+      <article class="help"><svg class="ic"><use href="#i-book"/></svg><div><b>Room to recover</b><p>An individual action plan, with academic flexibility and policy support where needed</p></div></article>
+      <article class="help"><svg class="ic"><use href="#i-lock"/></svg><div><b>Confidential and followed up</b><p>Handled with discretion and reviewed until the student is back on track</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="peer">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part B · Ongoing plans <span class="status s-restructure sm">Restructuring</span></p>
+      <h2>Peer Circles with Faculty Advisors</h2>
+      <p class="sub">Restructuring mentorship for effective faculty–mentor–mentee coordination</p>
+    </header>
+    <p class="body-lg">Faculty advising and student mentorship already exist at IIT Bombay, but they often run in parallel, with little day-to-day contact between the faculty member and the student mentors. The restructuring brings them into one coordinated unit: each Faculty Advisor works directly with a small team of student mentors, and each mentor anchors a peer circle of mentees. Every student is known by name, and a concern raised anywhere in the circle reaches the right person quickly.</p>
+
+    <div class="peer-stage">
+      <div class="diagram-scroll">
+        <svg class="peer-svg" id="peerSvg" viewBox="0 0 720 380" role="img" aria-label="One Faculty Advisor linked to three student mentors, each mentor anchoring a circle of six mentees"></svg>
+      </div>
+      <div class="peer-side">
+        <p class="label">How coordination will work</p>
+        <ol class="flow" id="peerFlow">
+          <li><b>Mentee</b><span>shares a concern</span></li>
+          <li><b>Student mentor</b><span>listens, informs the FA</span></li>
+          <li><b>Faculty Advisor</b><span>meets the student</span></li>
+          <li><b>Counsellor / SHINE</b><span>when more help is needed</span></li>
+        </ol>
+        <button class="btn" id="peerPlay" type="button"><svg class="ic"><use href="#i-play"/></svg>Follow a concern</button>
+        <p class="legend"><i class="lg-mentor"></i>Student mentor <i class="lg-mentee"></i>Mentee · FA: 20–30 students across three circles</p>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <article class="pillar"><span class="ic-badge"><svg class="ic"><use href="#i-sitemap"/></svg></span><b>Clear structure</b><p>Each Faculty Advisor is formally linked to three mentors and their circles</p></article>
+      <article class="pillar"><span class="ic-badge"><svg class="ic"><use href="#i-calendar"/></svg></span><b>Regular contact</b><p>Scheduled FA–mentor meetings and mentor–mentee check-ins every semester</p></article>
+      <article class="pillar"><span class="ic-badge"><svg class="ic"><use href="#i-check"/></svg></span><b>Accountability</b><p>Mentoring guidelines followed, with student feedback on advisors and mentors</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART C ============ -->
+<div class="part-divider" id="future">
+  <div class="wrap"><span class="pd-letter">C</span><div><p class="eyebrow">Part C</p><h2>Future targets</h2><p>Clear next steps: five priorities for the earliest action.</p></div></div>
+</div>
+
+<nav class="targets-nav" aria-label="Future targets">
+  <div class="wrap targets-row">
+    <a href="#wqrt"><b>1</b>Quick Response Team</a>
+    <a href="#rise"><b>2</b>Wellness app &amp; screening</a>
+    <a href="#hours"><b>3</b>More counsellors, longer hours</a>
+    <a href="#assigned"><b>4</b>Counsellor for every hostel &amp; dept.</a>
+    <a href="#admin"><b>5</b>Administrative support</a>
+  </div>
+</nav>
+
+<section class="section" id="wqrt">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part C · Future target 1</p>
+      <h2>Wellbeing Quick Response Team</h2>
+      <p class="sub">One number. One trained team. Any crisis, any hour.</p>
+    </header>
+    <p class="body-lg">The Wellbeing Quick Response Team (WQRT) will be a dedicated, round-the-clock team that handles every crisis situation on campus. Instead of a response that depends on whoever happens to be reachable, every emergency will be met by the same trained, accountable team.</p>
+
+    <div class="wqrt">
+      <div class="wq-side"><span class="wq-orb"><svg class="ic"><use href="#i-car"/></svg></span><b>Dedicated vehicle</b></div>
+      <div class="wq-core">
+        <div class="wq-head"><span class="live-dot" aria-hidden="true"></span>WQRT · on duty 24/7</div>
+        <div class="wq-members">
+          <div><span class="ic-badge lg"><svg class="ic"><use href="#i-users"/></svg></span><b>2 Counsellors</b><small>one male, one female in rotation</small></div>
+          <div><span class="ic-badge lg"><svg class="ic"><use href="#i-phone"/></svg></span><b>1 Psychiatrist</b><small>always available on a phone call</small></div>
+          <div><span class="ic-badge lg sky"><svg class="ic"><use href="#i-shield"/></svg></span><b>2 Security guards</b><small>ensure safety on site</small></div>
+        </div>
+      </div>
+      <div class="wq-side"><span class="wq-orb"><svg class="ic"><use href="#i-phone"/></svg></span><b>Dedicated cell phone number</b></div>
+    </div>
+
+    <div class="sim-head">
+      <h3 class="mini-title">How a crisis will be handled</h3>
+      <button class="btn" id="crisisPlay" type="button"><svg class="ic"><use href="#i-play"/></svg>Walk through a response</button>
+    </div>
+    <ol class="crisis" id="crisis">
+      <li><span class="cn">1</span><b>Alert</b><p>Anyone calls the WQRT number</p></li>
+      <li><span class="cn">2</span><b>Dispatch</b><p>Team leaves in the dedicated vehicle</p></li>
+      <li><span class="cn">3</span><b>On site</b><p>Counsellors support; security keeps safe</p></li>
+      <li><span class="cn">4</span><b>Clinical</b><p>Psychiatrist on call; hospital if needed</p></li>
+      <li><span class="cn">5</span><b>Follow-up</b><p>Handover to SWC and SHINE</p></li>
+    </ol>
+    <p class="fine">Calls can come from the student, a friend, a warden, campus security, a mentor or a wellbeing ambassador.</p>
+
+    <div class="grid3">
+      <article class="pillar"><span class="ic-badge"><svg class="ic"><use href="#i-phone"/></svg></span><b>One number to remember</b><p>Publicised in every hostel, department and on the RISE IITB app</p></article>
+      <article class="pillar"><span class="ic-badge"><svg class="ic"><use href="#i-clock"/></svg></span><b>Minutes, not hours</b><p>A team ready to move at any hour, with its own vehicle</p></article>
+      <article class="pillar"><span class="ic-badge"><svg class="ic"><use href="#i-check"/></svg></span><b>Clear roles</b><p>Trained staff, defined protocols, and every case handed over for follow-up</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="rise">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part C · Future target 2</p>
+      <h2>RISE IITB: Wellness App and Universal Screening</h2>
+      <p class="sub rise-sub"><span><b>R</b>esilience</span> · <span><b>I</b>nner strength</span> · <span><b>S</b>elf-care</span> · <span><b>E</b>motional well-being</span></p>
+    </header>
+    <p class="body-lg">RISE IITB will bring every wellness service onto one platform, with one login, and make routine wellbeing screening as normal as a health check-up. Every student will be screened, and every result will be followed up by a person.</p>
+
+    <div class="rise">
+      <div class="rise-features left">
+        <button class="rf is-on" type="button" data-f="0"><b>Screening</b><small>Every student, every semester</small></button>
+        <button class="rf" type="button" data-f="1"><b>Courses and workshops</b><small>Flourishing Hub, self-paced</small></button>
+        <button class="rf" type="button" data-f="2"><b>Community</b><small>Peer circles · events</small></button>
+      </div>
+      <div class="phone" aria-live="polite">
+        <div class="phone-notch"></div>
+        <div class="phone-screen" id="phoneScreen"></div>
+      </div>
+      <div class="rise-features right">
+        <button class="rf" type="button" data-f="3"><b>Counselling</b><small>Book in person or online</small></button>
+        <button class="rf" type="button" data-f="4"><b>AI self-help, 24/7</b><small>Hands any risk to a counsellor</small></button>
+      </div>
+    </div>
+
+    <h3 class="mini-title">Universal screening: four categories, every result followed up</h3>
+    <div class="screening">
+      <div class="when">
+        <div><b>At admission</b><small>all new students</small></div>
+        <div><b>Every semester</b><small>all students, validated tools</small></div>
+      </div>
+      <div class="levels" role="tablist" aria-label="Screening categories">
+        <button class="lvl l-green is-on" role="tab" aria-selected="true" data-l="0" type="button"><span>Green</span><b>Thriving · no concern</b></button>
+        <button class="lvl l-yellow" role="tab" aria-selected="false" data-l="1" type="button"><span>Yellow</span><b>Check-in · a mild change</b></button>
+        <button class="lvl l-orange" role="tab" aria-selected="false" data-l="2" type="button"><span>Orange</span><b>Support · several signals</b></button>
+        <button class="lvl l-red" role="tab" aria-selected="false" data-l="3" type="button"><span>Red</span><b>Urgent · serious risk</b></button>
+      </div>
+      <div class="lvl-detail" id="lvlDetail" aria-live="polite"></div>
+    </div>
+    <p class="fine"><em>Categories are seen only by SWC clinicians and the Student Wellness office. They are never shown to students as labels and never shared with faculty.</em></p>
+
+    <div class="two-col">
+      <div class="box"><p class="label">Safeguards</p><ul class="ticks"><li>Hosted on IIT Bombay servers; owned by IIT Bombay</li><li>Results seen only by authorised clinicians</li><li>Never part of academic, placement or disciplinary records</li><li>AI for self-help only; people make every decision</li></ul></div>
+      <div class="box"><p class="label">Roll-out in six months</p>
+        <div class="rollout">
+          <div class="ro r-a"><b>Alpha</b><small>Pilot: one hostel, one department</small></div>
+          <div class="ro r-b"><b>Beta</b><small>Institute-wide</small></div>
+          <div class="ro r-c"><b>Full release</b><small>All features live</small></div>
+        </div>
+        <p class="fine"><em>Developed through an open tender</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="hours">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part C · Future target 3</p>
+      <h2>More Counsellors, Longer Hours</h2>
+      <p class="sub">Help when students are free to seek it: in the evenings and at weekends</p>
+    </header>
+    <p class="body-lg">Students attend classes and labs through the day, and many reach out only once the day is over. We will increase the number of counsellors so that counselling is available until 10 pm on weekdays and as a full service on weekends, not only for walk-ins.</p>
+
+    <div class="hours-card">
+      <div class="seg" role="tablist" aria-label="Compare schedules">
+        <button class="seg-btn is-on" role="tab" aria-selected="true" data-mode="today" type="button">Today</button>
+        <button class="seg-btn" role="tab" aria-selected="false" data-mode="proposed" type="button">Proposed</button>
+      </div>
+      <div class="hours" id="hoursChart" data-mode="today">
+        <div class="h-row" data-day="wk"><span class="h-day">Mon</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="wk"><span class="h-day">Tue</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="wk"><span class="h-day">Wed</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="wk"><span class="h-day">Thu</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="wk"><span class="h-day">Fri</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="we"><span class="h-day">Sat</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="we"><span class="h-day">Sun</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-axis"><span></span><div><span>Morning</span><span>Evening</span><span>10 pm</span></div></div>
+      </div>
+      <div class="h-legend">
+        <span><i class="k-reg"></i>Regular counselling hours</span>
+        <span><i class="k-ext"></i>Extended evening hours</span>
+        <span><i class="k-full"></i>Weekend counselling</span>
+        <span><i class="k-walk"></i>Walk-ins only</span>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <article class="pillar"><span class="ic-badge"><svg class="ic"><use href="#i-users"/></svg></span><b>More counsellors</b><p>Enough to staff evenings and weekends without stretching the day team</p></article>
+      <article class="pillar"><span class="ic-badge"><svg class="ic"><use href="#i-clock"/></svg></span><b>No class missed</b><p>Students can seek help without missing lectures or labs</p></article>
+      <article class="pillar"><span class="ic-badge"><svg class="ic"><use href="#i-calendar"/></svg></span><b>Scheduled weekends</b><p>Appointments on Saturdays and Sundays, not only walk-ins</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="assigned">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part C · Future target 4</p>
+      <h2>Counsellor Assigned for Every Hostel and Department</h2>
+      <p class="sub">Support that is local, familiar and easy to reach</p>
+    </header>
+    <p class="body-lg">Each hostel and each department will have one SWC counsellor assigned as its contact person. Wardens, Heads of Department, faculty advisors, mentors and ambassadors will always know exactly whom to call, and students will see a familiar face.</p>
+    <div class="diagram-scroll">
+      <svg class="hub-svg" id="hubSvg" viewBox="0 0 760 400" role="img" aria-label="The SWC at the centre assigns one contact counsellor to each hostel and each department"></svg>
+    </div>
+    <div class="two-col">
+      <div class="box"><p class="label">What the assigned counsellor does</p><ul class="ticks"><li>Regular, visible presence in the hostel or department</li><li>First call for wardens, HoDs and faculty advisors</li><li>Works with the wellbeing ambassadors and mentors</li><li>Links local concerns to SHINE and the WQRT</li></ul></div>
+      <div class="box"><p class="label">Why it matters</p><ul class="ticks"><li>Familiarity lowers the barrier to seeking help</li><li>Early concerns are picked up close to the student</li><li>Clear accountability for every hostel and department</li><li>Better coordination across the support network</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Part C · Future target 5</p>
+      <h2>Administrative Support for Wellness</h2>
+      <p class="sub">A dedicated leadership and administrative backbone for a growing mission</p>
+    </header>
+    <p class="body-lg">Student wellness at IIT Bombay now spans round-the-clock services, a new response team, a wellness app, institute-wide screening and a larger counselling team. To run this reliably, two dedicated positions must be created: a <b>Chief Wellness Officer</b> and a <b>Deputy Registrar for Student Wellness</b>.</p>
+
+    <div class="org">
+      <div class="org-top"><b>Associate Dean, Student Wellness</b><small>Overall leadership</small></div>
+      <div class="org-mid">
+        <div class="org-role" data-role="cwo"><span class="new">New position</span><b>Chief Wellness Officer</b><small>Professional lead for services, quality and day-to-day coordination</small></div>
+        <div class="org-role" data-role="dr"><span class="new">New position</span><b>Deputy Registrar, Student Wellness</b><small>Staffing, budgets, procurement, contracts and records</small></div>
+      </div>
+      <div class="org-units">
+        <span>SWC</span><span>Flourishing Hub</span><span>Yogastha</span><span>NSS</span><span>Student Mentorship Program</span><span class="u-new">WQRT</span><span class="u-new">RISE IITB app</span>
+      </div>
+      <p class="fine center"><em>Existing units and new initiatives, supported by one professional and administrative backbone</em></p>
+    </div>
+
+    <div class="two-col">
+      <div class="box"><p class="label">Chief Wellness Officer</p><ul class="ticks"><li>Oversees counselling, screening and crisis services</li><li>Runs the WQRT roster and protocols</li><li>Monitors service quality and student feedback</li><li>Coordinates SWC, FH and the hostel and department network</li></ul></div>
+      <div class="box"><p class="label">Deputy Registrar, Student Wellness</p><ul class="ticks"><li>Recruitment and contracts of counsellors and staff</li><li>Budgets, procurement and the app tender</li><li>Hospital empanelment and reimbursements</li><li>Records, reporting and compliance</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section class="section roadmap-sec" id="roadmap">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Summary</p>
+      <h2>The Roadmap at a Glance</h2>
+      <p class="sub">From a strong foundation to a complete, round-the-clock system of care</p>
+    </header>
+    <div class="roadmap">
+      <div class="rm-col">
+        <h3 class="rm-head h-a">Current status</h3>
+        <div class="rm-item"><b>Students Wellness Centre</b><small>One-to-one and walk-in counselling; 24/7 crisis support</small></div>
+        <div class="rm-item"><b>Online counselling</b><small>Through Talk to Angel</small></div>
+        <div class="rm-item"><b>Empanelled hospitals</b><small>With reimbursement of bills</small></div>
+        <div class="rm-item"><b>Flourishing Hub</b><small>700+ workshops in year one; 15 instructors</small></div>
+        <div class="rm-item"><b>Wellness in the curriculum</b><small>NOCS 01 and NOCS 02 for all first-years</small></div>
+      </div>
+      <div class="rm-col">
+        <h3 class="rm-head h-b">Ongoing plans</h3>
+        <div class="rm-item"><b>24/7 psychiatry at IITB Hospital</b><span class="status s-done sm">Done</span></div>
+        <div class="rm-item"><b>Wellbeing Ambassadors</b><span class="status s-process sm">Under process</span></div>
+        <div class="rm-item"><b>SHINE Committee</b><span class="status s-approved sm">Approved in IFM</span></div>
+        <div class="rm-item"><b>Peer Circles with Faculty Advisors</b><span class="status s-restructure sm">Restructuring</span></div>
+      </div>
+      <div class="rm-col">
+        <h3 class="rm-head h-c">Future targets</h3>
+        <a class="rm-item" href="#wqrt"><b>1 · Wellbeing Quick Response Team</b><small>24/7 team, vehicle and one number</small></a>
+        <a class="rm-item" href="#rise"><b>2 · RISE IITB app and screening</b><small>Every student, every semester</small></a>
+        <a class="rm-item" href="#hours"><b>3 · More counsellors, longer hours</b><small>Till 10 pm on weekdays; weekends</small></a>
+        <a class="rm-item" href="#assigned"><b>4 · Counsellor assigned to every hostel and department</b><small>Local, familiar support</small></a>
+        <a class="rm-item" href="#admin"><b>5 · Administrative support</b><small>Chief Wellness Officer; DR, Student Wellness</small></a>
+      </div>
+    </div>
+
+    <div class="commitment">
+      <svg class="ic"><use href="#i-heart"/></svg>
+      <div><h3>Our commitment</h3><p>Every IIT Bombay student should know where to turn, and help should reach them at any hour: early, in their own hostel and department, and from people who know them.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-title">Office of the Associate Dean, Student Wellness</p>
+      <p>Indian Institute of Technology Bombay · Office of the Dean, Student Affairs</p>
+      <p class="foot-units">Students Wellness Centre · Flourishing Hub · Yogastha · NSS · Student Mentorship Program</p>
+    </div>
+    <div class="foot-links">
+      <p class="label">Find support</p>
+      <a href="https://swc.iitb.ac.in" target="_blank" rel="noopener">swc.iitb.ac.in</a>
+      <a href="https://flourishing-iitb.org" target="_blank" rel="noopener">flourishing-iitb.org</a>
+      <a href="#hero">Back to top ↑</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">Based on “Student Wellness at IIT Bombay”, October 2026 update by Prof. Deepak Marla.</div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
