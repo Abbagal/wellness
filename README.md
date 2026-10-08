@@ -2,7 +2,7 @@
 
 An interactive website based on the October 2026 update *Student Wellness at IIT Bombay: current status, ongoing plans and future goals* (Prof. Deepak Marla, Associate Dean of Student Wellness).
 
-**Live site:** https://abbagal.github.io/wellness/
+**Live site:** deployed on Vercel from the `main` branch.
 
 ## What's inside
 - Orbiting ecosystem hero: the Office of the Associate Dean with its five units
