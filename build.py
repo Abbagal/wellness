@@ -85,7 +85,8 @@ NAV = [
      "links": [("about.html#office", "Our office", "One office, five units"),
                ("about.html#why", "Why now", "A national priority"),
                ("about.html#ecosystem", "The ecosystem", "How the units work together"),
-               ("about.html#leadership", "Leadership", "Who leads student wellness")]},
+               ("about.html#leadership", "Leadership", "Who leads student wellness"),
+               ("report.html", "October 2026 Update", "The full update, section by section")]},
 ]
 
 LOGO = ('<svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><defs><clipPath id="lc{n}"><circle cx="24" cy="24" r="24"/></clipPath></defs>'
@@ -109,7 +110,7 @@ def logo(n):
 def header(active):
     items = []
     for i, item in enumerate(NAV):
-        cur = ' aria-current="page"' if item["key"] == active else ""
+        cur = ' aria-current="page"' if item["key"] == active or (active == "report" and item["key"] == "about") else ""
         links = "".join(f'<li><a href="{h}"><b>{t}</b><span>{d}</span></a></li>' for h, t, d in item["links"])
         edge = " edge" if item.get("edge") else ""
         items.append(
@@ -124,6 +125,7 @@ def header(active):
 <div class="utility">
   <div class="wrap">
     <p class="inst"><b>IIT Bombay</b> <span>· Office of the Dean, Student Affairs</span></p>
+    <a class="site-link" href="report.html">October 2026 Update</a>
     <a class="site-link" href="https://swc.iitb.ac.in" target="_blank" rel="noopener">SWC {icon("external")}</a>
     <a class="site-link" href="https://flourishing-iitb.org" target="_blank" rel="noopener">Flourishing Hub {icon("external")}</a>
     <a class="btn-help" href="get-help.html"><span class="pulse-dot" aria-hidden="true"></span>Get help now</a>
@@ -169,7 +171,7 @@ def footer():
         extra = {
             "Support": '<li><a href="https://swc.iitb.ac.in" target="_blank" rel="noopener">swc.iitb.ac.in</a></li>',
             "Programmes": '<li><a href="https://flourishing-iitb.org" target="_blank" rel="noopener">flourishing-iitb.org</a></li>',
-            "About": '<li><a href="vision.html#roadmap">Roadmap</a></li>',
+            "About": '<li><a href="report.html">October 2026 Update</a></li><li><a href="vision.html#roadmap">Roadmap</a></li>',
         }[title]
         cols.append(f"<div><h4>{title}</h4><ul>{lis}{extra}</ul></div>")
     return f"""

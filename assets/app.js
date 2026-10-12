@@ -111,6 +111,7 @@
     ['Longer counselling hours', 'Till 10 pm on weekdays and at weekends (planned)', 'vision.html#hours', 'Vision', 'hours timing evening weekend night'],
     ['Counsellor for every hostel', 'A familiar contact counsellor (planned)', 'vision.html#assigned', 'Vision', 'hostel department counsellor assigned local'],
     ['Roadmap', 'Current status, ongoing plans and future targets', 'vision.html#roadmap', 'Vision', 'roadmap plan summary future'],
+    ['October 2026 Update', 'The full update: current status, ongoing plans, future targets', 'report.html', 'Update', 'report update pdf document october 2026 marla full summary'],
     ['About the office', 'Associate Dean, Student Wellness', 'about.html#office', 'About', 'about office associate dean marla leadership contact'],
     ['The wellness ecosystem', 'Five units working as one', 'about.html#ecosystem', 'About', 'units ecosystem swc yogastha nss structure']
   ];
@@ -169,7 +170,7 @@
   /* ================= page helpers ================= */
 
   // on-page jump bar
-  var jumpLinks = $$('.jump a');
+  var jumpLinks = $$('.jump a, .doc-toc a');
   if (jumpLinks.length && hasIO) {
     var map = jumpLinks.map(function (a) { return { a: a, el: document.querySelector(a.getAttribute('href')) }; }).filter(function (m) { return m.el; });
     var jio = new IntersectionObserver(function (entries) {
@@ -177,7 +178,7 @@
         if (!e.isIntersecting) return;
         map.forEach(function (m) {
           var on = m.el === e.target; m.a.classList.toggle('active', on);
-          if (on && m.a.scrollIntoView && innerWidth < 900) m.a.parentNode.scrollTo({ left: m.a.offsetLeft - 16, behavior: 'smooth' });
+          if (on && m.a.closest('.jump') && innerWidth < 900) m.a.parentNode.scrollTo({ left: m.a.offsetLeft - 16, behavior: 'smooth' });
         });
       });
     }, { rootMargin: '-40% 0px -55% 0px' });
