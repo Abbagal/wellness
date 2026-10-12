@@ -798,7 +798,9 @@ a.rm-item:hover { transform: translateX(4px); border-color: var(--teal); color: 
   .cur-arrow { flex: 0 0 26px; width: 2px; height: 26px; margin: 4px auto; }
   .cur-arrow::after { right: -5px; top: auto; bottom: -2px; border: 6px solid transparent; border-top: 8px solid var(--teal); border-bottom: 0; }
   .step-btn, .step-btn + .step-btn, .crisis li, .crisis li + li { clip-path: none; border-radius: var(--radius-lg); padding: 16px 18px; }
-  .helpline { flex-wrap: wrap; }
+  .helpline { flex-wrap: wrap; gap: 10px 14px; padding: 18px; }
+  .helpline .grow { flex: 1 1 100%; }
+  .helpline .num-big { margin-right: auto; }
   .foot-grid { grid-template-columns: minmax(0, 1fr); }
   .stats { grid-template-columns: minmax(0, 1fr); }
   .stat { border-left: 0; padding-left: 0; }
@@ -942,6 +944,15 @@ a.doc-card:hover { background: var(--teal-soft); color: var(--ink); }
   .doc-plan .status { grid-column: 2; justify-self: start; }
   .doc-part > span { font-size: 3rem; }
   .doc-commit { flex-direction: column; }
+  /* tables become stacked cards on phones */
+  .table-scroll { border: 0; overflow: visible; }
+  .doc-table { min-width: 0; }
+  .doc-table thead { display: none; }
+  .doc-table tr { display: block; border: 1px solid var(--line); border-radius: var(--radius-lg); margin-bottom: 10px; overflow: hidden; }
+  .doc-table td { display: block; border-top: 0; padding: 4px 16px; background: none !important; }
+  .doc-table td:first-child { padding-top: 14px; }
+  .doc-table td:last-child { padding-bottom: 14px; }
+  .doc-table tr:nth-child(even) { background: var(--cloud); }
 }
 
 @media (prefers-reduced-motion: reduce) {
