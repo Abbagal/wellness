@@ -805,6 +805,27 @@ a.rm-item:hover { transform: translateX(4px); border-color: var(--teal); color: 
   .feature { flex-direction: column; }
   .wqrt { grid-template-columns: minmax(0, 1fr); }
 }
+/* ---------------- Associate Dean profile ---------------- */
+.dean-card { background: var(--navy); color: #d5e0f0; border-radius: var(--radius-lg); padding: clamp(24px, 4vw, 40px); position: relative; overflow: hidden; }
+.dean-card::after { content: ""; position: absolute; right: -70px; top: -70px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(242,177,52,.25); box-shadow: 0 0 0 36px rgba(242,177,52,.05); pointer-events: none; }
+.dean-id { display: flex; align-items: center; gap: 18px; position: relative; z-index: 1; }
+.dean-mono { width: 92px; height: 92px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--sun); color: var(--navy); font-family: var(--f-display); font-size: 2.1rem; font-weight: 700; box-shadow: 0 0 0 6px rgba(242,177,52,.22); }
+.dean-id b { display: block; font-family: var(--f-display); font-size: 1.6rem; color: var(--white); line-height: 1.15; }
+.dean-id div span { display: block; color: #b9c9e0; font-size: .95rem; }
+.dean-id div span:first-of-type { color: var(--sun); font-weight: 700; margin-top: 4px; }
+.h3 { font-size: 1.35rem; margin-bottom: 12px; }
+.dean-card blockquote { margin: 26px 0 0; font-family: var(--f-display); font-size: clamp(1.25rem, 1rem + 1vw, 1.65rem); line-height: 1.35; color: var(--white); position: relative; z-index: 1; }
+.dean-src { margin-top: 12px; font-size: .84rem; color: #9fb2cf; letter-spacing: .04em; }
+.dean-facts { margin: 24px 0 0; display: grid; gap: 0; border-top: 1px solid rgba(255,255,255,.14); position: relative; z-index: 1; }
+.dean-facts div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+.dean-facts dt { font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--sun); padding-top: 3px; }
+.dean-facts dd { margin: 0; color: var(--white); }
+@media (max-width: 640px) {
+  .dean-mono { width: 68px; height: 68px; font-size: 1.6rem; }
+  .dean-id b { font-size: 1.3rem; }
+  .dean-facts div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+
 /* ---------------- October 2026 Update (report page) ---------------- */
 .report-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 20px; color: #dbe5f3; font-size: .95rem; }
 .report-meta b { color: var(--white); }

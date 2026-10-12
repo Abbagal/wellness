@@ -112,6 +112,7 @@
     ['Counsellor for every hostel', 'A familiar contact counsellor (planned)', 'vision.html#assigned', 'Vision', 'hostel department counsellor assigned local'],
     ['Roadmap', 'Current status, ongoing plans and future targets', 'vision.html#roadmap', 'Vision', 'roadmap plan summary future'],
     ['October 2026 Update', 'The full update: current status, ongoing plans, future targets', 'report.html', 'Update', 'report update pdf document october 2026 marla full summary'],
+    ['Prof. Deepak Marla', 'Associate Dean of Student Wellness, IIT Bombay', 'about.html#leadership', 'About', 'deepak marla dean associate professor leadership head who'],
     ['About the office', 'Associate Dean, Student Wellness', 'about.html#office', 'About', 'about office associate dean marla leadership contact'],
     ['The wellness ecosystem', 'Five units working as one', 'about.html#ecosystem', 'About', 'units ecosystem swc yogastha nss structure']
   ];

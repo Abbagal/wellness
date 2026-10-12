@@ -85,7 +85,7 @@ NAV = [
      "links": [("about.html#office", "Our office", "One office, five units"),
                ("about.html#why", "Why now", "A national priority"),
                ("about.html#ecosystem", "The ecosystem", "How the units work together"),
-               ("about.html#leadership", "Leadership", "Who leads student wellness"),
+               ("about.html#leadership", "Prof. Deepak Marla", "Associate Dean of Student Wellness"),
                ("report.html", "October 2026 Update", "The full update, section by section")]},
 ]
 
