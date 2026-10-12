@@ -1,0 +1,101 @@
+<!--{"title": "About", "nav": "about", "desc": "The Office of the Associate Dean, Student Wellness at IIT Bombay, created in September 2026, brings the Students Wellness Centre, Flourishing Hub, Yogastha, NSS and the Student Mentorship Program under one roof."}-->
+<section class="page-hero">
+  <div class="hero-media"><img src="assets/img/class.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>About</span></nav>
+      <h1>One office, five units, one continuum of care</h1>
+      <p class="hero-lede">In September 2026, IIT Bombay created a new post, Associate Dean, Student Wellness, so that prevention, support and care work as one coordinated system.</p>
+    </div>
+  </div>
+</section>
+
+<nav class="jump" aria-label="On this page">
+  <div class="wrap"><a href="#office">Our office</a><a href="#why">Why now</a><a href="#ecosystem">The ecosystem</a><a href="#leadership">Leadership</a></div>
+</nav>
+
+<section class="band" id="office" aria-labelledby="officeTitle">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">Our office</span>
+      <h2 id="officeTitle" style="font-size:var(--step-3);margin:12px 0 16px">Created for the overall wellbeing of students</h2>
+      <div class="prose">
+        <p>The Office of the Associate Dean, Student Wellness sits within the Office of the Dean, Student Affairs. It brings five units together under one roof: the Students Wellness Centre, the Flourishing Hub, Yogastha, NSS and the Student Mentorship Program.</p>
+        <p>Together they form a continuum of care: helping every student flourish, supporting those who need help, and caring for those in crisis.</p>
+      </div>
+    </div>
+    <div class="media-card"><img src="assets/img/community.jpg" alt="A group of students together" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="band cloud" id="why" aria-labelledby="whyTitle">
+  <div class="wrap split top">
+    <div>
+      <span class="kicker">Why now</span>
+      <h2 id="whyTitle" style="font-size:var(--step-3);margin:12px 0 16px">Student wellbeing is a national priority</h2>
+      <p class="lead">The Supreme Court of India (<em>Sukdeb Saha v. State of Andhra Pradesh</em>, 2025) and the Ministry of Education's 2026 committee report both ask institutions to move from reactive counselling to proactive, institution-wide support.</p>
+    </div>
+    <div class="panel">
+      <div class="timeline">
+        <div class="tl"><small>March 2025</small><p><b>Flourishing Hub launched</b> with alumni support</p></div>
+        <div class="tl"><small>2025</small><p><b>Supreme Court of India:</b> <em>Sukdeb Saha v. State of Andhra Pradesh</em></p></div>
+        <div class="tl"><small>2026</small><p><b>Ministry of Education</b> committee report</p></div>
+        <div class="tl now"><small>September 2026</small><p><b>IIT Bombay creates the post of Associate Dean, Student Wellness</b></p></div>
+        <div class="tl"><small>As of October 2026</small><p><b>24/7 psychiatry</b> at the IIT Bombay Hospital; SHINE approved in IFM</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band navy" id="ecosystem" aria-labelledby="ecoTitle">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">The ecosystem</span>
+      <h2 id="ecoTitle" style="font-size:var(--step-3);margin:12px 0 16px">Five units, working as one</h2>
+      <p style="color:#d5e0f0;font-size:var(--step-1)">Select a unit in the diagram or below to see what it does and where it sits in the continuum of care.</p>
+    </div>
+    <svg class="orbit" id="orbit" viewBox="0 0 520 520" role="img" aria-label="The Office of the Associate Dean, Student Wellness at the centre, with five units around it">
+      <circle class="ring" cx="260" cy="260" r="110"/><circle class="ring r2" cx="260" cy="260" r="178"/><circle class="ring" cx="260" cy="260" r="236"/>
+      <g id="orbitLinks"></g>
+      <circle class="core-halo" cx="260" cy="260" r="86"/><circle class="core" cx="260" cy="260" r="72"/>
+      <text class="core-small" x="260" y="242" text-anchor="middle">OFFICE OF THE</text>
+      <text class="core-big" x="260" y="266" text-anchor="middle">Associate Dean,</text>
+      <text class="core-big" x="260" y="288" text-anchor="middle">Student Wellness</text>
+      <g id="orbitNodes"></g>
+    </svg>
+  </div>
+</section>
+
+<section class="band cloud" aria-label="Units">
+  <div class="wrap">
+    <div class="units" role="tablist" aria-label="Wellness units">
+      <button class="unit" role="tab" data-unit="swc" aria-selected="true">{{icon:hospital}}<b>Students Wellness Centre</b><small>Counselling and clinical care</small></button>
+      <button class="unit" role="tab" data-unit="fh" aria-selected="false">{{icon:leaf}}<b>Flourishing Hub</b><small>Wellbeing skills for all</small></button>
+      <button class="unit" role="tab" data-unit="yoga" aria-selected="false">{{icon:yoga}}<b>Yogastha</b><small>Yoga and mindfulness</small></button>
+      <button class="unit" role="tab" data-unit="nss" aria-selected="false">{{icon:heart}}<b>NSS</b><small>Service and community</small></button>
+      <button class="unit" role="tab" data-unit="smp" aria-selected="false">{{icon:users}}<b>Student Mentorship Program</b><small>Peer mentoring and belonging</small></button>
+    </div>
+    <div class="unit-panel" id="unitPanel" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="band" id="leadership" aria-labelledby="leadTitle">
+  <div class="wrap split wide-left">
+    <div class="band navy" style="border-radius:var(--radius-lg);padding:clamp(28px,4vw,48px)">
+      <div class="quote">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <div>
+          <blockquote>Every IIT Bombay student should know where to turn, and help should reach them at any hour.</blockquote>
+          <cite><span class="avatar" aria-hidden="true">DM</span><span><b>Our commitment</b><span>Student Wellness at IIT Bombay, October 2026 update · Prof. Deepak Marla</span></span></cite>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="kicker">Leadership</span>
+      <h2 id="leadTitle" style="font-size:var(--step-3);margin:12px 0 16px">Who leads student wellness</h2>
+      <p class="lead">Prof. Deepak Marla is the Associate Dean of Student Wellness, providing overall leadership for the five units and the new initiatives.</p>
+      <p class="fine">Two further positions are proposed to support the office: a Chief Wellness Officer and a Deputy Registrar for Student Wellness.</p>
+      <div class="btn-row"><a class="btn" href="vision.html#admin">See the proposed structure {{icon:arrow}}</a></div>
+    </div>
+  </div>
+</section>

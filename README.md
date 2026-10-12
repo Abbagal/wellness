@@ -1,14 +1,28 @@
 # Student Wellness at IIT Bombay
 
-An interactive website based on the October 2026 update *Student Wellness at IIT Bombay: current status, ongoing plans and future goals* (Prof. Deepak Marla, Associate Dean of Student Wellness).
+A multi-page website for the Office of the Associate Dean, Student Wellness, IIT Bombay, built from the October 2026 update *Student Wellness at IIT Bombay* (Prof. Deepak Marla). Styled after international university wellness sites (Penn, Stanford, Melbourne): utility bar with "Get help now", mega menu, site search, photo-led heroes and task-based cards.
 
 **Live site:** deployed on Vercel from the `main` branch.
 
-## What's inside
-- Orbiting ecosystem hero: the Office of the Associate Dean with its five units
-- Part A, current status: Students Wellness Centre and Flourishing Hub (animated counters, workshop filter)
-- Part B, ongoing plans: 24/7 psychiatry, Wellbeing Ambassadors, SHINE Committee (stage stepper), Peer Circles (a concern travelling through the diagram)
-- Part C, future targets: WQRT crisis walkthrough, RISE IITB app mock-up and screening levels, today vs proposed counselling hours, counsellor per hostel and department, administrative support
-- Roadmap at a glance, light and dark themes, mobile layout, reduced-motion support
+## Pages
+| Page | What's on it |
+|---|---|
+| `index.html` | "How can we care for you today?" search, task cards, continuum of care, stats, what's new, vision, where to go |
+| `get-help.html` | Urgent help, helplines (112, Tele-MANAS 14416), helping a friend, signs to notice |
+| `care.html` | Students Wellness Centre team, five ways to get help, 24/7 psychiatry, outreach |
+| `flourish.html` | Flourishing Hub, NOCS courses, workshop filter, Yogastha, NSS, mentorship |
+| `initiatives.html` | Progress tracker, Wellbeing Ambassadors, SHINE stages, Peer Circles animation |
+| `vision.html` | WQRT walkthrough, RISE IITB app and screening, hours chart, counsellor network, leadership, roadmap |
+| `about.html` | The office, why now, ecosystem orbit, leadership |
 
-Plain HTML, CSS and JavaScript. No build step: open `index.html`, or serve the folder with any static server.
+## Editing
+Page content lives in `src/pages/`. The shared header, menus and footer are in `build.py`.
+After editing, run:
+
+```
+python build.py
+```
+
+This regenerates the `.html` files in the project root. Commit them and Vercel redeploys.
+
+Photos are from Unsplash and illustrative only. Replace `assets/img/*.jpg` with real IIT Bombay photos when available.

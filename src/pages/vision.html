@@ -1,0 +1,200 @@
+<!--{"title": "Our Vision", "nav": "vision", "desc": "Five priorities for student wellness at IIT Bombay: a Wellbeing Quick Response Team, the RISE IITB app and universal screening, longer counselling hours, a counsellor for every hostel and department, and dedicated leadership."}-->
+<section class="page-hero">
+  <div class="hero-media"><img src="assets/img/campus.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Our Vision</span></nav>
+      <h1>Clear next steps</h1>
+      <p class="hero-lede">Five priorities for the earliest action, from a strong foundation to a complete, round-the-clock system of care.</p>
+    </div>
+  </div>
+</section>
+
+<nav class="jump" aria-label="On this page">
+  <div class="wrap"><a href="#wqrt">1 · Quick Response Team</a><a href="#rise">2 · RISE IITB</a><a href="#hours">3 · Longer hours</a><a href="#assigned">4 · Local counsellors</a><a href="#admin">5 · Leadership</a><a href="#roadmap">Roadmap</a></div>
+</nav>
+
+<section class="band navy" id="wqrt" aria-labelledby="wqrtTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Priority 1</span>
+      <h2 id="wqrtTitle">Wellbeing Quick Response Team</h2>
+      <p>One number. One trained team. Any crisis, any hour. Instead of a response that depends on whoever happens to be reachable, every emergency will be met by the same trained, accountable team.</p>
+    </div>
+    <div class="wqrt">
+      <div class="wq-side"><span class="wq-orb">{{icon:car}}</span>Dedicated vehicle</div>
+      <div class="wq-core">
+        <div class="wq-head"><span class="pulse-dot" aria-hidden="true"></span>WQRT · on duty 24/7</div>
+        <div class="wq-members">
+          <div><span class="ic-circle navy">{{icon:users}}</span><b>2 Counsellors</b><small>one male, one female in rotation</small></div>
+          <div><span class="ic-circle navy">{{icon:phone}}</span><b>1 Psychiatrist</b><small>always available on a phone call</small></div>
+          <div><span class="ic-circle">{{icon:shield}}</span><b>2 Security guards</b><small>ensure safety on site</small></div>
+        </div>
+      </div>
+      <div class="wq-side"><span class="wq-orb">{{icon:phone}}</span>Dedicated cell phone number</div>
+    </div>
+    <div class="sim-head">
+      <h3 class="sub-title">How a crisis will be handled</h3>
+      <button class="btn sun btn-play" id="crisisPlay" type="button">{{icon:play}}Walk through a response</button>
+    </div>
+    <ol class="crisis" id="crisis">
+      <li><span class="cn">STEP 1</span><b>Alert</b><p>Anyone calls the WQRT number</p></li>
+      <li><span class="cn">STEP 2</span><b>Dispatch</b><p>Team leaves in the dedicated vehicle</p></li>
+      <li><span class="cn">STEP 3</span><b>On site</b><p>Counsellors support; security keeps safe</p></li>
+      <li><span class="cn">STEP 4</span><b>Clinical</b><p>Psychiatrist on call; hospital if needed</p></li>
+      <li><span class="cn">STEP 5</span><b>Follow-up</b><p>Handover to SWC and SHINE</p></li>
+    </ol>
+    <p class="fine">Calls can come from the student, a friend, a warden, campus security, a mentor or a wellbeing ambassador.</p>
+    <div class="grid-3 mt">
+      <div class="feature" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)"><span class="ic-circle sun">{{icon:phone}}</span><div><h3>One number to remember</h3><p style="color:#c7d4e8">Publicised in every hostel, department and on the RISE IITB app.</p></div></div>
+      <div class="feature" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)"><span class="ic-circle sun">{{icon:clock}}</span><div><h3>Minutes, not hours</h3><p style="color:#c7d4e8">A team ready to move at any hour, with its own vehicle.</p></div></div>
+      <div class="feature" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)"><span class="ic-circle sun">{{icon:check}}</span><div><h3>Clear roles</h3><p style="color:#c7d4e8">Trained staff, defined protocols, and every case handed over for follow-up.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band cloud" id="rise" aria-labelledby="riseTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Priority 2</span>
+      <h2 id="riseTitle">RISE IITB: one app, universal screening</h2>
+      <p><b>R</b>esilience · <b>I</b>nner strength · <b>S</b>elf-care · <b>E</b>motional well-being. Every wellness service on one platform with one login, and routine wellbeing screening as normal as a health check-up.</p>
+    </div>
+    <div class="rise">
+      <div class="rise-features">
+        <button class="rf is-on" type="button" data-f="0"><b>Screening</b><small>Every student, every semester</small></button>
+        <button class="rf" type="button" data-f="1"><b>Courses and workshops</b><small>Flourishing Hub, self-paced</small></button>
+        <button class="rf" type="button" data-f="2"><b>Community</b><small>Peer circles · events</small></button>
+      </div>
+      <div class="phone" aria-live="polite"><div class="phone-notch"></div><div class="phone-screen" id="phoneScreen"></div></div>
+      <div class="rise-features">
+        <button class="rf" type="button" data-f="3"><b>Counselling</b><small>Book in person or online</small></button>
+        <button class="rf" type="button" data-f="4"><b>AI self-help, 24/7</b><small>Hands any risk to a counsellor</small></button>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Four categories, every result followed up by a person</h3>
+    <div class="screening">
+      <div class="when"><div><b>At admission</b><small>all new students</small></div><div><b>Every semester</b><small>all students, validated tools</small></div></div>
+      <div class="levels" role="tablist" aria-label="Screening categories">
+        <button class="lvl l-green is-on" role="tab" aria-selected="true" type="button"><span>Green</span><b>Thriving · no concern</b></button>
+        <button class="lvl l-yellow" role="tab" aria-selected="false" type="button"><span>Yellow</span><b>Check-in · a mild change</b></button>
+        <button class="lvl l-orange" role="tab" aria-selected="false" type="button"><span>Orange</span><b>Support · several signals</b></button>
+        <button class="lvl l-red" role="tab" aria-selected="false" type="button"><span>Red</span><b>Urgent · serious risk</b></button>
+      </div>
+      <div class="lvl-detail" id="lvlDetail" aria-live="polite"></div>
+    </div>
+    <p class="fine"><em>Categories are seen only by SWC clinicians and the Student Wellness office. They are never shown to students as labels and never shared with faculty.</em></p>
+    <div class="grid-2 mt">
+      <div class="panel"><h3>Safeguards</h3><ul class="ticks"><li>Hosted on IIT Bombay servers; owned by IIT Bombay</li><li>Results seen only by authorised clinicians</li><li>Never part of academic, placement or disciplinary records</li><li>AI for self-help only; people make every decision</li></ul></div>
+      <div class="panel"><h3>Roll-out in six months</h3>
+        <div class="rollout"><div class="ro r-a"><b>Alpha</b><small>Pilot: one hostel, one department</small></div><div class="ro r-b"><b>Beta</b><small>Institute-wide</small></div><div class="ro r-c"><b>Full release</b><small>All features live</small></div></div>
+        <p class="fine"><em>Developed through an open tender</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="hours" aria-labelledby="hoursTitle">
+  <div class="wrap split top">
+    <div>
+      <span class="kicker">Priority 3</span>
+      <h2 id="hoursTitle" style="font-size:var(--step-3);margin:12px 0 16px">More counsellors, longer hours</h2>
+      <p class="lead">Students attend classes and labs through the day, and many reach out only once the day is over. More counsellors will make counselling available until 10 pm on weekdays and as a full service on weekends, not only for walk-ins.</p>
+      <ul class="ticks mt">
+        <li><b>More counsellors:</b> enough to staff evenings and weekends without stretching the day team</li>
+        <li><b>No class missed:</b> help without missing lectures or labs</li>
+        <li><b>Scheduled weekends:</b> appointments on Saturdays and Sundays, not only walk-ins</li>
+      </ul>
+    </div>
+    <div class="hours-card">
+      <div class="seg" role="tablist" aria-label="Compare schedules">
+        <button class="seg-btn is-on" role="tab" aria-selected="true" data-mode="today" type="button">Today</button>
+        <button class="seg-btn" role="tab" aria-selected="false" data-mode="proposed" type="button">Proposed</button>
+      </div>
+      <div class="hours" id="hoursChart" data-mode="today">
+        <div class="h-row" data-day="wk"><span class="h-day">Mon</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="wk"><span class="h-day">Tue</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="wk"><span class="h-day">Wed</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="wk"><span class="h-day">Thu</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="wk"><span class="h-day">Fri</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="we"><span class="h-day">Sat</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-row" data-day="we"><span class="h-day">Sun</span><div class="h-track"><span class="h-reg"></span><span class="h-ext">till 10 pm</span><span class="h-walk">walk-ins only</span><span class="h-full">full service</span></div></div>
+        <div class="h-axis"><span></span><div><span>Morning</span><span>Evening</span><span>10 pm</span></div></div>
+      </div>
+      <div class="h-legend"><span><i class="k-reg"></i>Regular hours</span><span><i class="k-ext"></i>Extended evenings</span><span><i class="k-full"></i>Weekend counselling</span><span><i class="k-walk"></i>Walk-ins only</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band cloud" id="assigned" aria-labelledby="asgTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Priority 4</span>
+      <h2 id="asgTitle">A counsellor for every hostel and department</h2>
+      <p>Each hostel and department will have one SWC counsellor as its contact person. Wardens, Heads of Department, faculty advisors, mentors and ambassadors will always know exactly whom to call, and students will see a familiar face.</p>
+    </div>
+    <div class="panel"><div class="diagram-scroll"><svg class="hub-svg" id="hubSvg" viewBox="0 0 760 400" role="img" aria-label="The SWC assigns one contact counsellor to each hostel and each department"></svg></div></div>
+    <div class="grid-2 mt">
+      <div class="panel"><h3>What the assigned counsellor does</h3><ul class="ticks"><li>Regular, visible presence in the hostel or department</li><li>First call for wardens, HoDs and faculty advisors</li><li>Works with the wellbeing ambassadors and mentors</li><li>Links local concerns to SHINE and the WQRT</li></ul></div>
+      <div class="panel"><h3>Why it matters</h3><ul class="ticks"><li>Familiarity lowers the barrier to seeking help</li><li>Early concerns are picked up close to the student</li><li>Clear accountability for every hostel and department</li><li>Better coordination across the support network</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="admin" aria-labelledby="adminTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Priority 5</span>
+      <h2 id="adminTitle">Dedicated leadership for a growing mission</h2>
+      <p>Round-the-clock services, a response team, an app, screening and a larger counselling team need a professional and administrative backbone. Two new positions are proposed: a <b>Chief Wellness Officer</b> and a <b>Deputy Registrar for Student Wellness</b>.</p>
+    </div>
+    <div class="org">
+      <div class="org-top"><b>Associate Dean, Student Wellness</b><small>Overall leadership</small></div>
+      <div class="org-mid">
+        <div class="org-role"><span class="new">New position</span><b>Chief Wellness Officer</b><small>Professional lead for services, quality and day-to-day coordination</small></div>
+        <div class="org-role"><span class="new">New position</span><b>Deputy Registrar, Student Wellness</b><small>Staffing, budgets, procurement, contracts and records</small></div>
+      </div>
+      <div class="org-units"><span>SWC</span><span>Flourishing Hub</span><span>Yogastha</span><span>NSS</span><span>Student Mentorship Program</span><span class="u-new">WQRT</span><span class="u-new">RISE IITB app</span></div>
+    </div>
+    <div class="grid-2 mt">
+      <div class="panel cloud"><h3>Chief Wellness Officer</h3><ul class="ticks"><li>Oversees counselling, screening and crisis services</li><li>Runs the WQRT roster and protocols</li><li>Monitors service quality and student feedback</li><li>Coordinates SWC, FH and the hostel and department network</li></ul></div>
+      <div class="panel cloud"><h3>Deputy Registrar, Student Wellness</h3><ul class="ticks"><li>Recruitment and contracts of counsellors and staff</li><li>Budgets, procurement and the app tender</li><li>Hospital empanelment and reimbursements</li><li>Records, reporting and compliance</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="band cloud" id="roadmap" aria-labelledby="rmTitle">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="kicker">Summary</span>
+      <h2 id="rmTitle">The roadmap at a glance</h2>
+      <p>From a strong foundation to a complete, round-the-clock system of care.</p>
+    </div>
+    <div class="roadmap">
+      <div class="rm-col">
+        <h3 class="rm-head h-a">Current status</h3>
+        <a class="rm-item" href="care.html"><b>Students Wellness Centre</b><small>One-to-one and walk-in counselling; 24/7 crisis support</small></a>
+        <a class="rm-item" href="care.html#ways"><b>Online counselling</b><small>Through Talk to Angel</small></a>
+        <a class="rm-item" href="care.html#ways"><b>Empanelled hospitals</b><small>With reimbursement of bills</small></a>
+        <a class="rm-item" href="flourish.html"><b>Flourishing Hub</b><small>700+ workshops in year one; 15 instructors</small></a>
+        <a class="rm-item" href="flourish.html#courses"><b>Wellness in the curriculum</b><small>NOCS 01 and NOCS 02 for all first-years</small></a>
+      </div>
+      <div class="rm-col">
+        <h3 class="rm-head h-b">Ongoing plans</h3>
+        <a class="rm-item" href="care.html#psychiatry"><b>24/7 psychiatry at IITB Hospital</b><span class="status s-done">Done</span></a>
+        <a class="rm-item" href="initiatives.html#ambassadors"><b>Wellbeing Ambassadors</b><span class="status s-process">Under process</span></a>
+        <a class="rm-item" href="initiatives.html#shine"><b>SHINE Committee</b><span class="status s-approved">Approved in IFM</span></a>
+        <a class="rm-item" href="initiatives.html#peer"><b>Peer Circles with Faculty Advisors</b><span class="status s-restructure">Restructuring</span></a>
+      </div>
+      <div class="rm-col">
+        <h3 class="rm-head h-c">Future targets</h3>
+        <a class="rm-item" href="#wqrt"><b>1 · Wellbeing Quick Response Team</b><small>24/7 team, vehicle and one number</small></a>
+        <a class="rm-item" href="#rise"><b>2 · RISE IITB app and screening</b><small>Every student, every semester</small></a>
+        <a class="rm-item" href="#hours"><b>3 · More counsellors, longer hours</b><small>Till 10 pm on weekdays; weekends</small></a>
+        <a class="rm-item" href="#assigned"><b>4 · Counsellor for every hostel and department</b><small>Local, familiar support</small></a>
+        <a class="rm-item" href="#admin"><b>5 · Administrative support</b><small>Chief Wellness Officer; DR, Student Wellness</small></a>
+      </div>
+    </div>
+  </div>
+</section>
