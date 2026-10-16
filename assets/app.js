@@ -82,7 +82,12 @@
 
   // header shadow + back-to-top
   var header = $('#siteHeader'), toTop = $('#toTop');
+  var bar = document.createElement('div');
+  bar.className = 'progress'; bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
   function onScroll() {
+    var max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.setProperty('--p', max > 0 ? (scrollY / max).toFixed(4) : 0);
     header.classList.toggle('scrolled', scrollY > 10);
     toTop.classList.toggle('show', scrollY > 900);
   }
