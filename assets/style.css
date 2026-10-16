@@ -1288,6 +1288,31 @@ main > .band:last-child { padding-bottom: clamp(64px, 9vw, 112px); }
 .step-detail .sd-n { color: var(--navy); }
 .step-btn.is-on small { color: #cfe4ff; }
 
+/* ---- diagrams keep BetterHelp's greens while the rest of the site is blue ---- */
+.orbit, .peer-svg, .hub-svg, .tree, .org, .eco, .doc-team {
+  --navy: #325343; --navy-2: #457777; --navy-3: #397a4a; --heading: #252625;
+  --teal: #397a4a; --teal-2: #a6de9b; --teal-soft: #e8f4e4; --sky: #a6de9b; --sky-soft: #e8f4e4; --line: #d6e2d1;
+  --c: #a6de9b; --c-ink: #325343;
+}
+.tree-top, .org-top, .eco-core, .dt-lead { background: #325343; }
+.tree-top small, .org-top small, .dt-lead small { color: #dcebd6; }
+.eco-core small { color: #a6de9b; }
+.dots i { background: #397a4a; }
+.org-units .u-new { border-color: #397a4a; color: #397a4a; }
+:root .org-role { border-color: #9cc79a; }
+.dt-row > div { background: #f2f7f0; }
+.eco-units div { border-top-color: #397a4a; }
+.orbit .ring, .band.navy .orbit .ring { stroke: rgba(50,83,67,.35); }
+.orbit .o-link, .band.navy .orbit .o-link { stroke: rgba(50,83,67,.4); }
+.orbit .core { fill: #a6de9b; }
+.orbit .core-halo { fill: rgba(166,222,155,.35); }
+.orbit .core-small, .orbit .core-big { fill: #325343; }
+.orbit .o-node circle.dot { fill: #397a4a; }
+.orbit .o-node text { fill: #325343; }
+.orbit .o-node:hover rect, .orbit .o-node:focus-visible rect, .orbit .o-node.on rect { stroke: #397a4a; }
+.peer-svg .mentee { fill: #73c95b; }
+.lg-mentor { background: #397a4a; } .lg-mentee { background: #73c95b; }
+
 /* scroll progress */
 .progress { position: fixed; left: 0; right: 0; top: 0; height: 3px; z-index: 95; background: var(--navy); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); pointer-events: none; }
 

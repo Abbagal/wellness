@@ -322,7 +322,7 @@
       g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
       nodes.push({ g: g, line: line, base: -90 + i * 72 });
     });
-    var sats = [svg('circle', { r: 7, fill: '#f2b134' }, nodesG), svg('circle', { r: 4.5, fill: '#2a9df4' }, nodesG), svg('circle', { r: 5.5, fill: '#f2b134' }, nodesG)];
+    var sats = [svg('circle', { r: 7, fill: '#f2b134' }, nodesG), svg('circle', { r: 4.5, fill: '#397a4a' }, nodesG), svg('circle', { r: 5.5, fill: '#f2b134' }, nodesG)];
     var angle = 0, paused = false, last = performance.now(), o = $('#orbit');
     o.addEventListener('mouseenter', function () { paused = true; });
     o.addEventListener('mouseleave', function () { paused = false; });
@@ -388,7 +388,7 @@
     var faEl = personIcon(FA.x, FA.y, 30, 'fa');
     svg('text', { x: FA.x - 42, y: FA.y - 4, 'text-anchor': 'end' }, nodes).textContent = 'Faculty Advisor';
     svg('text', { class: 'small', x: FA.x - 42, y: FA.y + 14, 'text-anchor': 'end' }, nodes).textContent = '20–30 students, three circles';
-    var boxRect = svg('rect', { x: BOX.x - 52, y: BOX.y - 24, width: 112, height: 48, rx: 12, fill: '#ffffff', stroke: '#d5e3f6' }, nodes);
+    var boxRect = svg('rect', { x: BOX.x - 52, y: BOX.y - 24, width: 112, height: 48, rx: 12, fill: '#ffffff', stroke: '#d6e2d1' }, nodes);
     svg('text', { x: BOX.x + 4, y: BOX.y - 3, 'text-anchor': 'middle' }, nodes).textContent = 'Counsellor';
     svg('text', { class: 'small', x: BOX.x + 4, y: BOX.y + 14, 'text-anchor': 'middle' }, nodes).textContent = '/ SHINE';
     var tag1 = svg('g', { class: 'tag' }, nodes);
@@ -424,7 +424,7 @@
         .then(function () { setFlow(3); boxRect.setAttribute('stroke', '#c42a3a'); boxRect.setAttribute('stroke-width', '2.5'); return wait(1800); })
         .then(function () {
           setFlow(-1); me.el.classList.remove('lit'); mentorEls[me.m].classList.remove('lit'); faEl.classList.remove('lit'); edge.classList.remove('hl');
-          boxRect.setAttribute('stroke', '#d5e3f6'); boxRect.setAttribute('stroke-width', '1');
+          boxRect.setAttribute('stroke', '#d6e2d1'); boxRect.setAttribute('stroke-width', '1');
           pulse.setAttribute('cx', -20); pulse.setAttribute('cy', -20); btn.disabled = false;
         });
     });
