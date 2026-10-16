@@ -90,8 +90,8 @@ NAV = [
 ]
 
 LOGO = ('<svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><defs><clipPath id="lc{n}"><circle cx="24" cy="24" r="24"/></clipPath></defs>'
-        '<g clip-path="url(#lc{n})"><rect width="48" height="48" fill="#1559d6"/><circle cx="24" cy="28" r="10" fill="#f2b134"/>'
-        '<path d="M0 31c8-5 16-5 24 0s16 5 24 0v17H0z" fill="#2a9df4"/><path d="M0 37c8-4 16-4 24 0s16 4 24 0v11H0z" fill="#7cc3ff"/></g></svg>')
+        '<g clip-path="url(#lc{n})"><rect width="48" height="48" fill="#3f66c4"/><circle cx="24" cy="28" r="10" fill="#f3cd92"/>'
+        '<path d="M0 31c8-5 16-5 24 0s16 5 24 0v17H0z" fill="#7fb3dc"/><path d="M0 37c8-4 16-4 24 0s16 4 24 0v11H0z" fill="#b9d7f0"/></g></svg>')
 
 
 def icon(name, cls="ic"):
@@ -211,16 +211,16 @@ def page(meta, body):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{full_title}</title>
 <meta name="description" content="{meta['desc']}">
-<meta name="theme-color" content="#1559d6">
+<meta name="theme-color" content="#3f66c4">
 <meta property="og:title" content="{full_title}">
 <meta property="og:description" content="{meta['desc']}">
 <meta property="og:image" content="assets/img/hero.jpg">
 <script>(function(){{var d=document.documentElement;d.classList.add('js');if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('reduced');}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%231559d6'/%3E%3Ccircle cx='24' cy='28' r='10' fill='%23f2b134'/%3E%3Cpath d='M2 31c8-5 14-5 22 0s14 5 22 0c-2 9-10 17-22 17S4 40 2 31z' fill='%232a9df4'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%233f66c4'/%3E%3Ccircle cx='24' cy='28' r='10' fill='%23f3cd92'/%3E%3Cpath d='M2 31c8-5 14-5 22 0s14 5 22 0c-2 9-10 17-22 17S4 40 2 31z' fill='%237fb3dc'/%3E%3C/svg%3E">
 </head>
 <body data-page="{meta['nav']}">
 <a class="skip" href="#main">Skip to main content</a>

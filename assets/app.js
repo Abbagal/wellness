@@ -29,33 +29,28 @@
 
   /* ================= 3D depth ================= */
 
-  // floating orbs in every photo hero; they drift with the pointer
+  // soft colour clouds behind every hero, and a breathing guide on the home photo
   $$('.hero, .page-hero').forEach(function (h) {
     var o = document.createElement('div');
     o.className = 'orbs'; o.setAttribute('aria-hidden', 'true');
-    o.innerHTML = '<i class="orb-ring"></i><i class="orb orb-a"></i><i class="orb orb-b"></i><i class="orb orb-c"></i>';
-    h.insertBefore(o, h.querySelector('.wrap'));
-    if (reduced) return;
-    h.addEventListener('pointermove', function (e) {
-      var r = h.getBoundingClientRect();
-      o.style.setProperty('--px', ((e.clientX - r.left) / r.width - .5).toFixed(3));
-      o.style.setProperty('--py', ((e.clientY - r.top) / r.height - .5).toFixed(3));
-    });
+    o.innerHTML = '<i class="orb orb-a"></i><i class="orb orb-b"></i><i class="orb orb-c"></i>';
+    h.insertBefore(o, h.firstChild);
+    if (h.classList.contains('hero')) {
+      var b = document.createElement('div');
+      b.className = 'breathe'; b.setAttribute('aria-hidden', 'true');
+      b.innerHTML = '<i></i><span><b>Breathe in</b><em>Breathe out</em></span>';
+      h.appendChild(b);
+    }
   });
 
-  // cards tilt toward the pointer, with a moving highlight (mouse/trackpad only)
+  // cards lean gently toward the pointer (mouse/trackpad only)
   if (!reduced && window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches) {
     $$('.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .unit, .rf, .cont, .media-card, .sign, .rm-item').forEach(function (c) {
       c.classList.add('tilt');
-      var g = document.createElement('span');
-      g.className = 'glare'; g.setAttribute('aria-hidden', 'true');
-      c.appendChild(g);
       c.addEventListener('pointermove', function (e) {
         var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
         c.classList.add('tilting');
-        c.style.transform = 'perspective(900px) rotateX(' + ((.5 - y) * 10).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 12).toFixed(2) + 'deg) translate(-3px, -4px)';
-        c.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
-        c.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
+        c.style.transform = 'perspective(900px) rotateX(' + ((.5 - y) * 4).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 5).toFixed(2) + 'deg) translateY(-5px)';
       });
       c.addEventListener('pointerleave', function () { c.classList.remove('tilting'); c.style.transform = ''; });
     });
