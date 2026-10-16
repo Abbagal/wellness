@@ -29,7 +29,7 @@
 
   /* ================= 3D depth ================= */
 
-  // soft colour clouds behind every hero, and a breathing guide on the home photo
+  // flat shapes around every hero photo, and a breathing guide on the home photo
   $$('.hero, .page-hero').forEach(function (h) {
     var o = document.createElement('div');
     o.className = 'orbs'; o.setAttribute('aria-hidden', 'true');
@@ -42,19 +42,6 @@
       h.appendChild(b);
     }
   });
-
-  // cards lean gently toward the pointer (mouse/trackpad only)
-  if (!reduced && window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    $$('.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .unit, .rf, .cont, .media-card, .sign, .rm-item').forEach(function (c) {
-      c.classList.add('tilt');
-      c.addEventListener('pointermove', function (e) {
-        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-        c.classList.add('tilting');
-        c.style.transform = 'perspective(900px) rotateX(' + ((.5 - y) * 4).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 5).toFixed(2) + 'deg) translateY(-5px)';
-      });
-      c.addEventListener('pointerleave', function () { c.classList.remove('tilting'); c.style.transform = ''; });
-    });
-  }
 
   // card grids are dealt in, one card after another, when they scroll into view
   if (!reduced) {
