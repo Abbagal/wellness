@@ -1001,9 +1001,6 @@ a.doc-card:hover { background: var(--teal-soft); color: var(--ink); }
 .unit-panel, .flow li, .doc-card, .doc-stat, .doc-plan, .lvl-detail, .media-card, .wq-core {
   box-shadow: var(--elev-1);
 }
-.task, .news-card, .feature, .place, .channel, .team-card, .reach-card, .sign, .steps-list li, .unit, .rf, .rm-item, .tree-node {
-  background-image: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
-}
 .task:hover, .news-card:hover, .channel:hover { box-shadow: var(--elev-2); }
 .band.navy .feature { box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 18px 34px -20px rgba(8,40,120,.55); }
 .task.urgent { background-image: linear-gradient(160deg, #e5505f, var(--red)); }
@@ -1053,7 +1050,7 @@ a.doc-card:hover { background: var(--teal-soft); color: var(--ink); }
 .tilt.tilting { transition: transform .08s linear, box-shadow .35s; box-shadow: var(--elev-2); }
 .tilt .glare { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 3; opacity: 0; transition: opacity .3s;
   background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 0%), rgba(255,255,255,.28), rgba(255,255,255,0) 40%); }
-.tilt.tilting .glare { opacity: 1; }
+.tilt.tilting .glare { opacity: .35; }
 .tilt .ic-circle, .tilt h3, .tilt .num, .tilt .big { transform: translateZ(28px); }
 .tilt .go, .tilt .link-arrow { transform: translateZ(18px); }
 
@@ -1081,6 +1078,78 @@ a.doc-card:hover { background: var(--teal-soft); color: var(--ink); }
 /* reveal with a gentle 3D lift */
 .js .reveal { transform: perspective(1000px) translateY(28px) rotateX(7deg); transform-origin: 50% 100%; }
 .js .reveal.in { transform: none; }
+
+/* ---------------- Cards: solid 3D slabs with their own colour ----------------
+   Each card is a physical block: a crisp coloured edge underneath (not a blur), a quarter-circle
+   corner in its own shade that swells on hover, and an icon that flips round. Shades cycle through
+   the blue family; cards with a sun icon stay sun. app.js deals the cards in with a stagger. */
+@property --blob { syntax: "<length>"; inherits: false; initial-value: 92px; }
+:root :is(.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .sign, .rm-item, .steps-list li,
+  .unit, .rf, .ws, .tree-node, .org-role, .doc-card, .doc-stat, .helpline, .when, .hours-card, .cur-step) {
+  --c: #1559d6; --c-edge: #b7d1fa; --c-soft: #e6f0ff;
+}
+:root :is(.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .sign, .rm-item, .steps-list li, .unit, .rf, .ws, .tree-node, .doc-card):nth-child(4n+2) { --c: #0a7fc2; --c-edge: #ade0fb; --c-soft: #e2f5ff; }
+:root :is(.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .sign, .rm-item, .steps-list li, .unit, .rf, .ws, .tree-node, .doc-card):nth-child(4n+3) { --c: #4457d8; --c-edge: #c9cffa; --c-soft: #eceeff; }
+:root :is(.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .sign, .rm-item, .steps-list li, .unit, .rf, .ws, .tree-node, .doc-card):nth-child(4n+4) { --c: #0787a6; --c-edge: #ade4f0; --c-soft: #e0f7fc; }
+:root :is(.task, .feature, .place, .sign, .channel, .doc-card):has(> .ic-circle.sun) { --c: #b77700; --c-edge: #f6d98f; --c-soft: #fff4d6; }
+
+:root :is(.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .sign, .rm-item, .steps-list li,
+  .unit, .rf, .ws, .tree-node, .org-role, .doc-card, .doc-stat, .helpline, .when, .hours-card, .cur-step:not(.end)) {
+  border: 1.5px solid var(--c-edge);
+  background: radial-gradient(circle at 100% 0%, var(--c-soft) 0 var(--blob), transparent calc(var(--blob) + 1px)) #fff;
+  box-shadow: 6px 6px 0 var(--c-edge), 0 18px 30px -22px color-mix(in srgb, var(--c) 70%, transparent);
+  transition: transform .3s cubic-bezier(.3,1.4,.5,1), box-shadow .3s cubic-bezier(.3,1.4,.5,1), --blob .5s cubic-bezier(.2,.7,.2,1), border-color .3s;
+}
+:root :is(.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .sign, .rm-item,
+  .unit, .rf, .ws, .tree-node, .org-role, .doc-card):hover {
+  transform: translate(-3px, -4px);
+  box-shadow: 10px 11px 0 var(--c-edge), 0 26px 40px -24px color-mix(in srgb, var(--c) 80%, transparent);
+  border-color: color-mix(in srgb, var(--c) 45%, var(--c-edge));
+  --blob: 150px;
+}
+:root :is(.task, .news-card, .channel, .rm-item, .unit, .rf, .doc-card):active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--c-edge); }
+
+/* card details pick up the card's own shade */
+:root :is(.task, .feature, .place, .sign, .channel, .doc-card, .unit) .ic-circle,
+:root .unit .ic, :root .ws .ic { color: var(--c); }
+:root :is(.task, .feature, .place, .sign, .channel, .doc-card) .ic-circle {
+  background: radial-gradient(circle at 32% 26%, #fff 0%, var(--c-soft) 45%, var(--c-edge) 100%);
+  box-shadow: inset 0 -3px 6px color-mix(in srgb, var(--c) 22%, transparent), inset 0 2px 2px rgba(255,255,255,.9), 0 8px 16px -8px color-mix(in srgb, var(--c) 70%, transparent);
+}
+:root :is(.task, .channel, .place, .feature, .news-card, .sign):hover h3 { color: var(--c); }
+:root :is(.task .go, .place .link-arrow, .feature .link-arrow) { color: var(--c); }
+.task::after { background: var(--c); height: 5px; }
+.news-top { background: var(--c); height: 10px; }
+.reach-card .num, .team-card .big, .doc-stat b { color: var(--c); }
+.steps-list li::before { background: radial-gradient(circle at 32% 26%, color-mix(in srgb, var(--c) 35%, #fff) 0%, var(--c) 70%); }
+
+/* icon flips round in 3D on hover */
+:root :is(.task, .feature, .place, .sign, .channel, .doc-card):hover .ic-circle { animation: iconFlip .9s cubic-bezier(.3,1.3,.5,1); }
+@keyframes iconFlip {
+  0% { transform: translateZ(28px) rotateY(0) scale(1); }
+  45% { transform: translateZ(40px) rotateY(200deg) scale(1.15); }
+  100% { transform: translateZ(28px) rotateY(360deg) scale(1); }
+}
+
+/* exceptions keep their meaning */
+:root .task.urgent { --c: #fff; --c-edge: #f2aab3; --c-soft: rgba(255,255,255,.14); background: radial-gradient(circle at 100% 0%, rgba(255,255,255,.14) 0 var(--blob), transparent calc(var(--blob) + 1px)), linear-gradient(160deg, #e5505f, var(--red)); border-color: #d63d4d; }
+:root .task.urgent .ic-circle { background: rgba(255,255,255,.2); color: #fff; box-shadow: inset 0 2px 2px rgba(255,255,255,.35); }
+:root .helpline.red { --c-edge: #f2aab3; background: linear-gradient(160deg, #e5505f, var(--red)); border-color: #d63d4d; }
+:root .band.navy .feature { --c-edge: rgba(255,255,255,.35); background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.3); box-shadow: 6px 6px 0 rgba(255,255,255,.22); }
+:root .band.navy .feature:hover { box-shadow: 10px 11px 0 rgba(255,255,255,.3); }
+:root .band.navy .feature h3 { color: #fff; }
+:root .unit[aria-selected="true"], :root .rf.is-on { background: var(--blue-grad); border-color: #1559d6; box-shadow: 6px 6px 0 #9fc2f8; }
+:root .ws.dim { transform: scale(.97); box-shadow: 2px 2px 0 var(--c-edge); }
+
+/* dealt in: each card flips up into place, one after another */
+.deal > * { animation: dealIn .75s cubic-bezier(.2,.9,.25,1.15) backwards; animation-delay: calc(var(--i, 0) * 80ms); animation-play-state: paused; }
+.deal.dealt > * { animation-play-state: running; }
+@keyframes dealIn { from { opacity: .001; transform: perspective(900px) translateY(46px) rotateX(-32deg) rotateZ(-2deg); } }
+
+@media (max-width: 640px) {
+  :root :is(.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .sign, .rm-item, .steps-list li,
+    .unit, .rf, .ws, .tree-node, .org-role, .doc-card, .doc-stat, .helpline, .when, .hours-card, .cur-step:not(.end)) { box-shadow: 4px 4px 0 var(--c-edge); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

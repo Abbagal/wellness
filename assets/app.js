@@ -53,11 +53,23 @@
       c.addEventListener('pointermove', function (e) {
         var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
         c.classList.add('tilting');
-        c.style.transform = 'perspective(900px) rotateX(' + ((.5 - y) * 10).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 12).toFixed(2) + 'deg) translateY(-6px)';
+        c.style.transform = 'perspective(900px) rotateX(' + ((.5 - y) * 10).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 12).toFixed(2) + 'deg) translate(-3px, -4px)';
         c.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
         c.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
       });
       c.addEventListener('pointerleave', function () { c.classList.remove('tilting'); c.style.transform = ''; });
+    });
+  }
+
+  // card grids are dealt in, one card after another, when they scroll into view
+  if (!reduced) {
+    var CARD = '.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .sign, .rm-item, .unit, .rf, .ws, .tree-node, .org-role, .doc-card, .doc-stat, .helpline, .steps-list > li';
+    var decks = [];
+    $$(CARD).forEach(function (c) { var p = c.parentElement; if (p && decks.indexOf(p) < 0 && p.children.length > 1) decks.push(p); });
+    decks.forEach(function (p) {
+      Array.prototype.forEach.call(p.children, function (c, i) { c.style.setProperty('--i', i); });
+      p.classList.add('deal');
+      onView(p, function () { p.classList.add('dealt'); }, { threshold: 0.05 });
     });
   }
 
