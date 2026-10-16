@@ -25,4 +25,4 @@ python build.py
 
 This regenerates the `.html` files in the project root. Commit them and Vercel redeploys.
 
-Photos are from Unsplash and illustrative only. Replace `assets/img/*.jpg` with real IIT Bombay photos when available.
+Photos in `assets/img/` are IIT Bombay campus photos from Wikimedia Commons (CC BY-SA 3.0/4.0 and CC0). Each is credited in the site footer; keep those credits if you reuse them.

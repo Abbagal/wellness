@@ -90,8 +90,8 @@ NAV = [
 ]
 
 LOGO = ('<svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><defs><clipPath id="lc{n}"><circle cx="24" cy="24" r="24"/></clipPath></defs>'
-        '<g clip-path="url(#lc{n})"><rect width="48" height="48" fill="#325343"/><circle cx="24" cy="28" r="10" fill="#f6e27a"/>'
-        '<path d="M0 31c8-5 16-5 24 0s16 5 24 0v17H0z" fill="#73c95b"/><path d="M0 37c8-4 16-4 24 0s16 4 24 0v11H0z" fill="#a6de9b"/></g></svg>')
+        '<g clip-path="url(#lc{n})"><rect width="48" height="48" fill="#004ec3"/><circle cx="24" cy="28" r="10" fill="#f6e27a"/>'
+        '<path d="M0 31c8-5 16-5 24 0s16 5 24 0v17H0z" fill="#5aa2ff"/><path d="M0 37c8-4 16-4 24 0s16 4 24 0v11H0z" fill="#b9d6ff"/></g></svg>')
 
 
 def icon(name, cls="ic"):
@@ -194,7 +194,7 @@ def footer():
     </div>
     <div class="foot-bottom">
       <span>Based on <em>Student Wellness at IIT Bombay</em>, October 2026 update by Prof. Deepak Marla.</span>
-      <span>Photos: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> (illustrative)</span>
+      <span class="photo-credits">IIT Bombay photos from Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Main_building_in_IIT_Bombay.jpg" target="_blank" rel="noopener">Main Building</a> by Shishirdasika (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:IITBConvocationHall.JPG" target="_blank" rel="noopener">Convocation Hall</a> by Arne Hückelheim (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Mickey_Mehta_addressing_students_and_Faculty_at_IIT_Powai,_Mumbai.jpg" target="_blank" rel="noopener">Talk at IIT Bombay</a> by Satheravi (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Mood_Indigo_Volunteers.jpg" target="_blank" rel="noopener">Mood Indigo volunteers</a> by Trinidade (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Powai_lake_iit_bombay.jpg" target="_blank" rel="noopener">Powai Lake</a> by Jishnu12684 (CC0), <a href="https://commons.wikimedia.org/wiki/File:Cafe_92_IIT_Bombay.jpg" target="_blank" rel="noopener">Cafe 92</a> by Shishirdasika (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:IIT_Bombay_Olympic-size_Swimming_Pool.JPG" target="_blank" rel="noopener">Swimming pool</a> by Megha Gupta (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:View_from_Boat_House,_Powai_lake,_IIT_Bombay.JPG" target="_blank" rel="noopener">Boat house, Powai Lake</a> by Megha Gupta (CC BY-SA 3.0).</span>
     </div>
   </div>
 </footer>
@@ -211,7 +211,7 @@ def page(meta, body):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{full_title}</title>
 <meta name="description" content="{meta['desc']}">
-<meta name="theme-color" content="#325343">
+<meta name="theme-color" content="#004ec3">
 <meta property="og:title" content="{full_title}">
 <meta property="og:description" content="{meta['desc']}">
 <meta property="og:image" content="assets/img/hero.jpg">
@@ -220,7 +220,7 @@ def page(meta, body):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23325343'/%3E%3Ccircle cx='24' cy='28' r='10' fill='%23f6e27a'/%3E%3Cpath d='M2 31c8-5 14-5 22 0s14 5 22 0c-2 9-10 17-22 17S4 40 2 31z' fill='%2373c95b'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23004ec3'/%3E%3Ccircle cx='24' cy='28' r='10' fill='%23f6e27a'/%3E%3Cpath d='M2 31c8-5 14-5 22 0s14 5 22 0c-2 9-10 17-22 17S4 40 2 31z' fill='%235aa2ff'/%3E%3C/svg%3E">
 </head>
 <body data-page="{meta['nav']}">
 <a class="skip" href="#main">Skip to main content</a>
