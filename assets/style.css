@@ -1035,6 +1035,8 @@ a:hover { color: var(--navy); }
 
 /* ---- sections meet in soft waves ---- */
 .band { position: relative; }
+.band.cloud { background: var(--mist); }
+.band.teal { background: var(--sand); color: var(--ink-2); }
 .band.navy { background: var(--navy); color: #fff; }
 .band::before {
   content: ""; position: absolute; left: 0; right: 0; top: -59px; height: 60px; z-index: 1; pointer-events: none;
@@ -1282,6 +1284,9 @@ a.doc-card:hover, .doc-targets a:hover { background: var(--cloud-2); }
 }
 
 main > .band:last-child { padding-bottom: clamp(64px, 9vw, 112px); }
+
+.step-detail .sd-n { color: var(--navy); }
+.step-btn.is-on small { color: #cfe4ff; }
 
 /* scroll progress */
 .progress { position: fixed; left: 0; right: 0; top: 0; height: 3px; z-index: 95; background: var(--navy); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); pointer-events: none; }
