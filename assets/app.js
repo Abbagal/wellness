@@ -27,6 +27,40 @@
     try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { return null; }
   }
 
+  /* ================= 3D depth ================= */
+
+  // floating orbs in every photo hero; they drift with the pointer
+  $$('.hero, .page-hero').forEach(function (h) {
+    var o = document.createElement('div');
+    o.className = 'orbs'; o.setAttribute('aria-hidden', 'true');
+    o.innerHTML = '<i class="orb-ring"></i><i class="orb orb-a"></i><i class="orb orb-b"></i><i class="orb orb-c"></i>';
+    h.insertBefore(o, h.querySelector('.wrap'));
+    if (reduced) return;
+    h.addEventListener('pointermove', function (e) {
+      var r = h.getBoundingClientRect();
+      o.style.setProperty('--px', ((e.clientX - r.left) / r.width - .5).toFixed(3));
+      o.style.setProperty('--py', ((e.clientY - r.top) / r.height - .5).toFixed(3));
+    });
+  });
+
+  // cards tilt toward the pointer, with a moving highlight (mouse/trackpad only)
+  if (!reduced && window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    $$('.task, .news-card, .channel, .feature, .place, .team-card, .reach-card, .unit, .rf, .cont, .media-card, .sign, .rm-item').forEach(function (c) {
+      c.classList.add('tilt');
+      var g = document.createElement('span');
+      g.className = 'glare'; g.setAttribute('aria-hidden', 'true');
+      c.appendChild(g);
+      c.addEventListener('pointermove', function (e) {
+        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        c.classList.add('tilting');
+        c.style.transform = 'perspective(900px) rotateX(' + ((.5 - y) * 10).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 12).toFixed(2) + 'deg) translateY(-6px)';
+        c.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
+        c.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
+      });
+      c.addEventListener('pointerleave', function () { c.classList.remove('tilting'); c.style.transform = ''; });
+    });
+  }
+
   /* ================= site chrome ================= */
 
   // announcement bar (dismissible, remembered per browser)
@@ -289,7 +323,7 @@
       g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
       nodes.push({ g: g, line: line, base: -90 + i * 72 });
     });
-    var sats = [svg('circle', { r: 7, fill: '#f2b134' }, nodesG), svg('circle', { r: 4.5, fill: '#14958a' }, nodesG), svg('circle', { r: 5.5, fill: '#f2b134' }, nodesG)];
+    var sats = [svg('circle', { r: 7, fill: '#f2b134' }, nodesG), svg('circle', { r: 4.5, fill: '#2a9df4' }, nodesG), svg('circle', { r: 5.5, fill: '#f2b134' }, nodesG)];
     var angle = 0, paused = false, last = performance.now(), o = $('#orbit');
     o.addEventListener('mouseenter', function () { paused = true; });
     o.addEventListener('mouseleave', function () { paused = false; });
@@ -355,7 +389,7 @@
     var faEl = personIcon(FA.x, FA.y, 30, 'fa');
     svg('text', { x: FA.x - 42, y: FA.y - 4, 'text-anchor': 'end' }, nodes).textContent = 'Faculty Advisor';
     svg('text', { class: 'small', x: FA.x - 42, y: FA.y + 14, 'text-anchor': 'end' }, nodes).textContent = '20–30 students, three circles';
-    var boxRect = svg('rect', { x: BOX.x - 52, y: BOX.y - 24, width: 112, height: 48, rx: 12, fill: '#ffffff', stroke: '#dbe2eb' }, nodes);
+    var boxRect = svg('rect', { x: BOX.x - 52, y: BOX.y - 24, width: 112, height: 48, rx: 12, fill: '#ffffff', stroke: '#d5e3f6' }, nodes);
     svg('text', { x: BOX.x + 4, y: BOX.y - 3, 'text-anchor': 'middle' }, nodes).textContent = 'Counsellor';
     svg('text', { class: 'small', x: BOX.x + 4, y: BOX.y + 14, 'text-anchor': 'middle' }, nodes).textContent = '/ SHINE';
     var tag1 = svg('g', { class: 'tag' }, nodes);
@@ -391,7 +425,7 @@
         .then(function () { setFlow(3); boxRect.setAttribute('stroke', '#c42a3a'); boxRect.setAttribute('stroke-width', '2.5'); return wait(1800); })
         .then(function () {
           setFlow(-1); me.el.classList.remove('lit'); mentorEls[me.m].classList.remove('lit'); faEl.classList.remove('lit'); edge.classList.remove('hl');
-          boxRect.setAttribute('stroke', '#dbe2eb'); boxRect.setAttribute('stroke-width', '1');
+          boxRect.setAttribute('stroke', '#d5e3f6'); boxRect.setAttribute('stroke-width', '1');
           pulse.setAttribute('cx', -20); pulse.setAttribute('cy', -20); btn.disabled = false;
         });
     });
