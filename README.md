@@ -25,4 +25,11 @@ python build.py
 
 This regenerates the `.html` files in the project root. Commit them and Vercel redeploys.
 
+## How the 3D works
+- `assets/world.js` draws the lake and one clay sculpture per page in raw WebGL (no libraries). Add or change a sculpture in `SCENES`.
+- `assets/motion.js` adds the word-by-word headings, pointer-tilt cards and scroll-linked perspective.
+- `assets/depth.css` is the visual layer over `assets/style.css`: paper sheets, clay surfaces, the floating header.
+- Hero and `.band.navy` sections are transparent windows onto the lake; keep shapes in the world light so dark text stays readable.
+- Animation stops for visitors with reduced motion turned on, and the round pause button stops it for anyone. Without WebGL the sky gradient and larger photo carry the hero.
+
 Photos in `assets/img/` are IIT Bombay campus photos from Wikimedia Commons (CC BY-SA 3.0/4.0 and CC0). Each is credited in the site footer; keep those credits if you reuse them.

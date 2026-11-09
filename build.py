@@ -38,6 +38,7 @@ ICONS = {
     "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
     "arrow-up": '<path d="M12 19V5M6 11l6-6 6 6"/>',
     "play": '<path d="M7 4.5v15l12-7.5z"/>',
+    "pause": '<path d="M8 5v14M16 5v14"/>',
     "search": '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
     "chev": '<path d="M6 9l6 6 6-6"/>',
     "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
@@ -198,6 +199,8 @@ def footer():
     </div>
   </div>
 </footer>
+<a class="btn-help help-float" id="helpFloat" href="get-help.html"><span class="pulse-dot" aria-hidden="true"></span>Get help now</a>
+<button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false" aria-label="Pause animations" title="Pause animations"><svg class="ic" aria-hidden="true"><use href="#i-pause"/></svg></button>
 <button class="to-top" id="toTop" type="button" aria-label="Back to top">{icon("arrow-up")}</button>"""
 
 
@@ -211,18 +214,20 @@ def page(meta, body):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{full_title}</title>
 <meta name="description" content="{meta['desc']}">
-<meta name="theme-color" content="#004ec3">
+<meta name="theme-color" content="#87d6ff">
 <meta property="og:title" content="{full_title}">
 <meta property="og:description" content="{meta['desc']}">
 <meta property="og:image" content="assets/img/hero.jpg">
-<script>(function(){{var d=document.documentElement;d.classList.add('js');if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('reduced');}})();</script>
+<script>(function(){{var d=document.documentElement,p=null;d.classList.add('js');try{{p=localStorage.getItem('sw-motion')}}catch(e){{}}if(p==='off'){{d.classList.add('reduced')}}else if(p!=='on'&&window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){{d.classList.add('reduced')}}}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/depth.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23004ec3'/%3E%3Ccircle cx='24' cy='28' r='10' fill='%23f6e27a'/%3E%3Cpath d='M2 31c8-5 14-5 22 0s14 5 22 0c-2 9-10 17-22 17S4 40 2 31z' fill='%235aa2ff'/%3E%3C/svg%3E">
 </head>
 <body data-page="{meta['nav']}">
+<canvas id="world" aria-hidden="true"></canvas>
 <a class="skip" href="#main">Skip to main content</a>
 {sprite()}
 {header(meta['nav'])}
@@ -232,6 +237,8 @@ def page(meta, body):
 {footer()}
 {drawer()}
 <script src="assets/app.js"></script>
+<script src="assets/motion.js"></script>
+<script src="assets/world.js"></script>
 </body>
 </html>
 """

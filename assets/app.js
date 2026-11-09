@@ -29,18 +29,12 @@
 
   /* ================= 3D depth ================= */
 
-  // flat shapes around every hero photo, and a breathing guide on the home photo
-  $$('.hero, .page-hero').forEach(function (h) {
-    var o = document.createElement('div');
-    o.className = 'orbs'; o.setAttribute('aria-hidden', 'true');
-    o.innerHTML = '<i class="orb orb-a"></i><i class="orb orb-b"></i><i class="orb orb-c"></i>';
-    h.insertBefore(o, h.firstChild);
-    if (h.classList.contains('hero')) {
-      var b = document.createElement('div');
-      b.className = 'breathe'; b.setAttribute('aria-hidden', 'true');
-      b.innerHTML = '<i></i><span><b>Breathe in</b><em>Breathe out</em></span>';
-      h.appendChild(b);
-    }
+  // breathing guide beside the home sculpture (same 10s rhythm as assets/world.js)
+  $$('.hero').forEach(function (h) {
+    var b = document.createElement('div');
+    b.className = 'breathe'; b.setAttribute('aria-hidden', 'true');
+    b.innerHTML = '<i></i><span><b>Breathe in</b><em>Breathe out</em></span>';
+    h.appendChild(b);
   });
 
   // card grids are dealt in, one card after another, when they scroll into view
@@ -63,7 +57,7 @@
   if (ann) $('#announceClose').addEventListener('click', function () { ann.hidden = true; store('sw-announce', 'closed'); });
 
   // header shadow + back-to-top
-  var header = $('#siteHeader'), toTop = $('#toTop');
+  var header = $('#siteHeader'), toTop = $('#toTop'), helpFloat = $('#helpFloat');
   var bar = document.createElement('div');
   bar.className = 'progress'; bar.setAttribute('aria-hidden', 'true');
   document.body.appendChild(bar);
@@ -72,6 +66,7 @@
     bar.style.setProperty('--p', max > 0 ? (scrollY / max).toFixed(4) : 0);
     header.classList.toggle('scrolled', scrollY > 10);
     toTop.classList.toggle('show', scrollY > 900);
+    if (helpFloat) helpFloat.classList.toggle('show', scrollY > 240);
   }
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
