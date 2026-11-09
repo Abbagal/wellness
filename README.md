@@ -1,35 +1,21 @@
-# Student Wellness at IIT Bombay
+# Wellness at IIT Bombay
 
-A multi-page website for the Office of the Associate Dean, Student Wellness, IIT Bombay, built from the October 2026 update *Student Wellness at IIT Bombay*. Styled after international university wellness sites (Penn, Stanford, Melbourne): utility bar with "Get help now", mega menu, photo-led heroes and task-based cards.
+A single-page static website built from the web team brief. No framework, no database.
 
-**Live site:** deployed on Vercel from the `main` branch.
+- `index.html`: the page, top to bottom in the brief's block order
+- `styles.css`: all styling
+- `script.js`: page behaviour and all editable data
+- `images/`: photographs
 
-## Pages
-| Page | What's on it |
-|---|---|
-| `index.html` | Task cards, continuum of care, stats, what's new, vision, where to go |
-| `get-help.html` | Urgent help, helplines (112, Tele-MANAS 14416), helping a friend, signs to notice |
-| `care.html` | Students Wellness Centre team, five ways to get help, 24/7 psychiatry, outreach |
-| `flourish.html` | Flourishing Hub, NOCS courses, workshop filter, Yogastha, NSS, mentorship |
-| `initiatives.html` | Progress tracker, Wellbeing Ambassadors, SHINE stages, Peer Circles animation |
-| `vision.html` | WQRT walkthrough, RISE IITB app and screening, hours chart, counsellor network, leadership, roadmap |
-| `about.html` | The office, why now, ecosystem orbit |
+## Updating numbers and links
+Edit the data at the top of `script.js`. A value of `null` shows as a placeholder such as `[XX]`. Do not publish with placeholders.
 
-## Editing
-Page content lives in `src/pages/`. The shared header, menus and footer are in `build.py`.
-After editing, run:
+- `WELLNESS_DATA`: counts, helplines, booking links and the "as of" month
+- `REPORTS`: reports and calendars, added in one place
+- `ADVISORY_BOARD`: names, designations, affiliations and photographs
+- `HIGHLIGHTS`: Activity Highlights captions and photographs
 
-```
-python build.py
-```
+## Before launch
+Confirm the WRT number, email and booking link. Block 9 (Voices) stays out until real, consented, anonymised testimonials are supplied.
 
-This regenerates the `.html` files in the project root. Commit them and Vercel redeploys.
-
-## How the 3D works
-- `assets/world.js` draws the lake and one clay sculpture per page in raw WebGL (no libraries). Add or change a sculpture in `SCENES`.
-- `assets/motion.js` adds the word-by-word headings, pointer-tilt cards and scroll-linked perspective.
-- `assets/depth.css` is the visual layer over `assets/style.css`: paper sheets, clay surfaces, the floating header.
-- Hero and `.band.navy` sections are transparent windows onto the lake; keep shapes in the world light so dark text stays readable.
-- Animation stops for visitors with reduced motion turned on, and the round pause button stops it for anyone. Without WebGL the sky gradient and larger photo carry the hero.
-
-Photos in `assets/img/` are IIT Bombay campus photos from Wikimedia Commons (CC BY-SA 3.0/4.0 and CC0). Each is credited in the site footer; keep those credits if you reuse them.
+The hero is a Wikimedia Commons photo (CC BY-SA 4.0), credited in the footer. Keep the credit until it is replaced with the Institute's own photo.
