@@ -95,7 +95,7 @@
   });
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    closeMegas(); closeDrawer(); closeSearch();
+    closeMegas(); closeDrawer();
   });
 
   // mobile drawer
@@ -110,91 +110,6 @@
   });
   $('#menuClose').addEventListener('click', closeDrawer);
   drawer.addEventListener('click', function (e) { if (e.target === drawer || e.target.closest('a')) closeDrawer(); });
-
-  /* ================= site search ================= */
-  var INDEX = [
-    ['Get help now', 'Urgent support, day or night', 'get-help.html#now', 'Help', 'crisis emergency urgent danger suicide panic now 112 help'],
-    ['Helplines', '112 emergency and Tele-MANAS 14416, 24/7', 'get-help.html#lines', 'Help', 'helpline phone number call tele manas 14416 112 hotline'],
-    ['Worried about a friend', 'Signs to notice and what to do', 'get-help.html#friend', 'Help', 'friend roommate worried someone else support refer'],
-    ['Signs someone needs support', 'Loss, backlogs, withdrawal and more', 'get-help.html#signs', 'Help', 'signs warning symptoms withdrawal backlog'],
-    ['Students Wellness Centre', 'Counsellors, a clinical psychologist and outreach', 'care.html#swc', 'Care', 'swc counselling counsellor therapist psychologist team'],
-    ['Book a counselling session', 'One-to-one, confidential, booked online', 'care.html#ways', 'Care', 'book appointment session slot counselling talk therapy'],
-    ['Walk-in counselling', 'Weekdays and weekends', 'care.html#ways', 'Care', 'walk in drop in no appointment'],
-    ['Online counselling', 'Through the Talk to Angel platform', 'care.html#ways', 'Care', 'online video talk to angel remote virtual'],
-    ['24/7 psychiatry', 'A psychiatrist at the IIT Bombay Hospital, day and night', 'care.html#psychiatry', 'Care', 'psychiatrist psychiatry hospital medication night doctor'],
-    ['Empanelled hospitals', 'Treatment with bills reimbursed', 'care.html#ways', 'Care', 'hospital reimbursement bills insurance treatment'],
-    ['Gatekeeper training', 'For wardens, security staff and faculty', 'care.html#outreach', 'Care', 'training warden faculty security gatekeeper workshop'],
-    ['Flourishing Hub', '700+ workshops in its first year', 'flourish.html#hub', 'Flourish', 'flourishing hub wellbeing skills resilience'],
-    ['Wellness courses NOCS 01 & 02', 'Mandatory for first-year students', 'flourish.html#courses', 'Flourish', 'nocs course first year curriculum credit'],
-    ['Stress Management workshop', 'Flourishing Hub workshop series', 'flourish.html#workshops', 'Flourish', 'stress exam pressure anxiety calm workshops'],
-    ['Emotional Fitness', 'Flourishing Hub workshop series', 'flourish.html#workshops', 'Flourish', 'emotional fitness feelings mood workshops'],
-    ['Career Readiness & Interview Psychology', 'Workshops for placements and careers', 'flourish.html#workshops', 'Flourish', 'career placement interview job productivity communication workshops'],
-    ['Yoga and meditation', 'Yogastha and Flourishing Hub programmes', 'flourish.html#community', 'Flourish', 'yoga meditation mindfulness breathe yogastha sleep'],
-    ['NSS', 'Service and community', 'flourish.html#community', 'Flourish', 'nss volunteer service community'],
-    ['Wellbeing Ambassadors', 'A friendly first point of contact in every hostel', 'initiatives.html#ambassadors', 'Initiatives', 'ambassador hostel department peer volunteer become'],
-    ['SHINE Committee', 'Coordinated support for students who need more', 'initiatives.html#shine', 'Initiatives', 'shine backlog academic loss illness grades recover support'],
-    ['Peer Circles & mentorship', 'Mentors and Faculty Advisors together', 'initiatives.html#peer', 'Initiatives', 'mentor mentorship faculty advisor peer circle smp'],
-    ['Wellbeing Quick Response Team', 'One number for every crisis (planned)', 'vision.html#wqrt', 'Vision', 'wqrt quick response team emergency vehicle'],
-    ['RISE IITB app', 'One app and universal screening (planned)', 'vision.html#rise', 'Vision', 'rise app screening mobile ai chatbot self help'],
-    ['Longer counselling hours', 'Till 10 pm on weekdays and at weekends (planned)', 'vision.html#hours', 'Vision', 'hours timing evening weekend night'],
-    ['Counsellor for every hostel', 'A familiar contact counsellor (planned)', 'vision.html#assigned', 'Vision', 'hostel department counsellor assigned local'],
-    ['Roadmap', 'Current status, ongoing plans and future targets', 'vision.html#roadmap', 'Vision', 'roadmap plan summary future'],
-    ['October 2026 Update', 'The full update: current status, ongoing plans, future targets', 'report.html', 'Update', 'report update pdf document october 2026 marla full summary'],
-    ['Prof. Deepak Marla', 'Associate Dean of Student Wellness, IIT Bombay', 'about.html#leadership', 'About', 'deepak marla dean associate professor leadership head who'],
-    ['About the office', 'Associate Dean, Student Wellness', 'about.html#office', 'About', 'about office associate dean marla leadership contact'],
-    ['The wellness ecosystem', 'Five units working as one', 'about.html#ecosystem', 'About', 'units ecosystem swc yogastha nss structure']
-  ];
-  function score(entry, q) {
-    var hay = (entry[0] + ' ' + entry[1] + ' ' + entry[4]).toLowerCase(), s = 0;
-    q.split(/\s+/).forEach(function (w) {
-      if (!w) return;
-      if (entry[0].toLowerCase().indexOf(w) > -1) s += 3;
-      if (hay.indexOf(w) > -1) s += 1; else s -= 2;
-    });
-    return s;
-  }
-  function esc(t) { return t.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  $$('[data-finder]').forEach(function (box) {
-    var input = $('input', box), list = $('.finder-results', box), sel = -1, items = [];
-    function render() {
-      var q = input.value.trim().toLowerCase();
-      if (!q) {
-        if (list.closest('.search-panel')) items = INDEX.slice(0, 6); else { list.hidden = true; return; }
-      } else {
-        items = INDEX.map(function (e) { return [score(e, q), e]; }).filter(function (x) { return x[0] > 0; })
-          .sort(function (a, b) { return b[0] - a[0]; }).slice(0, 7).map(function (x) { return x[1]; });
-      }
-      sel = -1;
-      list.hidden = false;
-      list.innerHTML = items.length
-        ? items.map(function (e, i) { return '<li><a role="option" href="' + e[2] + '" data-i="' + i + '"><span class="tag">' + e[3] + '</span><span><b>' + esc(e[0]) + '</b><span>' + esc(e[1]) + '</span></span></a></li>'; }).join('')
-        : '<li class="finder-empty">No matches. Try “counselling”, “stress” or <a href="get-help.html">see all help options</a>.</li>';
-    }
-    function highlight() { $$('a', list).forEach(function (a, i) { a.setAttribute('aria-selected', i === sel); }); }
-    input.addEventListener('input', render);
-    input.addEventListener('focus', render);
-    input.addEventListener('keydown', function (e) {
-      var n = items.length;
-      if (e.key === 'ArrowDown' && n) { e.preventDefault(); sel = (sel + 1) % n; highlight(); }
-      else if (e.key === 'ArrowUp' && n) { e.preventDefault(); sel = (sel - 1 + n) % n; highlight(); }
-      else if (e.key === 'Enter') { e.preventDefault(); var t = items[sel > -1 ? sel : 0]; if (t) location.href = t[2]; }
-    });
-    var form = input.closest('form');
-    if (form) form.addEventListener('submit', function () { var t = items[0]; if (t) location.href = t[2]; });
-    document.addEventListener('click', function (e) { if (!box.contains(e.target) && !list.closest('.search-panel')) list.hidden = true; });
-    list.addEventListener('click', function () { closeSearch(); });
-  });
-  $$('.popular [data-q]').forEach(function (b) {
-    b.addEventListener('click', function () { var i = $('#heroQuery'); i.value = b.dataset.q; i.focus(); i.dispatchEvent(new Event('input')); });
-  });
-  var overlay = $('#searchOverlay');
-  function openSearch() { overlay.hidden = false; var i = $('#overlayQuery'); i.value = ''; i.focus(); i.dispatchEvent(new Event('input')); }
-  function closeSearch() { if (overlay && !overlay.hidden) overlay.hidden = true; }
-  $('#searchOpen').addEventListener('click', openSearch);
-  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeSearch(); });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === '/' && !/input|textarea/i.test(document.activeElement.tagName)) { e.preventDefault(); openSearch(); }
-  });
 
   /* ================= page helpers ================= */
 

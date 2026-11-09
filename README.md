@@ -1,13 +1,13 @@
 # Student Wellness at IIT Bombay
 
-A multi-page website for the Office of the Associate Dean, Student Wellness, IIT Bombay, built from the October 2026 update *Student Wellness at IIT Bombay* (Prof. Deepak Marla). Styled after international university wellness sites (Penn, Stanford, Melbourne): utility bar with "Get help now", mega menu, site search, photo-led heroes and task-based cards.
+A multi-page website for the Office of the Associate Dean, Student Wellness, IIT Bombay, built from the October 2026 update *Student Wellness at IIT Bombay* (Prof. Deepak Marla). Styled after international university wellness sites (Penn, Stanford, Melbourne): utility bar with "Get help now", mega menu, photo-led heroes and task-based cards.
 
 **Live site:** deployed on Vercel from the `main` branch.
 
 ## Pages
 | Page | What's on it |
 |---|---|
-| `index.html` | "How can we care for you today?" search, task cards, continuum of care, stats, what's new, vision, where to go |
+| `index.html` | Task cards, continuum of care, stats, what's new, vision, where to go |
 | `get-help.html` | Urgent help, helplines (112, Tele-MANAS 14416), helping a friend, signs to notice |
 | `care.html` | Students Wellness Centre team, five ways to get help, 24/7 psychiatry, outreach |
 | `flourish.html` | Flourishing Hub, NOCS courses, workshop filter, Yogastha, NSS, mentorship |

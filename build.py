@@ -39,7 +39,6 @@ ICONS = {
     "arrow-up": '<path d="M12 19V5M6 11l6-6 6 6"/>',
     "play": '<path d="M7 4.5v15l12-7.5z"/>',
     "pause": '<path d="M8 5v14M16 5v14"/>',
-    "search": '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
     "chev": '<path d="M6 9l6 6 6-6"/>',
     "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
     "close": '<path d="M6 6l12 12M18 6 6 18"/>',
@@ -136,7 +135,6 @@ def header(active):
   <div class="wrap header-row">
     <a class="logo" href="index.html" aria-label="Student Wellness, IIT Bombay: home">{logo(1)}</a>
     <nav class="main-nav" aria-label="Main"><ul>{''.join(items)}</ul></nav>
-    <button class="search-btn" id="searchOpen" type="button" aria-label="Search the site">{icon("search")}</button>
     <button class="menu-btn" id="menuOpen" type="button" aria-label="Open menu">{icon("menu")}</button>
   </div>
 </header>"""
@@ -153,14 +151,6 @@ def drawer():
       <button class="menu-btn" style="display:grid" id="menuClose" type="button" aria-label="Close menu">{icon("close")}</button></div>
     {groups}
     <a class="btn-help" href="get-help.html"><span class="pulse-dot" aria-hidden="true"></span>Get help now</a>
-  </div>
-</div>
-<div class="search-overlay" id="searchOverlay" hidden>
-  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
-    <div class="finder" data-finder>
-      <label class="finder-field">{icon("search")}<input id="overlayQuery" type="search" placeholder="Search services, programmes, help…" autocomplete="off" aria-label="Search"></label>
-      <ul class="finder-results" role="listbox"></ul>
-    </div>
   </div>
 </div>"""
 
