@@ -179,7 +179,17 @@ main > .band:last-child { padding-bottom: calc(var(--pad) + var(--sheet)); }
 /* continuum: three panels that fan in from depth as you arrive */
 .continuum { overflow: visible; box-shadow: none; gap: 18px; perspective: 1500px; border-radius: 0; }
 .cont { border-radius: 40px; box-shadow: var(--clay-lift); transition: box-shadow .5s var(--calm); will-change: transform; }
-.cont h3 { font-size: 2.7rem; font-weight: 300; }
+/* photos stay in their natural colour, with the words on the white card beneath */
+.cont { min-height: 0; padding: 0; justify-content: flex-start; background: #fff; color: var(--ink-2); }
+.cont:hover { color: var(--ink-2); }
+.cont::before { display: none; }
+.cont img { position: static; flex: none; height: 240px; }
+.cont:hover img { transform: none; }
+.cont > :not(img) { margin-inline: 26px; }
+.cont .step { margin-top: 24px; color: #00439c; }
+.cont h3 { font-size: 2.7rem; font-weight: 300; color: var(--heading); }
+.cont p { color: var(--ink-2); flex: 1; }
+.cont small { margin-bottom: 26px; color: var(--ink-3); border-top-color: var(--line); }
 
 /* stats float over the lake as frosted pebbles */
 .stats { gap: 16px; }
@@ -263,7 +273,7 @@ body[data-page="help"] .help-float { display: none; }
 }
 @media (max-width: 860px) {
   .media-card, .split > :last-child .media-card, .split > .media-card:last-child { border-radius: 32px; box-shadow: var(--clay-lift); }
-  .cont { min-height: 320px; border-radius: 32px; }
+  .cont { border-radius: 32px; }
   .stats { gap: 12px; }
   .stat:nth-child(3) { padding-left: 22px; }
   .target .tn { width: 56px; height: 56px; font-size: 1.4rem; }
