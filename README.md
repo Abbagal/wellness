@@ -1,6 +1,6 @@
 # Student Wellness at IIT Bombay
 
-A multi-page website for the Office of the Associate Dean, Student Wellness, IIT Bombay, built from the October 2026 update *Student Wellness at IIT Bombay* (Prof. Deepak Marla). Styled after international university wellness sites (Penn, Stanford, Melbourne): utility bar with "Get help now", mega menu, photo-led heroes and task-based cards.
+A multi-page website for the Office of the Associate Dean, Student Wellness, IIT Bombay, built from the October 2026 update *Student Wellness at IIT Bombay*. Styled after international university wellness sites (Penn, Stanford, Melbourne): utility bar with "Get help now", mega menu, photo-led heroes and task-based cards.
 
 **Live site:** deployed on Vercel from the `main` branch.
 
@@ -13,7 +13,7 @@ A multi-page website for the Office of the Associate Dean, Student Wellness, IIT
 | `flourish.html` | Flourishing Hub, NOCS courses, workshop filter, Yogastha, NSS, mentorship |
 | `initiatives.html` | Progress tracker, Wellbeing Ambassadors, SHINE stages, Peer Circles animation |
 | `vision.html` | WQRT walkthrough, RISE IITB app and screening, hours chart, counsellor network, leadership, roadmap |
-| `about.html` | The office, why now, ecosystem orbit, leadership |
+| `about.html` | The office, why now, ecosystem orbit |
 
 ## Editing
 Page content lives in `src/pages/`. The shared header, menus and footer are in `build.py`.

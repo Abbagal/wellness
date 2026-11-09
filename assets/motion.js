@@ -96,7 +96,7 @@
   $$('.media-card img').forEach(function (img) {
     jobs.push({ el: img.parentNode, run: function (p) { img.style.transform = 'scale(1.14) translate3d(0,' + ((p - .5) * -9).toFixed(2) + '%,0)'; } });
   });
-  $$('.dean-card, .hours-card, .peer-stage, .wq-core').forEach(function (el) {
+  $$('.hours-card, .peer-stage, .wq-core').forEach(function (el) {
     jobs.push({ el: el, run: function (p) {
       var q = 1 - clamp(p * 2.2);
       el.style.transform = 'perspective(1400px) rotateX(' + (q * 9).toFixed(2) + 'deg) translate3d(0,' + (q * 30).toFixed(1) + 'px,0)';

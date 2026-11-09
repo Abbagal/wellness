@@ -85,7 +85,6 @@ NAV = [
      "links": [("about.html#office", "Our office", "One office, five units"),
                ("about.html#why", "Why now", "A national priority"),
                ("about.html#ecosystem", "The ecosystem", "How the units work together"),
-               ("about.html#leadership", "Prof. Deepak Marla", "Associate Dean of Student Wellness"),
                ("report.html", "October 2026 Update", "The full update, section by section")]},
 ]
 
@@ -184,7 +183,7 @@ def footer():
       {''.join(cols)}
     </div>
     <div class="foot-bottom">
-      <span>Based on <em>Student Wellness at IIT Bombay</em>, October 2026 update by Prof. Deepak Marla.</span>
+      <span>Based on <em>Student Wellness at IIT Bombay</em>, October 2026 update.</span>
       <span class="photo-credits">IIT Bombay photos from Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Main_building_in_IIT_Bombay.jpg" target="_blank" rel="noopener">Main Building</a> by Shishirdasika (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:IITBConvocationHall.JPG" target="_blank" rel="noopener">Convocation Hall</a> by Arne Hückelheim (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Mickey_Mehta_addressing_students_and_Faculty_at_IIT_Powai,_Mumbai.jpg" target="_blank" rel="noopener">Talk at IIT Bombay</a> by Satheravi (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Mood_Indigo_Volunteers.jpg" target="_blank" rel="noopener">Mood Indigo volunteers</a> by Trinidade (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Powai_lake_iit_bombay.jpg" target="_blank" rel="noopener">Powai Lake</a> by Jishnu12684 (CC0), <a href="https://commons.wikimedia.org/wiki/File:Cafe_92_IIT_Bombay.jpg" target="_blank" rel="noopener">Cafe 92</a> by Shishirdasika (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:IIT_Bombay_Olympic-size_Swimming_Pool.JPG" target="_blank" rel="noopener">Swimming pool</a> by Megha Gupta (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:View_from_Boat_House,_Powai_lake,_IIT_Bombay.JPG" target="_blank" rel="noopener">Boat house, Powai Lake</a> by Megha Gupta (CC BY-SA 3.0).</span>
     </div>
   </div>
