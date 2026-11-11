@@ -6,13 +6,13 @@ A static website built from the web team brief, split into pages. No framework, 
 - `about.html`: Our Work and the leadership messages
 - `initiatives.html`: Our Initiatives
 - `get-help.html`: How to Get Help
-- `people.html`: core team and Advisory Board
+- `people.html`: core team, Advisory Board and Student Body (Wellbeing Ambassadors)
 - `reports.html`: reports and Activity Highlights
 - `styles.css`: all styling
 - `script.js`: page behaviour and all editable data
 - `images/`: photographs
 
-- `site-chrome.js`: the header, footer and "Get help now" panel, shared by every page. Change them here once.
+- `site-chrome.js`: the header, footer and "Get help now" panel, shared by every page, including the Initiatives and Get Help dropdown menus. Change them here once.
 
 ## Updating numbers and links
 Edit the data at the top of `script.js`. A value of `null` shows as a placeholder such as `[XX]`. Do not publish with placeholders.
@@ -21,6 +21,7 @@ Edit the data at the top of `script.js`. A value of `null` shows as a placeholde
 - `REPORTS`: reports and calendars, added in one place
 - `ADVISORY_BOARD`: names, designations, affiliations and photographs
 - `HIGHLIGHTS`: Activity Highlights captions and photographs
+- `STUDENT_BODY`: Institute, Hostel and Department Wellbeing Ambassadors
 - `CALL_LIST`: the tap-to-dial numbers in the help panel and on the Get Help page
 - `SERVICES`: hours, how to reach and location for each service on the Get Help page
 

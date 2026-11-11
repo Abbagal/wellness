@@ -56,6 +56,15 @@ const REPORT_CATEGORIES = ["Annual Reports", "Activity Reports", "Workshop Calen
 const ADVISORY_BOARD = [];
 const BOARD_VISIBLE = 6;
 
+// Student Body on the Our People page. { name: "", place: "Hostel 12" or "Department of Physics", photo: "images/name.webp" }
+// An empty list shows placeholder cards until the names are supplied.
+const STUDENT_BODY = {
+  institute: [],   // Institute Wellbeing Ambassadors
+  hostel: [],      // Hostel Wellbeing Ambassadors
+  department: []   // Department Wellbeing Ambassadors
+};
+const STUDENT_BODY_VISIBLE = 10;
+
 // { caption: "", photo: "images/name.webp", alt: "" }. Captions below mark the six events the brief asks for.
 const HIGHLIGHTS = [
   { caption: "[A workshop in progress]" },
@@ -200,6 +209,21 @@ const HIGHLIGHTS = [
     $("use", toggle).setAttribute("href", open ? "#i-close" : "#i-menu");
   }
   toggle.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+  /* dropdowns: hover or focus opens them on wide screens; the arrow button opens them anywhere */
+  const subs = $$(".has-sub", nav);
+  function setSub(li, open) {
+    li.classList.toggle("sub-open", open);
+    $(".sub-toggle", li).setAttribute("aria-expanded", String(open));
+  }
+  subs.forEach((li) => {
+    $(".sub-toggle", li).addEventListener("click", () => {
+      const open = !li.classList.contains("sub-open");
+      subs.forEach((o) => setSub(o, false));
+      setSub(li, open);
+    });
+    li.addEventListener("mouseleave", () => setSub(li, false));
+    li.addEventListener("focusout", (e) => { if (!li.contains(e.relatedTarget)) setSub(li, false); });
+  });
   $$("a", nav).forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
   /* slide-in help panel: available on every page */
@@ -225,7 +249,12 @@ const HIGHLIGHTS = [
   $("#helpClose").addEventListener("click", closePanel);
   scrim.addEventListener("click", closePanel);
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { closePanel(); setMenu(false); return; }
+    if (e.key === "Escape") {
+      const inSub = document.activeElement && document.activeElement.closest(".has-sub");
+      subs.forEach((o) => setSub(o, false));
+      if (inSub) $(".sub-toggle", inSub).focus(); // back to the arrow that opened the list
+      closePanel(); setMenu(false); return;
+    }
     if (e.key !== "Tab" || panel.hidden) return;
     const f = focusables(), first = f[0], last = f[f.length - 1];
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
@@ -242,12 +271,8 @@ const HIGHLIGHTS = [
     });
   });
 
-  /* advisory board (people page) */
-  const board = $("#board"), boardToggle = $("#boardToggle");
-  if (board) {
-  const members = ADVISORY_BOARD.length ? ADVISORY_BOARD
-    : Array.from({ length: 10 }, () => ({ name: "[Name]", designation: "[Designation]", affiliation: "[Affiliation]" }));
-  members.forEach((p, i) => {
+  /* people grids (people page): advisory board and student body, with "View all" past a limit */
+  function personCard(p) {
     const li = el("li");
     if (p.photo) {
       const img = el("img", "avatar");
@@ -260,20 +285,39 @@ const HIGHLIGHTS = [
       ph.appendChild(icon("user"));
       li.appendChild(ph);
     }
-    li.append(el("b", "", p.name), el("span", "", p.designation), el("span", "", p.affiliation));
-    if (i >= BOARD_VISIBLE) li.hidden = true;
-    board.appendChild(li);
-  });
-  if (members.length > BOARD_VISIBLE) {
-    boardToggle.hidden = false;
-    boardToggle.addEventListener("click", () => {
-      const open = boardToggle.getAttribute("aria-expanded") !== "true";
-      $$("li", board).slice(BOARD_VISIBLE).forEach((li) => { li.hidden = !open; });
-      boardToggle.setAttribute("aria-expanded", String(open));
-      boardToggle.textContent = open ? "Show fewer" : "View all";
+    li.appendChild(el("b", "", p.name));
+    p.lines.forEach((t) => li.appendChild(el("span", "", t)));
+    return li;
+  }
+  function peopleGrid(list, visible) {
+    const ul = document.getElementById(list.id), btn = document.getElementById(list.id + "Toggle");
+    if (!ul) return;
+    list.people.forEach((p, i) => {
+      const li = personCard(p);
+      if (i >= visible) li.hidden = true;
+      ul.appendChild(li);
     });
+    if (btn && list.people.length > visible) {
+      btn.hidden = false;
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") !== "true";
+        $$("li", ul).slice(visible).forEach((li) => { li.hidden = !open; });
+        btn.setAttribute("aria-expanded", String(open));
+        btn.textContent = open ? "Show fewer" : "View all";
+      });
+    }
   }
-  }
+  const placeholders = (n, place) => Array.from({ length: n }, () => ({ name: "[Name]", lines: [place] }));
+  peopleGrid({ id: "board", people: ADVISORY_BOARD.length
+    ? ADVISORY_BOARD.map((p) => ({ name: p.name, photo: p.photo, lines: [p.designation, p.affiliation] }))
+    : Array.from({ length: 10 }, () => ({ name: "[Name]", lines: ["[Designation]", "[Affiliation]"] })) }, BOARD_VISIBLE);
+  [["institute", "ambInstitute", "[Programme, year]"], ["hostel", "ambHostel", "[Hostel]"], ["department", "ambDepartment", "[Department]"]]
+    .forEach(([key, id, place]) => {
+      const list = STUDENT_BODY[key];
+      peopleGrid({ id, people: list.length
+        ? list.map((p) => ({ name: p.name, photo: p.photo, lines: [p.place] }))
+        : placeholders(5, place) }, STUDENT_BODY_VISIBLE);
+    });
 
   /* report tabs (reports page) */
   const tabs = $("#reportTabs"), reportPanel = $("#reportPanel");

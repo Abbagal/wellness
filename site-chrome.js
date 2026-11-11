@@ -6,11 +6,26 @@
 (function () {
   "use strict";
 
+  // sub: the dropdown shown on hover or focus (and behind the arrow button on phones).
   var NAV = [
     { href: "index.html", label: "Home" },
     { href: "about.html", label: "About" },
-    { href: "initiatives.html", label: "Initiatives" },
-    { href: "get-help.html", label: "Get Help" },
+    { href: "initiatives.html", label: "Initiatives", wide: true, sub: [
+      { href: "initiatives.html#care", label: "CARE: Counselling" },
+      { href: "initiatives.html#online-counselling", label: "Online Counselling" },
+      { href: "initiatives.html#wrt", label: "24x7 Wellness Response Team" },
+      { href: "initiatives.html#psychiatry", label: "24x7 Psychiatry Support" },
+      { href: "initiatives.html#flourishing-hub", label: "Flourishing Hub" },
+      { href: "initiatives.html#shine", label: "SHINE" },
+      { href: "initiatives.html#rise", label: "RISE IITB" },
+      { href: "initiatives.html#ambassadors", label: "Wellbeing Ambassadors" },
+      { href: "initiatives.html#mentors", label: "Student Mentors and Faculty Team" }
+    ] },
+    { href: "get-help.html", label: "Get Help", sub: [
+      // filled by script.js: the booking link from WELLNESS_DATA.links, the number from helplines
+      { html: '<span data-link="careBooking" data-label="Book a Counselling Session" data-class="sub-link">Book a Counselling Session</span>', note: "Talk to a CARE counsellor, in person or online" },
+      { html: '<a class="sub-link" href="tel:+918356810252" data-tel>Wellness Response Team, 24x7</a>', note: "Call or WhatsApp at any hour" }
+    ] },
     { href: "people.html", label: "Our People" },
     { href: "reports.html", label: "Reports" }
   ];
@@ -22,9 +37,18 @@
     return '<svg class="ic" aria-hidden="true"><use href="#i-' + name + '"/></svg>';
   }
 
-  var links = NAV.map(function (item) {
+  var links = NAV.map(function (item, n) {
     var current = item.href === page ? ' aria-current="page"' : "";
-    return '<li><a href="' + item.href + '"' + current + ">" + item.label + "</a></li>";
+    var top = '<a href="' + item.href + '"' + current + ">" + item.label + "</a>";
+    if (!item.sub) return "<li>" + top + "</li>";
+    var id = "sub-" + n;
+    var rows = item.sub.map(function (s) {
+      var link = s.html || '<a class="sub-link" href="' + s.href + '">' + s.label + "</a>";
+      return "<li>" + link + (s.note ? '<span class="sub-note">' + s.note + "</span>" : "") + "</li>";
+    }).join("");
+    return '<li class="has-sub">' + top +
+      '<button class="sub-toggle" type="button" aria-expanded="false" aria-controls="' + id + '" aria-label="Show ' + item.label + ' links">' + icon("right") + "</button>" +
+      '<ul class="sub' + (item.wide ? " wide" : "") + '" id="' + id + '">' + rows + "</ul></li>";
   }).join("") + '<li><a href="#contact">Contact</a></li>';
 
   var header =
