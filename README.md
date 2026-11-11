@@ -2,7 +2,7 @@
 
 A static website built from the web team brief, split into pages. No framework, no database, no build step.
 
-- `index.html`: Home, a short summary (hero, Wellness at a Glance, Our Work, the Director's message, Our Team, links to every page)
+- `index.html`: Home, a short summary (hero, Wellness at a Glance, Our Work, the Director's and Associate Dean's messages, Our Team, links to every page)
 - `about.html`: Our Work and the leadership messages
 - `initiatives.html`: Our Initiatives
 - `get-help.html`: How to Get Help

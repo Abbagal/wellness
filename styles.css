@@ -129,6 +129,7 @@ a.card.summary:focus-visible { outline: 3px solid var(--mid); outline-offset: 3p
 .byline b { color: var(--text); }
 .more { margin-top: 12px; }
 .message.solo { max-width: 940px; margin: 32px auto 0; }
+.message.solo + .message.solo { margin-top: 20px; }
 
 /* Block 5 */
 .cards { display: grid; gap: 16px; }
