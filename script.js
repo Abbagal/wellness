@@ -70,7 +70,7 @@ const HIGHLIGHTS = [
     n.textContent = v === null ? PLACEHOLDER : fmt(v);
   });
   const [y, m] = WELLNESS_DATA.asOf.split("-").map(Number);
-  $("#asOf").textContent = new Date(y, m - 1, 1).toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+  if ($("#asOf")) $("#asOf").textContent = new Date(y, m - 1, 1).toLocaleDateString("en-IN", { month: "long", year: "numeric" });
 
   const lines = WELLNESS_DATA.helplines;
   $$("[data-tel]").forEach((a) => {
@@ -130,9 +130,8 @@ const HIGHLIGHTS = [
   toggle.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
   $$("a", nav).forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
-  /* slide-in help panel: repeats Block 6 so the two can never differ */
+  /* slide-in help panel: available on every page */
   const panel = $("#helpPanel"), scrim = $("#helpScrim"), opener = $("#helpOpen");
-  $("#helpPanelBody").appendChild($("#helpPaths").cloneNode(true)).removeAttribute("id");
   const focusables = () => $$("a[href], button", panel);
   function openPanel() {
     setMenu(false);
@@ -171,8 +170,9 @@ const HIGHLIGHTS = [
     });
   });
 
-  /* advisory board */
+  /* advisory board (people page) */
   const board = $("#board"), boardToggle = $("#boardToggle");
+  if (board) {
   const members = ADVISORY_BOARD.length ? ADVISORY_BOARD
     : Array.from({ length: 10 }, () => ({ name: "[Name]", designation: "[Designation]", affiliation: "[Affiliation]" }));
   members.forEach((p, i) => {
@@ -201,9 +201,11 @@ const HIGHLIGHTS = [
       boardToggle.textContent = open ? "Show fewer" : "View all";
     });
   }
+  }
 
-  /* report tabs */
+  /* report tabs (reports page) */
   const tabs = $("#reportTabs"), reportPanel = $("#reportPanel");
+  if (tabs) {
   function showCategory(i, focus) {
     const cat = REPORT_CATEGORIES[i];
     $$(".tab", tabs).forEach((t, j) => {
@@ -244,9 +246,11 @@ const HIGHLIGHTS = [
     tabs.appendChild(t);
   });
   showCategory(0);
+  }
 
-  /* highlights: native swipe with scroll snap, plus buttons */
+  /* highlights: native swipe with scroll snap, plus buttons (reports page) */
   const slides = $("#slides");
+  if (slides) {
   HIGHLIGHTS.forEach((h) => {
     const li = el("li");
     if (h.photo) {
@@ -273,4 +277,5 @@ const HIGHLIGHTS = [
   }
   $("#prevSlide").addEventListener("click", () => step(-1));
   $("#nextSlide").addEventListener("click", () => step(1));
+  }
 })();

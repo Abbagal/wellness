@@ -1,11 +1,18 @@
 # Wellness at IIT Bombay
 
-A single-page static website built from the web team brief. No framework, no database.
+A static website built from the web team brief, split into pages. No framework, no database, no build step.
 
-- `index.html`: the page, top to bottom in the brief's block order
+- `index.html`: Home, a short summary (hero, Wellness at a Glance, Our Promise, links to every page)
+- `about.html`: Our Promise and the leadership messages
+- `initiatives.html`: Our Initiatives
+- `get-help.html`: How to Get Help
+- `people.html`: core team and Advisory Board
+- `reports.html`: reports and Activity Highlights
 - `styles.css`: all styling
 - `script.js`: page behaviour and all editable data
 - `images/`: photographs
+
+The header, footer and slide-in help panel are repeated in every page. When one of them changes, change it in all six files. The help panel copies the paths on `get-help.html`, so keep the two in step.
 
 ## Updating numbers and links
 Edit the data at the top of `script.js`. A value of `null` shows as a placeholder such as `[XX]`. Do not publish with placeholders.

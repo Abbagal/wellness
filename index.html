@@ -44,22 +44,23 @@
 <!-- Block 0: Sticky header -->
 <header class="site-header">
   <div class="wrap bar">
-    <a class="logo" href="#top" aria-label="Wellness at IIT Bombay: back to top">
+    <a class="logo" href="index.html" aria-label="Wellness at IIT Bombay: home">
       <span class="logo-mark" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
       <span class="logo-text"><small>IIT Bombay</small><b>Wellness</b></span>
     </a>
     <nav class="main-nav" id="mainNav" aria-label="Main">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#initiatives">Initiatives</a></li>
-        <li><a href="#get-help">Get Help</a></li>
-        <li><a href="#people">Our People</a></li>
-        <li><a href="#reports">Reports</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="initiatives.html">Initiatives</a></li>
+        <li><a href="get-help.html">Get Help</a></li>
+        <li><a href="people.html">Our People</a></li>
+        <li><a href="reports.html">Reports</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button>
-    <a class="btn help-now" id="helpOpen" href="#get-help">Get Help Now</a>
+    <a class="btn help-now" id="helpOpen" href="get-help.html">Get Help Now</a>
   </div>
 </header>
 
@@ -75,8 +76,8 @@
     <h1 id="heroTitle">Wellness at IIT Bombay</h1>
     <p class="hero-sub">Care that is always on. Support that is always near. A community that flourishes together.</p>
     <div class="btn-row">
-      <a class="btn" href="#get-help">Get Support Now</a>
-      <a class="btn outline" href="#initiatives">Explore Our Initiatives</a>
+      <a class="btn" href="get-help.html">Get Support Now</a>
+      <a class="btn outline" href="initiatives.html">Explore Our Initiatives</a>
     </div>
   </div>
 </section>
@@ -101,211 +102,59 @@
   </div>
 </section>
 
-<!-- Block 3: Our Promise -->
-<section class="band" id="about" aria-labelledby="promiseTitle">
+<!-- Our Promise, in short -->
+<section class="band" aria-labelledby="promiseTitle">
   <div class="wrap narrow center reveal">
     <h2 id="promiseTitle">Our Promise</h2>
     <p class="lead-serif">Wellness is not a service we offer. It is a culture we build.</p>
-    <p>At IIT Bombay, student wellness goes beyond treating distress. We prevent it, we nurture strengths, we respond within minutes when it matters, and we walk alongside every student, from the first day to graduation day.</p>
+    <p>We prevent distress, nurture strengths, respond within minutes when it matters, and walk alongside every student from the first day to graduation day.</p>
   </div>
   <div class="wrap trio reveal">
     <div class="box"><h3>Prevent</h3><p>Build resilience early</p></div>
     <div class="box"><h3>Respond</h3><p>Help within minutes, at any hour</p></div>
     <div class="box"><h3>Flourish</h3><p>Thrive, not just cope</p></div>
   </div>
-  <p class="divider center">We do not wait for students to fall. We build the ground beneath them.</p>
+  <p class="center more-link"><a href="about.html">More about us and messages from the leadership</a></p>
 </section>
 
-<!-- Block 4: Messages -->
-<section class="band soft" id="messages" aria-labelledby="messagesTitle">
+<!-- Explore: one card per page -->
+<section class="band soft" aria-labelledby="exploreTitle">
   <div class="wrap">
-    <h2 id="messagesTitle" class="center reveal">Messages</h2>
-    <div class="messages">
-      <article class="message reveal">
-        <div class="portrait" role="img" aria-label="Portrait of the Director, to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></div>
-        <div class="message-body">
-          <h3>Director's Message</h3>
-          <blockquote>“The strength of an institution is measured by how it cares for its people.”</blockquote>
-          <p class="byline"><b>[Name]</b><br>Director, IIT Bombay</p>
-          <div class="more" id="msgDirector" hidden><p>[Full text, 150 to 200 words, from the Director's office.]</p></div>
-          <button class="link-btn" type="button" data-expand="msgDirector" aria-expanded="false" aria-controls="msgDirector">Read full message</button>
-        </div>
-      </article>
-      <article class="message reveal">
-        <div class="portrait" role="img" aria-label="Portrait of the Associate Dean, Student Wellness, to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></div>
-        <div class="message-body">
-          <h3>Associate Dean's Message</h3>
-          <blockquote>“No student should ever have to wonder where to turn.”</blockquote>
-          <p class="byline"><b>[Name]</b><br>Associate Dean, Student Wellness</p>
-          <div class="more" id="msgDean" hidden><p>[Full text, 150 to 200 words, to be supplied by the Associate Dean, Student Wellness.]</p></div>
-          <button class="link-btn" type="button" data-expand="msgDean" aria-expanded="false" aria-controls="msgDean">Read full message</button>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Block 5: Our Initiatives -->
-<section class="band" id="initiatives" aria-labelledby="initiativesTitle">
-  <div class="wrap">
-    <h2 id="initiativesTitle" class="center reveal">Our Initiatives</h2>
-    <p class="divider center tight">Prevention before crisis. Presence before panic.</p>
+    <h2 id="exploreTitle" class="center reveal">Explore Wellness</h2>
     <div class="cards">
-      <article class="card reveal">
-        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-chat"/></svg></span>
-        <h3>CARE: Counselling</h3>
-        <p class="hook">Talk to someone who listens.</p>
-        <p>Confidential one-to-one counselling with <span data-bind="counsellors">[XX]</span> trained professionals. Walk in, book online, or reach out at any time.</p>
-        <p class="figure"><span data-bind="counsellors">[XX]</span> counsellors</p>
-        <a class="learn" href="https://swc.iitb.ac.in" target="_blank" rel="noopener">Learn more<span class="sr"> about CARE counselling</span></a>
-      </article>
-      <article class="card reveal">
+      <a class="card summary reveal" href="initiatives.html">
         <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-leaf"/></svg></span>
-        <h3>Flourishing Hub</h3>
-        <p class="hook">Beyond coping. Toward thriving.</p>
-        <p>India's first campus initiative focused on flourishing. Preventive, strengths-based programmes that draw on positive psychology and Indian wisdom traditions. Open to every student, for every student.</p>
-        <p class="figure"><span data-bind="workshops">[XX]</span> workshops</p>
-        <a class="learn" href="https://flourishing-iitb.org" target="_blank" rel="noopener">Learn more<span class="sr"> about the Flourishing Hub</span></a>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-sun"/></svg></span>
-        <h3>SHINE</h3>
-        <p class="hook">Support before struggle becomes crisis.</p>
-        <p>Support, Help and Intervention for Nurturing Empowerment. A standing committee that quietly supports students facing academic or personal difficulty, starting in their own department.</p>
-        <p class="figure">Launching soon</p>
-        <a class="learn" href="#get-help">Learn more<span class="sr"> about SHINE</span></a>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-phone"/></svg></span>
-        <h3>RISE IITB</h3>
-        <p class="hook">Wellness in your pocket.</p>
-        <p>Resilience, Inner strength, Self-care, Emotional well-being. The IIT Bombay wellbeing app, with a one-tap SOS to reach help.</p>
-        <p class="figure">Coming soon</p>
-        <a class="learn" href="#get-help">Learn more<span class="sr"> about RISE IITB</span></a>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-shield"/></svg></span>
-        <h3>24x7 Wellness Response Team (WRT)</h3>
-        <p class="hook">When it cannot wait, we are already on our way.</p>
-        <p>A trained on-campus team of counsellors, with security support and a psychiatrist on call, reaching students in crisis at any hour.</p>
-        <p class="figure">24x7</p>
-        <a class="learn" href="#get-help">Learn more<span class="sr"> about the Wellness Response Team</span></a>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-plus"/></svg></span>
-        <h3>24x7 Psychiatry Support</h3>
-        <p class="hook">Clinical care, at any hour.</p>
-        <p>Round-the-clock psychiatric cover for urgent and ongoing needs, with a psychiatrist always on call.</p>
-        <p class="figure">24x7</p>
-        <a class="learn" href="#get-help">Learn more<span class="sr"> about 24x7 psychiatry support</span></a>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-laptop"/></svg></span>
-        <h3>Online Counselling</h3>
-        <p class="hook">Support, wherever you are.</p>
-        <p>Private virtual sessions for students who prefer privacy, are off campus, or are on internship.</p>
-        <p class="figure"><span data-bind="onlineCounsellingSessions">[XX]</span> sessions</p>
-        <a class="learn" href="https://swc.iitb.ac.in" target="_blank" rel="noopener">Learn more<span class="sr"> about online counselling</span></a>
-      </article>
-      <article class="card reveal">
-        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-hand"/></svg></span>
-        <h3>Wellbeing Ambassadors</h3>
-        <p class="hook">Care that starts with a friend.</p>
-        <p>Trained student volunteers across hostels and departments who are the first point of warmth and the bridge to professional help.</p>
-        <p class="figure"><span data-bind="wellbeingAmbassadors">[XX]</span> ambassadors</p>
-        <a class="learn" href="#get-help">Learn more<span class="sr"> about Wellbeing Ambassadors</span></a>
-      </article>
-      <article class="card reveal">
+        <h3>Our Initiatives</h3>
+        <p>CARE counselling, the Flourishing Hub, SHINE, RISE IITB, the 24x7 Wellness Response Team, psychiatry, online counselling and student support.</p>
+        <span class="learn" aria-hidden="true">Open</span>
+      </a>
+      <a class="card summary reveal" href="get-help.html">
+        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-chat"/></svg></span>
+        <h3>How to Get Help</h3>
+        <p>Three simple paths: talk to a counsellor, find guidance, or reach the 24x7 team when it is urgent.</p>
+        <span class="learn" aria-hidden="true">Open</span>
+      </a>
+      <a class="card summary reveal" href="about.html">
+        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
+        <h3>About and Messages</h3>
+        <p>Our promise, and messages from the Director and the Associate Dean, Student Wellness.</p>
+        <span class="learn" aria-hidden="true">Open</span>
+      </a>
+      <a class="card summary reveal" href="people.html">
         <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-users"/></svg></span>
-        <h3>Student Mentors and Faculty Team</h3>
-        <p class="hook">Guidance that walks with you.</p>
-        <p><span data-bind="studentMentors">[XX]</span> student mentors and <span data-bind="facultyTeam">[XX]</span> Faculty Team members offering academic, personal and career guidance through every stage of the student journey.</p>
-        <p class="figure"><span data-bind="studentMentors">[XX]</span> mentors, <span data-bind="facultyTeam">[XX]</span> faculty</p>
-        <a class="learn" href="#get-help">Learn more<span class="sr"> about student mentors and the Faculty Team</span></a>
-      </article>
-    </div>
-    <h3 class="also-title reveal">Also part of Wellness</h3>
-    <div class="also reveal">
-      <div class="also-item"><span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-yoga"/></svg></span><div><b>Yogastha</b><p>Yoga and mindfulness</p></div></div>
-      <div class="also-item"><span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span><div><b>NSS</b></div></div>
-      <div class="also-item"><span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-book"/></svg></span><div><b>Student Mentorship Program</b></div></div>
-    </div>
-    <p class="divider center">From a friendly ambassador to a 24x7 psychiatrist, there is always a door open.</p>
-  </div>
-</section>
-
-<!-- Block 6: How to Get Help (also shown in the slide-in panel) -->
-<section class="band soft" id="get-help" aria-labelledby="helpTitle">
-  <div class="wrap">
-    <h2 id="helpTitle" class="center reveal">How to Get Help</h2>
-    <div id="helpPaths">
-      <ol class="paths">
-        <li class="box">
-          <h3>“I want to talk.”</h3>
-          <p>Book a counselling slot with CARE.</p>
-          <p><span data-link="careBooking" data-label="Book a slot">[booking link]</span></p>
-        </li>
-        <li class="box">
-          <h3>“I am struggling and want guidance.”</h3>
-          <p>Reach SHINE, a student mentor, or your Faculty Team contact.</p>
-          <p><span data-link="guidance" data-label="Find your contact">[link]</span></p>
-        </li>
-        <li class="box">
-          <h3>“It is urgent.”</h3>
-          <p><a href="tel:+918356810252" data-tel>Call</a> or <a href="https://wa.me/918356810252" target="_blank" rel="noopener" data-wa>WhatsApp</a> the WRT on <a href="tel:+918356810252" data-tel data-show-number>+91 8356-810252</a> (24x7), or write to <a href="mailto:wellness@iitb.ac.in" data-mail>wellness@iitb.ac.in</a>.</p>
-          <p>Psychiatry 24x7: <span data-phone="psychiatry24x7" data-empty="[number]">[number]</span></p>
-        </li>
-      </ol>
-      <p class="reassure center">Asking for help is a sign of strength. Everything is confidential.</p>
-    </div>
-    <p class="divider center">Strength is not the absence of struggle. It is having someone beside you.</p>
-  </div>
-</section>
-
-<!-- Block 7: Our People -->
-<section class="band" id="people" aria-labelledby="peopleTitle">
-  <div class="wrap">
-    <h2 id="peopleTitle" class="center reveal">The people behind the care.</h2>
-    <h3 class="group-title reveal">Core team</h3>
-    <ul class="people core reveal">
-      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>Director</span></li>
-      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>Once appointed</b><span>Dean of Student Wellness</span></li>
-      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>Associate Dean, Student Wellness</span></li>
-      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>Head Counsellor</span></li>
-      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>SWC Lead</span></li>
-      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>Flourishing Hub Lead</span></li>
-    </ul>
-    <h3 class="group-title reveal">Advisory Board</h3>
-    <ul class="people board reveal" id="board"></ul>
-    <p class="center"><button class="btn outline" id="boardToggle" type="button" aria-expanded="false" aria-controls="board" hidden>View all</button></p>
-  </div>
-</section>
-
-<!-- Block 8: Reports and Activities -->
-<section class="band soft" id="reports" aria-labelledby="reportsTitle">
-  <div class="wrap">
-    <h2 id="reportsTitle" class="center reveal">Transparency. Impact. Accountability.</h2>
-    <div class="reports-grid reveal">
-      <div>
-        <div class="tabs" role="tablist" aria-label="Reports by type" id="reportTabs"></div>
-        <div id="reportPanel" role="tabpanel" tabindex="0"></div>
-      </div>
-      <div class="highlights" role="group" aria-roledescription="carousel" aria-label="Activity Highlights">
-        <div class="highlights-head">
-          <h3>Activity Highlights</h3>
-          <div>
-            <button class="round" id="prevSlide" type="button" aria-label="Previous highlight"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg></button>
-            <button class="round" id="nextSlide" type="button" aria-label="Next highlight"><svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
-          </div>
-        </div>
-        <ul class="slides" id="slides" tabindex="0"></ul>
-      </div>
+        <h3>Our People</h3>
+        <p>The core team and the Advisory Board behind student wellness.</p>
+        <span class="learn" aria-hidden="true">Open</span>
+      </a>
+      <a class="card summary reveal" href="reports.html">
+        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-file"/></svg></span>
+        <h3>Reports and Activities</h3>
+        <p>Annual and activity reports, workshop calendars, newsletters and event highlights.</p>
+        <span class="learn" aria-hidden="true">Open</span>
+      </a>
     </div>
   </div>
 </section>
-
-<!-- Block 9: Voices is optional. The brief allows only real, consented, anonymised testimonials,
-     so it stays out until those are supplied. -->
 
 <!-- Block 10: Closing call to action -->
 <section class="closing" aria-labelledby="closingTitle">
@@ -351,14 +200,35 @@
   </div>
 </footer>
 
-<!-- Slide-in help panel: filled from Block 6 by script.js -->
+<!-- Slide-in help panel: keep in step with the get-help page -->
 <div class="scrim" id="helpScrim" hidden></div>
 <aside class="help-panel" id="helpPanel" role="dialog" aria-modal="true" aria-labelledby="helpPanelTitle" hidden>
   <div class="help-panel-top">
     <h2 id="helpPanelTitle">How to Get Help</h2>
     <button class="round" id="helpClose" type="button" aria-label="Close help panel"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
   </div>
-  <div id="helpPanelBody"></div>
+  <div id="helpPanelBody">
+  <div>
+    <ol class="paths">
+      <li class="box">
+        <h3>“I want to talk.”</h3>
+        <p>Book a counselling slot with CARE.</p>
+        <p><span data-link="careBooking" data-label="Book a slot">[booking link]</span></p>
+      </li>
+      <li class="box">
+        <h3>“I am struggling and want guidance.”</h3>
+        <p>Reach SHINE, a student mentor, or your Faculty Team contact.</p>
+        <p><span data-link="guidance" data-label="Find your contact">[link]</span></p>
+      </li>
+      <li class="box">
+        <h3>“It is urgent.”</h3>
+        <p><a href="tel:+918356810252" data-tel>Call</a> or <a href="https://wa.me/918356810252" target="_blank" rel="noopener" data-wa>WhatsApp</a> the WRT on <a href="tel:+918356810252" data-tel data-show-number>+91 8356-810252</a> (24x7), or write to <a href="mailto:wellness@iitb.ac.in" data-mail>wellness@iitb.ac.in</a>.</p>
+        <p>Psychiatry 24x7: <span data-phone="psychiatry24x7" data-empty="[number]">[number]</span></p>
+      </li>
+    </ol>
+    <p class="reassure center">Asking for help is a sign of strength. Everything is confidential.</p>
+  </div>
+  </div>
 </aside>
 
 <script src="script.js"></script>
