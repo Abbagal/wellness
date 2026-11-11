@@ -41,28 +41,9 @@
   <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
 </defs></svg>
 
-<!-- Block 0: Sticky header -->
-<header class="site-header">
-  <div class="wrap bar">
-    <a class="logo" href="index.html" aria-label="Wellness at IIT Bombay: home">
-      <span class="logo-mark" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
-      <span class="logo-text"><small>IIT Bombay</small><b>Wellness</b></span>
-    </a>
-    <nav class="main-nav" id="mainNav" aria-label="Main">
-      <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="initiatives.html">Initiatives</a></li>
-        <li><a href="get-help.html">Get Help</a></li>
-        <li><a href="people.html">Our People</a></li>
-        <li><a href="reports.html">Reports</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button>
-    <a class="btn help-now" id="helpOpen" href="get-help.html">Get Help Now</a>
-  </div>
-</header>
+<!-- Header, footer and help panel come from site-chrome.js -->
+<script src="site-chrome.js"></script>
+<noscript><nav class="wrap" aria-label="Main"><p><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="initiatives.html">Initiatives</a> · <a href="get-help.html">Get Help</a> · <a href="people.html">Our People</a> · <a href="reports.html">Reports</a></p></nav></noscript>
 
 <main id="main">
 
@@ -102,26 +83,60 @@
   </div>
 </section>
 
-<!-- Our Promise, in short -->
-<section class="band" aria-labelledby="promiseTitle">
+<!-- Our Work -->
+<section class="band" aria-labelledby="workTitle">
   <div class="wrap narrow center reveal">
-    <h2 id="promiseTitle">Our Promise</h2>
-    <p class="lead-serif">Wellness is not a service we offer. It is a culture we build.</p>
-    <p>We prevent distress, nurture strengths, respond within minutes when it matters, and walk alongside every student from the first day to graduation day.</p>
+    <h2 id="workTitle">Our Work</h2>
+    <p class="lead-serif">No student at IIT Bombay should have to face a hard time alone.</p>
+    <p>Counselling, a 24x7 response team, psychiatry, peer support and flourishing programmes work together as one system, so that there is always a next step and someone to take it with you.</p>
   </div>
   <div class="wrap trio reveal">
-    <div class="box"><h3>Prevent</h3><p>Build resilience early</p></div>
-    <div class="box"><h3>Respond</h3><p>Help within minutes, at any hour</p></div>
-    <div class="box"><h3>Flourish</h3><p>Thrive, not just cope</p></div>
+    <div class="box"><h3>Prevent</h3><p>Workshops, mentoring and early support in every hostel and department.</p></div>
+    <div class="box"><h3>Respond</h3><p>Counsellors, psychiatry and a response team that reaches you at any hour.</p></div>
+    <div class="box"><h3>Flourish</h3><p>Programmes that help students grow and thrive, not just cope.</p></div>
   </div>
-  <p class="center more-link"><a href="about.html">More about us and messages from the leadership</a></p>
+  <p class="center more-link"><a href="initiatives.html">See all our initiatives</a></p>
+</section>
+
+<!-- Director's message -->
+<section class="band soft" aria-labelledby="directorTitle">
+  <div class="wrap">
+    <h2 id="directorTitle" class="center reveal">A Message from the Director</h2>
+    <article class="message solo reveal">
+      <div class="portrait" role="img" aria-label="Portrait of the Director, to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></div>
+      <div class="message-body">
+        <blockquote>“The strength of an institution is measured by how it cares for its people.”</blockquote>
+        <p class="byline"><b>[Name]</b><br>Director, IIT Bombay</p>
+        <div class="more" id="msgDirectorHome" hidden><p>[Full text, 150 to 200 words, from the Director's office.]</p></div>
+        <button class="link-btn" type="button" data-expand="msgDirectorHome" aria-expanded="false" aria-controls="msgDirectorHome">Read full message</button>
+      </div>
+    </article>
+    <p class="center more-link"><a href="about.html">Read the Associate Dean's message</a></p>
+  </div>
+</section>
+
+<!-- Our Team -->
+<section class="band" aria-labelledby="teamTitle">
+  <div class="wrap">
+    <h2 id="teamTitle" class="center reveal">Our Team</h2>
+    <p class="center section-sub reveal">The people who make sure there is always someone to turn to.</p>
+    <ul class="people core reveal">
+      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>Director</span></li>
+      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>Once appointed</b><span>Dean of Student Wellness</span></li>
+      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>Associate Dean, Student Wellness</span></li>
+      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>Head Counsellor</span></li>
+      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>SWC Lead</span></li>
+      <li><span class="avatar" role="img" aria-label="Photograph to be supplied"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><b>[Name]</b><span>Flourishing Hub Lead</span></li>
+    </ul>
+    <p class="center more-link"><a href="people.html">Meet the full team and the Advisory Board</a></p>
+  </div>
 </section>
 
 <!-- Explore: one card per page -->
 <section class="band soft" aria-labelledby="exploreTitle">
   <div class="wrap">
     <h2 id="exploreTitle" class="center reveal">Explore Wellness</h2>
-    <div class="cards">
+    <div class="cards four">
       <a class="card summary reveal" href="initiatives.html">
         <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-leaf"/></svg></span>
         <h3>Our Initiatives</h3>
@@ -131,19 +146,13 @@
       <a class="card summary reveal" href="get-help.html">
         <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-chat"/></svg></span>
         <h3>How to Get Help</h3>
-        <p>Three simple paths: talk to a counsellor, find guidance, or reach the 24x7 team when it is urgent.</p>
+        <p>Where to start, who to call, and when and where each service is open. Numbers you can tap to dial.</p>
         <span class="learn" aria-hidden="true">Open</span>
       </a>
       <a class="card summary reveal" href="about.html">
         <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
         <h3>About and Messages</h3>
-        <p>Our promise, and messages from the Director and the Associate Dean, Student Wellness.</p>
-        <span class="learn" aria-hidden="true">Open</span>
-      </a>
-      <a class="card summary reveal" href="people.html">
-        <span class="card-icon" aria-hidden="true"><svg class="ic"><use href="#i-users"/></svg></span>
-        <h3>Our People</h3>
-        <p>The core team and the Advisory Board behind student wellness.</p>
+        <p>Our work in full, and messages from the Director and the Associate Dean, Student Wellness.</p>
         <span class="learn" aria-hidden="true">Open</span>
       </a>
       <a class="card summary reveal" href="reports.html">
@@ -169,67 +178,7 @@
 
 </main>
 
-<!-- Block 11: Footer -->
-<footer class="footer" id="contact">
-  <div class="wrap foot-grid">
-    <div>
-      <h2>Contact</h2>
-      <p>Student Wellness, Indian Institute of Technology Bombay, Powai, Mumbai</p>
-      <p><a href="mailto:wellness@iitb.ac.in" data-mail>wellness@iitb.ac.in</a></p>
-      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=IIT+Bombay+Powai+Mumbai" target="_blank" rel="noopener">View location</a></p>
-    </div>
-    <div>
-      <h2>Helplines</h2>
-      <p>Wellness Response Team (24x7): <a href="tel:+918356810252" data-tel data-show-number>+91 8356-810252</a></p>
-      <p>Psychiatry (24x7): <span data-phone="psychiatry24x7" data-empty="[number]">[number]</span></p>
-    </div>
-    <div>
-      <h2>Quick links</h2>
-      <ul>
-        <li><a href="https://swc.iitb.ac.in" target="_blank" rel="noopener">swc.iitb.ac.in</a></li>
-        <li><a href="https://flourishing-iitb.org" target="_blank" rel="noopener">flourishing-iitb.org</a></li>
-        <li>RISE IITB (coming soon)</li>
-        <li><a href="https://www.iitb.ac.in" target="_blank" rel="noopener">IIT Bombay</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrap foot-bottom">
-    <p class="safety">If you or someone you know is in immediate danger, call <span data-phone="emergency" data-empty="[emergency number]">[emergency number]</span>.</p>
-    <p>© IIT Bombay, Student Wellness</p>
-    <p class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Main_building_in_IIT_Bombay.jpg" target="_blank" rel="noopener">Main Building</a> by Shishirdasika, CC BY-SA 4.0, cropped.</p>
-  </div>
-</footer>
-
-<!-- Slide-in help panel: keep in step with the get-help page -->
-<div class="scrim" id="helpScrim" hidden></div>
-<aside class="help-panel" id="helpPanel" role="dialog" aria-modal="true" aria-labelledby="helpPanelTitle" hidden>
-  <div class="help-panel-top">
-    <h2 id="helpPanelTitle">How to Get Help</h2>
-    <button class="round" id="helpClose" type="button" aria-label="Close help panel"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
-  </div>
-  <div id="helpPanelBody">
-  <div>
-    <ol class="paths">
-      <li class="box">
-        <h3>“I want to talk.”</h3>
-        <p>Book a counselling slot with CARE.</p>
-        <p><span data-link="careBooking" data-label="Book a slot">[booking link]</span></p>
-      </li>
-      <li class="box">
-        <h3>“I am struggling and want guidance.”</h3>
-        <p>Reach SHINE, a student mentor, or your Faculty Team contact.</p>
-        <p><span data-link="guidance" data-label="Find your contact">[link]</span></p>
-      </li>
-      <li class="box">
-        <h3>“It is urgent.”</h3>
-        <p><a href="tel:+918356810252" data-tel>Call</a> or <a href="https://wa.me/918356810252" target="_blank" rel="noopener" data-wa>WhatsApp</a> the WRT on <a href="tel:+918356810252" data-tel data-show-number>+91 8356-810252</a> (24x7), or write to <a href="mailto:wellness@iitb.ac.in" data-mail>wellness@iitb.ac.in</a>.</p>
-        <p>Psychiatry 24x7: <span data-phone="psychiatry24x7" data-empty="[number]">[number]</span></p>
-      </li>
-    </ol>
-    <p class="reassure center">Asking for help is a sign of strength. Everything is confidential.</p>
-  </div>
-  </div>
-</aside>
+<div data-site-footer></div>
 
 <script src="script.js"></script>
 </body>

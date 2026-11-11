@@ -83,6 +83,7 @@ button { font: inherit; color: inherit; }
 .page-top { padding-top: clamp(40px, 6vw, 72px); }
 .page-title { font-size: clamp(2rem, 1.5rem + 2.6vw, 3.25rem); line-height: 1.1; }
 .more-link { margin-top: 28px; font-weight: 700; }
+.section-sub { margin: 10px auto 0; max-width: 40em; color: var(--muted); }
 a.card.summary { color: inherit; text-decoration: none; }
 a.card.summary h3 { color: var(--heading); }
 a.card.summary .learn { color: var(--mid); }
@@ -121,6 +122,7 @@ a.card.summary:focus-visible { outline: 3px solid var(--mid); outline-offset: 3p
 .byline { color: var(--muted); }
 .byline b { color: var(--text); }
 .more { margin-top: 12px; }
+.message.solo { max-width: 940px; margin: 32px auto 0; }
 
 /* Block 5 */
 .cards { display: grid; gap: 16px; }
@@ -188,6 +190,8 @@ a.card.summary:focus-visible { outline: 3px solid var(--mid); outline-offset: 3p
 .foot-bottom { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line); }
 .safety { font-weight: 700; color: var(--heading); margin-bottom: 8px; }
 .credit { font-size: .9rem; color: var(--muted); }
+.privacy { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; color: var(--heading); }
+.privacy .ic { color: var(--mid-dark); margin-top: 2px; }
 
 /* help panel */
 .scrim { position: fixed; inset: 0; z-index: 60; background: rgba(27, 58, 107, .3); }
@@ -195,7 +199,46 @@ a.card.summary:focus-visible { outline: 3px solid var(--mid); outline-offset: 3p
 .help-panel.open { transform: none; }
 .help-panel-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .help-panel h2 { font-size: 1.6rem; }
-.help-panel .paths { margin-top: 18px; grid-template-columns: minmax(0, 1fr) !important; }
+.panel-intro { margin-top: 10px; color: var(--muted); }
+.help-panel .call-list { margin-top: 18px; }
+.panel-note { margin-top: 16px; }
+.panel-safe { margin-top: 16px; display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--heading); }
+.panel-safe .ic { color: var(--mid-dark); }
+.panel-actions { display: grid; gap: 10px; margin-top: 18px; }
+
+/* numbers to call */
+.call-list { display: grid; gap: 10px; }
+.call { display: flex; align-items: center; gap: 14px; justify-content: space-between; background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; color: var(--text); text-decoration: none; transition: background .25s, border-color .25s; }
+a.call:hover { background: var(--white); border-color: var(--mid); }
+.call .ic { color: var(--mid-dark); width: 26px; height: 26px; }
+.call-text { display: flex; flex-direction: column; min-width: 0; }
+.call-text b { color: var(--heading); font-size: 1.05rem; }
+.call-text span { font-size: .95rem; color: var(--muted); }
+.call-text .call-number { margin-top: 2px; font-weight: 700; font-size: 1.05rem; color: var(--mid-dark); }
+.call.pending .call-number { color: var(--muted); font-weight: 600; }
+.call-list.wide { margin-top: 28px; }
+
+/* where to start */
+.ladder { display: grid; gap: 14px; margin-top: 32px; counter-reset: none; }
+.step { position: relative; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+.step.urgent { background: var(--mid); border-color: var(--mid); color: #fff; }
+.step.urgent h3, .step.urgent .step-label, .step.urgent a { color: #fff; }
+.step-no { width: 40px; height: 40px; border-radius: 50%; background: var(--soft); color: var(--heading); font-family: var(--serif); font-size: 1.3rem; display: grid; place-items: center; }
+.step.urgent .step-no { background: #fff; }
+.step-label { margin-top: 12px; font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--mid-dark); }
+.step h3 { margin-block: 4px 8px; }
+.step p + p { margin-top: 10px; }
+.step a { font-weight: 700; }
+
+/* services */
+.services { display: grid; gap: 16px; margin-top: 32px; }
+.service { display: flex; flex-direction: column; gap: 10px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+.service-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.tag { flex: none; font-size: .78rem; font-weight: 700; letter-spacing: .04em; color: var(--mid-dark); background: var(--soft); border-radius: 999px; padding: 4px 10px; }
+.facts { display: grid; gap: 6px; align-content: start; padding-top: 10px; border-top: 1px solid var(--line); flex: 1; }
+.facts div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 8px; }
+.facts dt { font-weight: 700; color: var(--heading); }
+.facts dd.ph { color: var(--muted); }
 
 /* motion */
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
@@ -217,6 +260,7 @@ a.card.summary:focus-visible { outline: 3px solid var(--mid); outline-offset: 3p
   .cards, .also, .trio, .paths { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .people { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .services, .call-list.wide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (min-width: 960px) {
   :root { --gutter: 32px; --header: 76px; }
@@ -227,10 +271,14 @@ a.card.summary:focus-visible { outline: 3px solid var(--mid); outline-offset: 3p
   .logo-mark { width: 44px; height: 44px; }
   .logo-text b { font-size: 1.3rem; }
   .counters { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .trio, .paths, .also, .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .trio, .paths, .also, .cards, .ladder, .services { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cards.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .messages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .message { grid-template-columns: 42% minmax(0, 1fr); }
   .portrait { max-height: none; height: 100%; }
+  .message.solo { grid-template-columns: 300px minmax(0, 1fr); }
+  .message.solo .portrait { aspect-ratio: auto; min-height: 300px; }
+  .message.solo .message-body { padding: 32px; align-self: center; }
   .people { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .people.core { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .reports-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: start; }

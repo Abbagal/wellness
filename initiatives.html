@@ -41,28 +41,9 @@
   <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
 </defs></svg>
 
-<!-- Block 0: Sticky header -->
-<header class="site-header">
-  <div class="wrap bar">
-    <a class="logo" href="index.html" aria-label="Wellness at IIT Bombay: home">
-      <span class="logo-mark" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
-      <span class="logo-text"><small>IIT Bombay</small><b>Wellness</b></span>
-    </a>
-    <nav class="main-nav" id="mainNav" aria-label="Main">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="initiatives.html" aria-current="page">Initiatives</a></li>
-        <li><a href="get-help.html">Get Help</a></li>
-        <li><a href="people.html">Our People</a></li>
-        <li><a href="reports.html">Reports</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button>
-    <a class="btn help-now" id="helpOpen" href="get-help.html">Get Help Now</a>
-  </div>
-</header>
+<!-- Header, footer and help panel come from site-chrome.js -->
+<script src="site-chrome.js"></script>
+<noscript><nav class="wrap" aria-label="Main"><p><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="initiatives.html">Initiatives</a> · <a href="get-help.html">Get Help</a> · <a href="people.html">Our People</a> · <a href="reports.html">Reports</a></p></nav></noscript>
 
 <main id="main">
 
@@ -168,67 +149,7 @@
 
 </main>
 
-<!-- Block 11: Footer -->
-<footer class="footer" id="contact">
-  <div class="wrap foot-grid">
-    <div>
-      <h2>Contact</h2>
-      <p>Student Wellness, Indian Institute of Technology Bombay, Powai, Mumbai</p>
-      <p><a href="mailto:wellness@iitb.ac.in" data-mail>wellness@iitb.ac.in</a></p>
-      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=IIT+Bombay+Powai+Mumbai" target="_blank" rel="noopener">View location</a></p>
-    </div>
-    <div>
-      <h2>Helplines</h2>
-      <p>Wellness Response Team (24x7): <a href="tel:+918356810252" data-tel data-show-number>+91 8356-810252</a></p>
-      <p>Psychiatry (24x7): <span data-phone="psychiatry24x7" data-empty="[number]">[number]</span></p>
-    </div>
-    <div>
-      <h2>Quick links</h2>
-      <ul>
-        <li><a href="https://swc.iitb.ac.in" target="_blank" rel="noopener">swc.iitb.ac.in</a></li>
-        <li><a href="https://flourishing-iitb.org" target="_blank" rel="noopener">flourishing-iitb.org</a></li>
-        <li>RISE IITB (coming soon)</li>
-        <li><a href="https://www.iitb.ac.in" target="_blank" rel="noopener">IIT Bombay</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrap foot-bottom">
-    <p class="safety">If you or someone you know is in immediate danger, call <span data-phone="emergency" data-empty="[emergency number]">[emergency number]</span>.</p>
-    <p>© IIT Bombay, Student Wellness</p>
-    <p class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Main_building_in_IIT_Bombay.jpg" target="_blank" rel="noopener">Main Building</a> by Shishirdasika, CC BY-SA 4.0, cropped.</p>
-  </div>
-</footer>
-
-<!-- Slide-in help panel: keep in step with the get-help page -->
-<div class="scrim" id="helpScrim" hidden></div>
-<aside class="help-panel" id="helpPanel" role="dialog" aria-modal="true" aria-labelledby="helpPanelTitle" hidden>
-  <div class="help-panel-top">
-    <h2 id="helpPanelTitle">How to Get Help</h2>
-    <button class="round" id="helpClose" type="button" aria-label="Close help panel"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
-  </div>
-  <div id="helpPanelBody">
-  <div>
-    <ol class="paths">
-      <li class="box">
-        <h3>“I want to talk.”</h3>
-        <p>Book a counselling slot with CARE.</p>
-        <p><span data-link="careBooking" data-label="Book a slot">[booking link]</span></p>
-      </li>
-      <li class="box">
-        <h3>“I am struggling and want guidance.”</h3>
-        <p>Reach SHINE, a student mentor, or your Faculty Team contact.</p>
-        <p><span data-link="guidance" data-label="Find your contact">[link]</span></p>
-      </li>
-      <li class="box">
-        <h3>“It is urgent.”</h3>
-        <p><a href="tel:+918356810252" data-tel>Call</a> or <a href="https://wa.me/918356810252" target="_blank" rel="noopener" data-wa>WhatsApp</a> the WRT on <a href="tel:+918356810252" data-tel data-show-number>+91 8356-810252</a> (24x7), or write to <a href="mailto:wellness@iitb.ac.in" data-mail>wellness@iitb.ac.in</a>.</p>
-        <p>Psychiatry 24x7: <span data-phone="psychiatry24x7" data-empty="[number]">[number]</span></p>
-      </li>
-    </ol>
-    <p class="reassure center">Asking for help is a sign of strength. Everything is confidential.</p>
-  </div>
-  </div>
-</aside>
+<div data-site-footer></div>
 
 <script src="script.js"></script>
 </body>

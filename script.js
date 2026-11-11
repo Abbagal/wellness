@@ -12,7 +12,8 @@ const WELLNESS_DATA = {
     wrtPhoneWhatsApp: "+91 8356-810252", // confirm before publishing
     wrtEmail: "wellness@iitb.ac.in",     // confirm before publishing
     psychiatry24x7: null,
-    emergency: null
+    teleManas: "14416",                  // Government of India mental health helpline
+    emergency: "112"                     // all-India police, fire and ambulance
   },
   links: {
     careBooking: "https://swc.iitb.ac.in", // confirm the direct booking link
@@ -20,6 +21,32 @@ const WELLNESS_DATA = {
   },
   asOf: "2026-10"
 };
+
+// The numbers in the "Get help now" panel and on the Get Help page, in this order.
+// key points into WELLNESS_DATA.helplines; a null number shows as "to be confirmed".
+const CALL_LIST = [
+  { key: "wrtPhoneWhatsApp", name: "Wellness Response Team", note: "24x7, on campus. Call or WhatsApp." },
+  { key: "psychiatry24x7", name: "Psychiatry", note: "24x7, a psychiatrist on call." },
+  { key: "teleManas", name: "Tele-MANAS", note: "Government of India mental health helpline. Free, 24x7, in many Indian languages." },
+  { key: "emergency", name: "Emergency", note: "Police, fire and ambulance, anywhere in India." }
+];
+
+// Services on the Get Help page. null shows a placeholder until the office confirms it.
+// how: "Walk in", "Book ahead", "Walk in or book ahead", "Call or WhatsApp", and so on.
+const SERVICES = [
+  { name: "CARE: Counselling", what: "One-to-one sessions with a professional counsellor.",
+    when: null, how: "Walk in or book ahead", where: null, link: "careBooking", linkLabel: "Book a slot" },
+  { name: "Online Counselling", what: "Private video sessions, for when you are off campus, on internship, or simply prefer it.",
+    when: null, how: "Book ahead", where: "Online, from anywhere", link: "careBooking", linkLabel: "Book online" },
+  { name: "24x7 Wellness Response Team", what: "A trained team that comes to you anywhere on campus when it cannot wait.",
+    when: "24x7, every day of the year", how: "Call or WhatsApp", where: "Comes to you", tel: "wrtPhoneWhatsApp" },
+  { name: "24x7 Psychiatry Support", what: "A psychiatrist on call for urgent and ongoing clinical care.",
+    when: "24x7, every day of the year", how: null, where: null, tel: "psychiatry24x7" },
+  { name: "Wellbeing Ambassadors and Student Mentors", what: "Trained students in your hostel and department. Often the easiest first conversation.",
+    when: null, how: "Talk to them directly", where: "Your hostel and department", link: "guidance", linkLabel: "Find your contact" },
+  { name: "SHINE", what: "Quiet support for academic or personal difficulty, starting in your own department.",
+    when: "Launching soon", how: null, where: "Your department" }
+];
 
 // Newest first within each category. { title: "", year: 2026, category: "Annual Reports", file: "reports/name.pdf" }
 const REPORTS = [];
@@ -63,6 +90,51 @@ const HIGHLIGHTS = [
     s.appendChild(u);
     return s;
   };
+
+  /* shared header is already in place; add the footer and help panel before filling data */
+  if (window.SITE_CHROME) window.SITE_CHROME.fill();
+
+  /* numbers to call: help panel and Get Help page */
+  $$("[data-call-list]").forEach((list) => {
+    CALL_LIST.forEach((c) => {
+      const v = WELLNESS_DATA.helplines[c.key];
+      const li = el("li");
+      const row = el(v ? "a" : "div", "call" + (v ? "" : " pending"));
+      if (v) row.href = "tel:" + digits(v);
+      const text = el("span", "call-text");
+      text.append(el("b", "", c.name), el("span", "", c.note), el("span", "call-number", v || "[number to be confirmed]"));
+      row.appendChild(text);
+      if (v) row.appendChild(icon("phone"));
+      li.appendChild(row);
+      list.appendChild(li);
+    });
+  });
+
+  /* services with times, how to reach and where */
+  const services = $("#services");
+  if (services) {
+    SERVICES.forEach((sv) => {
+      const card = el("article", "service reveal");
+      const head = el("div", "service-head");
+      head.append(el("h3", "", sv.name), el("span", "tag", "Confidential"));
+      card.append(head, el("p", "", sv.what));
+      const dl = el("dl", "facts");
+      [["When", sv.when, "[hours]"], ["How", sv.how, "[how to reach]"], ["Where", sv.where, "[location]"]].forEach(([k, v, ph]) => {
+        const row = el("div");
+        row.append(el("dt", "", k), el("dd", v ? "" : "ph", v || ph));
+        dl.appendChild(row);
+      });
+      card.appendChild(dl);
+      if (sv.tel) {
+        const v = WELLNESS_DATA.helplines[sv.tel];
+        if (v) { const a = el("a", "learn", "Call " + v); a.href = "tel:" + digits(v); card.appendChild(a); }
+      } else if (sv.link) {
+        const url = WELLNESS_DATA.links[sv.link];
+        if (url) { const a = el("a", "learn", sv.linkLabel); a.href = url; a.target = "_blank"; a.rel = "noopener"; card.appendChild(a); }
+      }
+      services.appendChild(card);
+    });
+  }
 
   /* data into the page */
   $$("[data-bind]").forEach((n) => {
