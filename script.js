@@ -56,6 +56,14 @@ const REPORT_CATEGORIES = ["Annual Reports", "Activity Reports", "Workshop Calen
 const ADVISORY_BOARD = [];
 const BOARD_VISIBLE = 6;
 
+// Counselling teams on the Our People page, below the Advisory Board.
+// { name: "", designation: "Counsellor", photo: "images/name.webp" }. An empty list shows placeholder cards.
+const COUNSELLING_TEAMS = {
+  wellness: [],     // Wellness Counselling Team (CARE)
+  flourishing: []   // Flourishing Counselling Team (Flourishing Hub)
+};
+const COUNSELLING_VISIBLE = 8;
+
 // Student Body on the Our People page. { name: "", place: "Hostel 12" or "Department of Physics", photo: "images/name.webp" }
 // An empty list shows placeholder cards until the names are supplied.
 const STUDENT_BODY = {
@@ -311,6 +319,12 @@ const HIGHLIGHTS = [
   peopleGrid({ id: "board", people: ADVISORY_BOARD.length
     ? ADVISORY_BOARD.map((p) => ({ name: p.name, photo: p.photo, lines: [p.designation, p.affiliation] }))
     : Array.from({ length: 10 }, () => ({ name: "[Name]", lines: ["[Designation]", "[Affiliation]"] })) }, BOARD_VISIBLE);
+  [["wellness", "wellnessCounsellors"], ["flourishing", "flourishingCounsellors"]].forEach(([key, id]) => {
+    const list = COUNSELLING_TEAMS[key];
+    peopleGrid({ id, people: list.length
+      ? list.map((p) => ({ name: p.name, photo: p.photo, lines: [p.designation] }))
+      : placeholders(4, "[Designation]") }, COUNSELLING_VISIBLE);
+  });
   [["institute", "ambInstitute", "[Programme, year]"], ["hostel", "ambHostel", "[Hostel]"], ["department", "ambDepartment", "[Department]"]]
     .forEach(([key, id, place]) => {
       const list = STUDENT_BODY[key];

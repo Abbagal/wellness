@@ -6,7 +6,7 @@ A static website built from the web team brief, split into pages. No framework, 
 - `about.html`: Our Work and the leadership messages
 - `initiatives.html`: Our Initiatives
 - `get-help.html`: How to Get Help
-- `people.html`: core team, Advisory Board and Student Body (Wellbeing Ambassadors)
+- `people.html`: core team, Advisory Board, Wellness and Flourishing Counselling Teams (`COUNSELLING_TEAMS` in script.js) and Student Body (Wellbeing Ambassadors)
 - `reports.html`: reports and Activity Highlights
 - `styles.css`: all styling
 - `script.js`: page behaviour and all editable data
