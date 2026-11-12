@@ -57,10 +57,15 @@ const ADVISORY_BOARD = [];
 const BOARD_VISIBLE = 6;
 
 // Counselling teams on the Our People page, below the Advisory Board.
-// { name: "", designation: "Counsellor", photo: "images/name.webp" }. An empty list shows placeholder cards.
+// { name: "", designation: "Counsellor" or ["Line 1", "Line 2"], photo: "images/name.webp" }. An empty list shows placeholder cards.
 const COUNSELLING_TEAMS = {
   wellness: [],     // Wellness Counselling Team (CARE)
-  flourishing: []   // Flourishing Counselling Team (Flourishing Hub)
+  flourishing: [    // Flourishing Counselling Team (Flourishing Hub)
+    { name: "Chaitali Phadke", designation: ["Wellness Instructor", "Psychologist (Spl. Counseling)"], photo: "images/chaitali-phadke.webp" },
+    { name: "Revati Shinde", designation: ["Wellness Instructor", "Psychologist (Spl. Clinical)"] },
+    { name: "Charvi Joshi", designation: ["Wellness Instructor", "Psychologist (Spl. Industrial)"], photo: "images/charvi-joshi.webp" },
+    { name: "Malvika Singhal", designation: ["Wellness Instructor", "Psychologist (Spl. Counseling)"], photo: "images/malvika-singhal.webp" }
+  ]
 };
 const COUNSELLING_VISIBLE = 8;
 
@@ -322,7 +327,7 @@ const HIGHLIGHTS = [
   [["wellness", "wellnessCounsellors"], ["flourishing", "flourishingCounsellors"]].forEach(([key, id]) => {
     const list = COUNSELLING_TEAMS[key];
     peopleGrid({ id, people: list.length
-      ? list.map((p) => ({ name: p.name, photo: p.photo, lines: [p.designation] }))
+      ? list.map((p) => ({ name: p.name, photo: p.photo, lines: [].concat(p.designation) }))
       : placeholders(4, "[Designation]") }, COUNSELLING_VISIBLE);
   });
   [["institute", "ambInstitute", "[Programme, year]"], ["hostel", "ambHostel", "[Hostel]"], ["department", "ambDepartment", "[Department]"]]
