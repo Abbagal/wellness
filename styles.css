@@ -172,6 +172,9 @@ a.card.summary:focus-visible { outline: 3px solid var(--mid); outline-offset: 3p
   .init .card:hover .learn { background: var(--mid); color: #fff; }
   .init .card:hover .learn .ic { transform: translateX(3px); }
 }
+.init-home-title { margin-top: clamp(48px, 7vw, 80px); font-size: clamp(1.6rem, 1.3rem + 1.4vw, 2.2rem); }
+.init.compact .card { padding-top: 24px; }
+.init.compact .hook { flex: 1; }
 .also-title { margin-top: 38px; text-align: center; }
 .also { display: grid; gap: 12px; margin-top: 16px; }
 .also-item { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
