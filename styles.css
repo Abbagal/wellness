@@ -468,3 +468,36 @@ a.card.summary .learn::after { content: " \2192"; }
   .js h2.reveal.center::after { transform: none; }
   .orb { display: none; }
 }
+
+/* ---- design pass 3: hero help card, wave edges, small hovers ---- */
+/* floating help card over the hero photo */
+.hero-card { position: relative; z-index: 3; margin: 4px var(--gutter) 24px; display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 18px; background: rgba(255, 255, 255, .82); -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3); box-shadow: 0 24px 48px -24px rgba(27, 58, 107, .55); }
+.hero-card-icon { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--mid); color: #fff; }
+.hero-card-icon .ic { width: 24px; height: 24px; }
+.hero-card-text { display: flex; flex-direction: column; min-width: 0; flex: 1; line-height: 1.3; }
+.hero-card-text b { font-family: var(--serif); font-weight: 500; font-size: 1.1rem; color: var(--heading); }
+.hero-card-text span { font-size: .92rem; color: var(--muted); }
+.hero-card .btn { flex: none; min-height: 42px; padding: 8px 16px; }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(47, 109, 181, .45); } 100% { box-shadow: 0 0 0 14px rgba(47, 109, 181, 0); } }
+.hero-card-icon { animation: ping 2.4s ease-out infinite; }
+@keyframes floaty { 50% { transform: translateY(-8px); } }
+@media (min-width: 960px) {
+  .hero-card { position: absolute; margin: 0; right: max(32px, calc((100vw - 1200px) / 2 + 32px)); bottom: 56px; width: 430px; animation: floaty 7s ease-in-out infinite; }
+}
+
+/* soft bands meet their neighbours with a gentle wave */
+.band.soft, .glance { position: relative; }
+.band.soft::before, .band.soft::after, .glance::after { content: ""; position: absolute; left: 0; right: 0; height: 44px; pointer-events: none; background-repeat: no-repeat; background-size: 100% 100%; }
+.band.soft::before { top: -1px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 0h1440v16c-240 24-480 28-720 13S240 6 0 24z' fill='%23ffffff'/%3E%3C/svg%3E"); }
+.band.soft::after, .glance::after { bottom: -1px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 44h1440V28c-240-24-480-28-720-13S240 38 0 20z' fill='%23ffffff'/%3E%3C/svg%3E"); }
+.band.soft:has(+ .closing)::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 44h1440V28c-240-24-480-28-720-13S240 38 0 20z' fill='%232F6DB5'/%3E%3C/svg%3E"); }
+.band.soft > .wrap, .glance > .wrap { position: relative; z-index: 1; }
+
+/* small hovers */
+.people li .avatar { transition: transform .3s ease, box-shadow .3s ease; }
+.also-item { background: var(--white); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+@media (hover: hover) {
+  .people li:hover .avatar { transform: translateY(-5px); box-shadow: 0 0 0 5px var(--white), 0 0 0 6px var(--mid), var(--shadow-up); }
+  .also-item:hover { transform: translateY(-3px); border-color: var(--mid); box-shadow: var(--shadow); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-card, .hero-card-icon { animation: none; } }
