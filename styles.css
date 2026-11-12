@@ -151,6 +151,27 @@ a.card.summary:focus-visible { outline: 3px solid var(--mid); outline-offset: 3p
 .card > p:not(.hook):not(.figure) { flex: 1; }
 .figure { font-family: var(--serif); font-size: 1.3rem; color: var(--heading); padding-top: 10px; border-top: 1px solid var(--line); margin-top: 6px; }
 .learn { font-weight: 700; }
+/* initiative cards: numbered, with a soft corner circle and a footer row */
+.cards.init { gap: 20px; counter-reset: init; }
+.init .card { position: relative; overflow: hidden; gap: 10px; padding: 28px 24px 22px; border-radius: 16px; counter-increment: init; transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+.init .card::before { content: ""; position: absolute; top: -78px; right: -78px; width: 190px; height: 190px; border-radius: 50%; background: var(--soft); transition: transform .5s ease; }
+.init .card::after { content: counter(init, decimal-leading-zero); content: counter(init, decimal-leading-zero) / ""; position: absolute; top: 20px; right: 22px; font-family: var(--serif); font-size: 1.7rem; line-height: 1; color: var(--mid); opacity: .6; }
+.init .card > * { position: relative; }
+.init .card-icon { width: 58px; height: 58px; border-radius: 16px; background: var(--mid); color: #fff; box-shadow: 0 12px 22px -14px rgba(47, 109, 181, .9); }
+.init .card-icon .ic { width: 28px; height: 28px; }
+.init .card h3 { margin-top: 12px; font-size: 1.4rem; }
+.init .hook { font-family: var(--serif); font-weight: 400; font-size: 1.1rem; line-height: 1.35; color: var(--mid-dark); }
+.card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+.card-foot .figure { margin: 0; padding: 0; border: 0; font-size: 1.15rem; line-height: 1.25; }
+.card-foot .learn { flex: none; display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 6px 12px 6px 16px; border-radius: 999px; background: var(--soft); color: var(--mid-dark); text-decoration: none; transition: background .25s, color .25s; }
+.card-foot .learn .ic { width: 1.05em; height: 1.05em; stroke-width: 2.2; transition: transform .25s ease; }
+.card-foot .learn:hover, .card-foot .learn:focus-visible { background: var(--mid); color: #fff; }
+@media (hover: hover) {
+  .init .card:hover { border-color: var(--mid); }
+  .init .card:hover::before { transform: scale(1.18); }
+  .init .card:hover .learn { background: var(--mid); color: #fff; }
+  .init .card:hover .learn .ic { transform: translateX(3px); }
+}
 .also-title { margin-top: 38px; text-align: center; }
 .also { display: grid; gap: 12px; margin-top: 16px; }
 .also-item { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
