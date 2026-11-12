@@ -415,3 +415,56 @@ a.card.summary .learn::after { content: " \2192"; }
 /* footer */
 .footer { background: linear-gradient(180deg, var(--white) 0%, var(--soft) 100%); border-top: 0; }
 .foot-bottom { border-top-color: rgba(47, 109, 181, .18); }
+
+/* ---- motion layer: all of it switches off under prefers-reduced-motion ---- */
+/* grid items rise in 3D, one after another */
+.js .rise { opacity: 0; transform: perspective(900px) translateY(36px) rotateX(12deg); transform-origin: 50% 100%; transition: opacity .8s ease var(--d, 0ms), transform 1s cubic-bezier(.2, .7, .2, 1) var(--d, 0ms); }
+.js .rise.in { opacity: 1; transform: none; }
+.js .rise.settled { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, background .3s ease; }
+
+/* pointer tilt with a light that follows the cursor */
+.tilt { position: relative; }
+.js .tilt.tilt.settled { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px)); transition: transform .25s ease-out, box-shadow .3s ease, border-color .3s ease; will-change: transform; }
+.tilt:hover { --lift: -6px; }
+.card > .glare, .box > .glare { position: absolute; inset: 0; z-index: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .35s ease; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 0%), rgba(47, 109, 181, .13), transparent 58%); }
+.box > .glare { background: radial-gradient(circle at var(--gx, 50%) var(--gy, 0%), rgba(255, 255, 255, .22), transparent 60%); }
+.tilt:hover > .glare { opacity: 1; }
+.tilt .card-icon, .tilt .box-icon { transition: transform .3s ease, box-shadow .3s ease; transform: translate3d(var(--mx, 0px), var(--my, 0px), 0); }
+.tilt:hover .card-icon, .tilt:hover .box-icon { transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1.07); }
+.init .card.tilt:hover { box-shadow: inset 0 -3px 0 var(--mid), 0 26px 44px -26px rgba(27, 58, 107, .55); }
+.init .card.tilt:hover .card-icon { box-shadow: 0 16px 26px -12px rgba(47, 109, 181, .95); }
+
+/* headings: the short rule draws itself in */
+.js h2.reveal.center::after { transform: scaleX(0); transition: transform .9s cubic-bezier(.2, .7, .2, 1) .35s; }
+.js h2.reveal.center.in::after { transform: none; }
+
+/* hero: copy arrives in sequence, the photo settles from a slow zoom, orbs drift */
+@keyframes heroIn { from { opacity: 0; transform: translateY(26px); } }
+@keyframes settle { from { transform: scale(1.09); } }
+@keyframes drift { 0% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(26px, -22px, 0) scale(1.06); } 100% { transform: translate3d(-14px, 16px, 0) scale(.97); } }
+.js .hero-copy > * { animation: heroIn 1s cubic-bezier(.2, .7, .2, 1) both; }
+.js .hero-copy > :nth-child(2) { animation-delay: .12s; }
+.js .hero-copy > :nth-child(3) { animation-delay: .24s; }
+.js .hero-copy > :nth-child(4) { animation-delay: .36s; }
+.js .hero-copy > :nth-child(5) { animation-delay: .48s; }
+.hero-photo { will-change: transform; }
+.hero-photo img { animation: settle 2.6s cubic-bezier(.2, .7, .2, 1) both; }
+.orb { position: absolute; z-index: 1; border-radius: 50%; pointer-events: none; filter: blur(2px); background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, .9), rgba(227, 239, 251, .55) 45%, rgba(47, 109, 181, .10) 100%); box-shadow: inset 0 0 30px rgba(47, 109, 181, .10); animation: drift 16s ease-in-out infinite alternate; opacity: var(--fade, 1); }
+.orb.one { width: 120px; height: 120px; left: 46%; top: 16%; }
+.orb.two { width: 64px; height: 64px; left: 6%; bottom: 14%; animation-duration: 13s; animation-delay: -4s; }
+.orb.three { width: 38px; height: 38px; left: 40%; bottom: 26%; animation-duration: 11s; animation-delay: -7s; }
+@media (max-width: 959px) { .orb.one { left: auto; right: 6%; top: 8%; width: 84px; height: 84px; } .orb.two, .orb.three { display: none; } }
+
+/* closing band circles breathe slowly */
+@keyframes breathe { to { transform: scale(1.12) translate3d(20px, 10px, 0); } }
+.closing::before { animation: breathe 12s ease-in-out infinite alternate; }
+.closing::after { animation: breathe 15s ease-in-out infinite alternate-reverse; }
+
+/* reading progress */
+.progress { position: fixed; top: 0; left: 0; right: 0; z-index: 58; height: 3px; transform: scaleX(0); transform-origin: 0 50%; background: linear-gradient(90deg, var(--line), var(--mid)); pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .rise, .js .hero-copy > * { opacity: 1 !important; transform: none !important; }
+  .js h2.reveal.center::after { transform: none; }
+  .orb { display: none; }
+}

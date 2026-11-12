@@ -413,4 +413,81 @@ const HIGHLIGHTS = [
   $("#prevSlide").addEventListener("click", () => step(-1));
   $("#nextSlide").addEventListener("click", () => step(1));
   }
+  /* ---- motion: staggered 3D reveals, card tilt, hero depth ---- */
+  if (!reduced) {
+    // grids rise into place one item after another
+    $$(".cards, .trio, .counters, .services, .ladder, .call-list.wide").forEach((grid) => {
+      grid.classList.remove("reveal");
+      Array.from(grid.children).forEach((it, i) => {
+        it.classList.remove("reveal");
+        it.classList.add("rise");
+        it.style.setProperty("--d", ((i % 3) * 110 + Math.floor(i / 3) * 60) + "ms");
+      });
+    });
+    once($$(".rise"), (n) => {
+      n.classList.add("in");
+      setTimeout(() => n.classList.add("settled"), 1100 + parseInt(n.style.getPropertyValue("--d") || 0, 10));
+    });
+
+    // cards and boxes tilt towards the pointer, with a soft light following it
+    if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      $$(".cards .card, .trio .box").forEach((c) => {
+        c.classList.add("tilt");
+        const glare = el("span", "glare");
+        glare.setAttribute("aria-hidden", "true");
+        c.appendChild(glare);
+        let frame = 0;
+        c.addEventListener("pointermove", (e) => {
+          cancelAnimationFrame(frame);
+          frame = requestAnimationFrame(() => {
+            const r = c.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+            c.style.setProperty("--ry", ((x - 0.5) * 9).toFixed(2) + "deg");
+            c.style.setProperty("--rx", ((0.5 - y) * 7).toFixed(2) + "deg");
+            c.style.setProperty("--mx", ((x - 0.5) * 8).toFixed(1) + "px");
+            c.style.setProperty("--my", ((y - 0.5) * 8).toFixed(1) + "px");
+            c.style.setProperty("--gx", (x * 100).toFixed(1) + "%");
+            c.style.setProperty("--gy", (y * 100).toFixed(1) + "%");
+          });
+        });
+        c.addEventListener("pointerleave", () => {
+          cancelAnimationFrame(frame);
+          ["--rx", "--ry", "--mx", "--my"].forEach((p) => c.style.removeProperty(p));
+        });
+      });
+    }
+
+    // hero: soft floating orbs and a gentle parallax on the photo
+    const hero = $(".hero");
+    if (hero) {
+      ["orb one", "orb two", "orb three"].forEach((cls) => {
+        const o = el("span", cls);
+        o.setAttribute("aria-hidden", "true");
+        hero.appendChild(o);
+      });
+      const photo = $(".hero-photo", hero);
+      const wide = matchMedia("(min-width: 960px)");
+      let ticking = false;
+      const move = () => {
+        ticking = false;
+        const y = Math.min(window.scrollY, hero.offsetHeight);
+        photo.style.transform = wide.matches ? "translate3d(0," + (y * 0.22).toFixed(1) + "px,0)" : "";
+        hero.style.setProperty("--fade", (1 - (y / hero.offsetHeight) * 0.6).toFixed(3));
+      };
+      addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
+    }
+  }
+
+  // thin reading-progress bar at the top; it only follows the scroll position
+  const bar = el("div", "progress");
+  bar.setAttribute("aria-hidden", "true");
+  document.body.appendChild(bar);
+  let pTick = false;
+  const progress = () => {
+    pTick = false;
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = "scaleX(" + (max > 0 ? Math.min(1, scrollY / max) : 0).toFixed(4) + ")";
+  };
+  addEventListener("scroll", () => { if (!pTick) { pTick = true; requestAnimationFrame(progress); } }, { passive: true });
+  progress();
 })();
