@@ -471,7 +471,7 @@ const HIGHLIGHTS = [
       const move = () => {
         ticking = false;
         const y = Math.min(window.scrollY, hero.offsetHeight);
-        photo.style.transform = wide.matches ? "translate3d(0," + (y * 0.22).toFixed(1) + "px,0)" : "";
+        photo.style.transform = wide.matches ? "translate3d(0," + (y * 0.08).toFixed(1) + "px,0)" : "";
         hero.style.setProperty("--fade", (1 - (y / hero.offsetHeight) * 0.6).toFixed(3));
       };
       addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
