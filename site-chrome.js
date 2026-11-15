@@ -10,16 +10,17 @@
   var NAV = [
     { href: "index.html", label: "Home" },
     { href: "about.html", label: "About" },
+    // each initiative has its own page; on those pages "Initiatives" shows as the current section
     { href: "initiatives.html", label: "Initiatives", wide: true, sub: [
-      { href: "initiatives.html#care", label: "CARE: Counselling" },
-      { href: "initiatives.html#online-counselling", label: "Online Counselling" },
-      { href: "initiatives.html#wrt", label: "24x7 Wellness Response Team" },
-      { href: "initiatives.html#psychiatry", label: "24x7 Psychiatry Support" },
-      { href: "initiatives.html#flourishing-hub", label: "Flourishing Hub" },
-      { href: "initiatives.html#shine", label: "SHINE" },
-      { href: "initiatives.html#rise", label: "RISE IITB" },
-      { href: "initiatives.html#ambassadors", label: "Wellbeing Ambassadors" },
-      { href: "initiatives.html#mentors", label: "Student Mentors and Faculty Team" }
+      { href: "care.html", label: "CARE: Counselling" },
+      { href: "online-counselling.html", label: "Online Counselling" },
+      { href: "wellness-response-team.html", label: "24x7 Wellness Response Team" },
+      { href: "psychiatry.html", label: "24x7 Psychiatry Support" },
+      { href: "flourishing-hub.html", label: "Flourishing Hub" },
+      { href: "shine.html", label: "SHINE" },
+      { href: "rise.html", label: "RISE IITB" },
+      { href: "wellbeing-ambassadors.html", label: "Wellbeing Ambassadors" },
+      { href: "student-mentors.html", label: "Student Mentors and Faculty Team" }
     ] },
     { href: "get-help.html", label: "Get Help", sub: [
       // filled by script.js: the booking link from WELLNESS_DATA.links, the number from helplines
@@ -43,7 +44,8 @@
   }
 
   var links = NAV.map(function (item, n) {
-    var current = item.href === page ? ' aria-current="page"' : "";
+    var inSection = item.sub && item.sub.some(function (s) { return s.href === page; });
+    var current = item.href === page ? ' aria-current="page"' : inSection ? ' aria-current="true"' : "";
     var top = '<a href="' + item.href + '"' + current + ">" + item.label + "</a>";
     if (!item.sub) return "<li>" + top + "</li>";
     var id = "sub-" + n;

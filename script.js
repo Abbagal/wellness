@@ -16,7 +16,7 @@ const WELLNESS_DATA = {
     emergency: "112"                     // all-India police, fire and ambulance
   },
   links: {
-    careBooking: "https://swc.iitb.ac.in", // confirm the direct booking link
+    careBooking: "https://app.swc.iitb.ac.in/", // SWC appointment portal (from swc.iitb.ac.in/in-person); works on the IITB network only
     guidance: null
   },
   asOf: "2026-10"
@@ -35,17 +35,18 @@ const CALL_LIST = [
 // how: "Walk in", "Book ahead", "Walk in or book ahead", "Call or WhatsApp", and so on.
 const SERVICES = [
   { name: "CARE: Counselling", what: "One-to-one sessions with a professional counsellor.",
-    when: null, how: "Walk in or book ahead", where: null, link: "careBooking", linkLabel: "Book a slot" },
-  { name: "Online Counselling", what: "Private video sessions, for when you are off campus, on internship, or simply prefer it.",
-    when: null, how: "Book ahead", where: "Online, from anywhere", link: "careBooking", linkLabel: "Book online" },
+    when: "Booked: Mon–Fri, 10 am – 5 pm. Walk in: every day, 10 am – 4 pm", how: "Walk in or book ahead",
+    where: "Student Wellness Centre, 3rd floor, Nandan Nilekani Main Building", link: "careBooking", linkLabel: "Book a slot", page: "care.html" },
+  { name: "Online Counselling", what: "Free, private audio or video sessions through TalktoAngel, for when you are off campus, on internship, or simply prefer it.",
+    when: "24x7", how: "Sign in with your IITB email", where: "Online, from anywhere", url: "https://www.talktoangel.com/iit-bombay/login", linkLabel: "Start online", page: "online-counselling.html" },
   { name: "24x7 Wellness Response Team", what: "A trained team that comes to you anywhere on campus when it cannot wait.",
-    when: "24x7, every day of the year", how: "Call or WhatsApp", where: "Comes to you", tel: "wrtPhoneWhatsApp" },
+    when: "24x7, every day of the year", how: "Call or WhatsApp", where: "Comes to you", tel: "wrtPhoneWhatsApp", page: "wellness-response-team.html" },
   { name: "24x7 Psychiatry Support", what: "A psychiatrist on call for urgent and ongoing clinical care.",
-    when: "24x7, every day of the year", how: null, where: null, tel: "psychiatry24x7" },
+    when: "24x7, every day of the year", how: null, where: null, tel: "psychiatry24x7", page: "psychiatry.html" },
   { name: "Wellbeing Ambassadors and Student Mentors", what: "Trained students in your hostel and department. Often the easiest first conversation.",
-    when: null, how: "Talk to them directly", where: "Your hostel and department", link: "guidance", linkLabel: "Find your contact" },
+    when: null, how: "Talk to them directly", where: "Your hostel and department", link: "guidance", linkLabel: "Find your contact", page: "wellbeing-ambassadors.html" },
   { name: "SHINE", what: "Quiet support for academic or personal difficulty, starting in your own department.",
-    when: "Launching soon", how: null, where: "Your department" }
+    when: "Launching soon", how: null, where: "Your department", page: "shine.html" }
 ];
 
 // Newest first within each category. { title: "", year: 2026, category: "Annual Reports", file: "reports/name.pdf" }
@@ -150,10 +151,11 @@ const HIGHLIGHTS = [
       if (sv.tel) {
         const v = WELLNESS_DATA.helplines[sv.tel];
         if (v) { const a = el("a", "learn", "Call " + v); a.href = "tel:" + digits(v); card.appendChild(a); }
-      } else if (sv.link) {
-        const url = WELLNESS_DATA.links[sv.link];
+      } else if (sv.link || sv.url) {
+        const url = sv.url || WELLNESS_DATA.links[sv.link];
         if (url) { const a = el("a", "learn", sv.linkLabel); a.href = url; a.target = "_blank"; a.rel = "noopener"; card.appendChild(a); }
       }
+      if (sv.page) { const a = el("a", "learn more-about", "More about " + sv.name.replace(/^24x7 |:.*$/g, "")); a.href = sv.page; card.appendChild(a); }
       services.appendChild(card);
     });
   }

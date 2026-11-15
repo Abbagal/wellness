@@ -4,7 +4,8 @@ A static website built from the web team brief, split into pages. No framework, 
 
 - `index.html`: Home, a short summary (hero, Wellness at a Glance, Our Work, the Director's and Associate Dean's messages, Our Team, links to every page)
 - `about.html`: Our Work and the leadership messages
-- `initiatives.html`: Our Initiatives
+- `initiatives.html`: Our Initiatives, all nine side by side
+- One page per initiative: `care.html`, `online-counselling.html`, `wellness-response-team.html`, `psychiatry.html`, `flourishing-hub.html`, `shine.html`, `rise.html`, `wellbeing-ambassadors.html`, `student-mentors.html`. They share one layout (hero with "At a glance", sections, previous/next and all initiatives), so change them together. Facts come from swc.iitb.ac.in and flourishing-iitb.org; anything unconfirmed shows as a placeholder.
 - `get-help.html`: How to Get Help
 - `people.html`: core team, Advisory Board, Wellness and Flourishing Counselling Teams (`COUNSELLING_TEAMS` in script.js) and Student Body (Wellbeing Ambassadors)
 - `reports.html`: reports and Activity Highlights
