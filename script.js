@@ -413,10 +413,89 @@ const HIGHLIGHTS = [
   $("#prevSlide").addEventListener("click", () => step(-1));
   $("#nextSlide").addEventListener("click", () => step(1));
   }
+  /* ---- events page ---- */
+  // section links: mark the section being read
+  const evLinks = $$(".ev-tabs a");
+  if (evLinks.length && "IntersectionObserver" in window) {
+    const byId = new Map(evLinks.map((a) => [a.hash.slice(1), a]));
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        evLinks.forEach((a) => a.removeAttribute("aria-current"));
+        const a = byId.get(e.target.id);
+        a.setAttribute("aria-current", "true");
+        a.parentNode.parentNode.scrollTo({ left: a.offsetLeft - 24, behavior: reduced ? "auto" : "smooth" });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    byId.forEach((a, id) => { const s = document.getElementById(id); if (s) spy.observe(s); });
+  }
+
+  // testimonials: arrows, swipe and a dot for each quote
+  const voices = $("#voices-track");
+  if (voices) {
+    const cards = $$(".ev-voice", voices), dots = $("#voiceDots");
+    cards.forEach(() => dots.appendChild(el("span")));
+    const current = () => {
+      let best = 0;
+      cards.forEach((c, i) => { if (Math.abs(c.offsetLeft - voices.offsetLeft - voices.scrollLeft) < Math.abs(cards[best].offsetLeft - voices.offsetLeft - voices.scrollLeft)) best = i; });
+      return best;
+    };
+    const mark = () => {
+      const atEnd = voices.scrollLeft + voices.clientWidth >= voices.scrollWidth - 4;
+      const n = atEnd ? cards.length - 1 : current();
+      $$("span", dots).forEach((d, i) => d.classList.toggle("on", i === n));
+    };
+    const go = (dir) => {
+      const atEnd = voices.scrollLeft + voices.clientWidth >= voices.scrollWidth - 4;
+      let n = current() + dir;
+      if (dir > 0 && atEnd) n = 0;
+      if (n < 0) n = cards.length - 1;
+      voices.scrollTo({ left: cards[n].offsetLeft - voices.offsetLeft - 4, behavior: reduced ? "auto" : "smooth" });
+    };
+    $("#voicePrev").addEventListener("click", () => go(-1));
+    $("#voiceNext").addEventListener("click", () => go(1));
+    let vTick = false;
+    voices.addEventListener("scroll", () => { if (!vTick) { vTick = true; requestAnimationFrame(() => { vTick = false; mark(); }); } }, { passive: true });
+    mark();
+  }
+
+  // photo viewer: arrows, keyboard and swipe; Escape or the backdrop closes it
+  const viewer = $("#viewer"), shots = $$(".ev-shot");
+  if (viewer && shots.length && viewer.showModal) {
+    const vImg = $("#viewerImg"), vCap = $("#viewerCap"), vCount = $("#viewerCount");
+    let at = 0, from = null;
+    const show = (i) => {
+      at = (i + shots.length) % shots.length;
+      const s = shots[at];
+      vImg.src = s.dataset.full;
+      vImg.alt = $("img", s).alt;
+      vCap.textContent = s.dataset.caption;
+      vCount.textContent = (at + 1) + " / " + shots.length;
+    };
+    shots.forEach((s, i) => s.addEventListener("click", () => { from = s; show(i); viewer.showModal(); }));
+    $("#viewerPrev").addEventListener("click", () => show(at - 1));
+    $("#viewerNext").addEventListener("click", () => show(at + 1));
+    $("#viewerClose").addEventListener("click", () => viewer.close());
+    viewer.addEventListener("click", (e) => { if (e.target === viewer || e.target.tagName === "FIGURE") viewer.close(); });
+    viewer.addEventListener("close", () => { if (from) from.focus(); });
+    viewer.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { e.preventDefault(); show(at - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); show(at + 1); }
+    });
+    let x0 = null;
+    viewer.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    viewer.addEventListener("touchend", (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 50) show(at + (dx < 0 ? 1 : -1));
+      x0 = null;
+    });
+  }
+
   /* ---- motion: staggered 3D reveals, card tilt, hero depth ---- */
   if (!reduced) {
     // grids rise into place one item after another
-    $$(".cards, .trio, .counters, .services, .ladder, .call-list.wide").forEach((grid) => {
+    $$(".cards, .trio, .counters, .services, .ladder, .call-list.wide, .ev-facts, .ev-goals, .ev-gallery").forEach((grid) => {
       grid.classList.remove("reveal");
       Array.from(grid.children).forEach((it, i) => {
         it.classList.remove("reveal");

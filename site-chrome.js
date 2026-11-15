@@ -27,6 +27,11 @@
       { html: '<a class="sub-link" href="tel:+918356810252" data-tel>Wellness Response Team, 24x7</a>', note: "Call or WhatsApp at any hour" }
     ] },
     { href: "people.html", label: "Our People" },
+    { href: "events.html", label: "Events", sub: [
+      { href: "events.html", label: "National Wellbeing Conclave 2025", note: "IIT Bombay, 22–23 November 2025" },
+      { href: "events.html#gallery", label: "Conclave photo gallery" },
+      { href: "https://swc.iitb.ac.in/swc-calendar", label: "SWC event calendar", note: "What is coming up next" }
+    ] },
     { href: "reports.html", label: "Reports" }
   ];
 
@@ -84,6 +89,7 @@
           "<h2>Quick links</h2>" +
           "<ul>" +
             '<li><a href="get-help.html">How to get help</a></li>' +
+            '<li><a href="events.html">National Wellbeing Conclave 2025</a></li>' +
             '<li><a href="https://swc.iitb.ac.in" target="_blank" rel="noopener">swc.iitb.ac.in</a></li>' +
             '<li><a href="https://flourishing-iitb.org" target="_blank" rel="noopener">flourishing-iitb.org</a></li>' +
             "<li>RISE IITB (coming soon)</li>" +

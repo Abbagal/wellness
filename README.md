@@ -8,6 +8,7 @@ A static website built from the web team brief, split into pages. No framework, 
 - `get-help.html`: How to Get Help
 - `people.html`: core team, Advisory Board, Wellness and Flourishing Counselling Teams (`COUNSELLING_TEAMS` in script.js) and Student Body (Wellbeing Ambassadors)
 - `reports.html`: reports and Activity Highlights
+- `events.html`: Events, featuring the 2nd National Wellbeing Conclave 2025 (content and photos from swc.iitb.ac.in/NWC2025; photos in `images/events/`). The home page shows it under "Recent Events".
 - `styles.css`: all styling
 - `script.js`: page behaviour and all editable data
 - `images/`: photographs
