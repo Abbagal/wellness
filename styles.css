@@ -943,7 +943,13 @@ body:has(.ev-viewer[open]) { overflow: hidden; }
 .people.core { display: flex; flex-wrap: wrap; justify-content: center; }
 .people.core li { width: calc((100% - 14px) / 2); }
 @media (min-width: 640px) { .people.core li { width: calc((100% - 28px) / 3); } }
-@media (min-width: 960px) { .people.core li { width: calc((100% - 42px) / 4); } }
+@media (min-width: 960px) { .people.core li { width: calc((100% - 70px) / 6); } }
+/* the Professor In-Charge leads the core team: a larger card on its own row */
+.people.core li.lead { width: 100%; max-width: 440px; margin: 0 max(0px, calc((100% - 440px) / 2)) 10px; padding: 30px 20px 26px; border-radius: 22px; background: linear-gradient(160deg, var(--soft) 0%, var(--white) 75%); border: 1px solid var(--line); box-shadow: 0 30px 60px -40px rgba(27, 58, 107, .55); }
+.people.core li.lead .avatar { width: 180px; height: 180px; object-position: center 15%; }
+.people.core li.lead b { margin-top: 16px; font-family: var(--serif); font-weight: 500; font-size: 1.6rem; line-height: 1.2; }
+.people.core li.lead span { font-size: 1.02rem; }
+.people.core li.lead span + span { color: var(--mid-dark); font-weight: 500; }
 img.portrait { object-fit: cover; object-position: center 18%; }
 
 /* ---- RISE IITB (rise.html): an app landing page, after setu.iitkgp.ac.in, in the brief's blues ---- */
