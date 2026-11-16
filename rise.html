@@ -60,42 +60,116 @@
 <main id="main" class="initiative" data-initiative="rise">
 
 <!-- One initiative; the list of all of them is in initiatives.html. Generated from one template, so keep the pages in step. -->
-<section class="in-hero page-top" aria-labelledby="pageTitle">
-  <div class="wrap">
+<!-- RISE IITB: laid out like an app landing page (after setu.iitkgp.ac.in), in this site's blues.
+     The brief does not allow app features to be described before release, so this page talks about
+     the four pillars and today's services; features go here at launch. -->
+<section class="rs-hero page-top" aria-labelledby="pageTitle">
+  <div class="wrap center">
     <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="initiatives.html">Initiatives</a></li><li aria-current="page">RISE IITB</li></ol></nav>
-    <div class="in-hero-grid">
-      <div class="in-hero-copy">
-        <p class="ev-kicker"><span class="eyebrow">Prevent</span><span class="ev-status">Coming soon</span><span class="in-no" aria-hidden="true">07 / 09</span></p>
-        <h1 id="pageTitle" class="in-title">RISE <em>IITB</em></h1>
-        <p class="in-hook">Wellness in your pocket.</p>
-        <p class="in-lead">Resilience, Inner strength, Self-care, Emotional well-being. RISE IITB is the IIT Bombay wellbeing app, coming soon.</p>
-        <ul class="in-tags"><li>Coming soon</li><li>For every IITB student</li></ul>
-        <div class="btn-row"><a class="btn" href="online-counselling.html"><svg class="ic" aria-hidden="true"><use href="#i-laptop"/></svg>Talk to someone online now</a><a class="btn outline" href="get-help.html"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg>Every way to get help</a></div>
+    <p class="rs-pill reveal"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>Building a kinder campus · IIT Bombay</p>
+    <p class="rs-logo reveal" aria-hidden="true"><span class="rs-mark">RISE</span><span class="rs-sub">IITB</span></p>
+    <ul class="rs-words reveal" aria-label="What RISE stands for"><li>Resilience</li><li>Inner strength</li><li>Self-care</li><li>Emotional well-being</li></ul>
+    <p class="rs-initiative reveal"><span class="rs-badge"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>An IIT Bombay initiative</span><span class="ev-status">Coming soon</span></p>
+    <h1 id="pageTitle" class="rs-title reveal">Re-imagining wellbeing for every student at <em>IIT Bombay</em></h1>
+    <ul class="rs-chips reveal" aria-label="RISE looks after you"><li><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>Emotionally</li><li><svg class="ic" aria-hidden="true"><use href="#i-yoga"/></svg>Physically</li><li><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Socially</li><li><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Academically</li></ul>
+    <ul class="rs-stats">
+      <li class="reveal"><b>24x7</b><span>Wellness Response Team, today</span></li>
+      <li class="reveal"><b>4</b><span>Pillars, one app</span></li>
+      <li class="reveal"><b>Every</b><span>IIT Bombay student</span></li>
+    </ul>
+  </div>
+</section>
+
+<nav class="ev-tabs" aria-label="On this page">
+  <ul><li><a href="#pillars">Pillars</a></li><li><a href="#message">Message</a></li><li><a href="#now">Help now</a></li><li><a href="#for-you">For you</a></li><li><a href="#download">Download</a></li></ul>
+</nav>
+
+<section class="band" id="pillars" aria-labelledby="pillarsTitle">
+  <div class="wrap">
+    <div class="rs-eco reveal">
+      <h2 id="pillarsTitle" class="center">Discover the four pillars of <em>RISE</em></h2>
+      <div class="rs-tabs" role="tablist" aria-label="The four pillars">
+        <button type="button" role="tab" id="rsTab0" aria-controls="rsPanel0" aria-selected="true"><span class="rs-letter">R</span><b>Resilience</b><small>Bouncing back</small></button>
+        <button type="button" role="tab" id="rsTab1" aria-controls="rsPanel1" aria-selected="false" tabindex="-1"><span class="rs-letter">I</span><b>Inner strength</b><small>Knowing yourself</small></button>
+        <button type="button" role="tab" id="rsTab2" aria-controls="rsPanel2" aria-selected="false" tabindex="-1"><span class="rs-letter">S</span><b>Self-care</b><small>Small daily habits</small></button>
+        <button type="button" role="tab" id="rsTab3" aria-controls="rsPanel3" aria-selected="false" tabindex="-1"><span class="rs-letter">E</span><b>Emotional well-being</b><small>Feeling, not hiding</small></button>
       </div>
-      <aside class="in-glance" aria-label="At a glance">
-        <div class="in-glance-top"><span class="in-glance-icon"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><b>At a glance</b></div>
-        <dl><div><dt><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg>Status</dt><dd>Coming soon</dd></div><div><dt><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Where</dt><dd>On your phone</dd></div><div><dt><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>For</dt><dd>Every IIT Bombay student</dd></div></dl>
-      </aside>
+      <div class="rs-panels">
+        <div class="rs-panel" role="tabpanel" id="rsPanel0" aria-labelledby="rsTab0"><h3>Resilience</h3><p>Setbacks are part of IIT life: a tough quiz, a rejection, a hard semester. Resilience is learning to recover, and asking for help along the way.</p></div>
+        <div class="rs-panel" role="tabpanel" id="rsPanel1" aria-labelledby="rsTab1" hidden><h3>Inner strength</h3><p>Your values, your strengths and your own pace. Inner strength grows when you stop measuring yourself only by grades.</p></div>
+        <div class="rs-panel" role="tabpanel" id="rsPanel2" aria-labelledby="rsTab2" hidden><h3>Self-care</h3><p>Sleep, food, movement and a little time away from the screen. Self-care is not a reward for finishing your work; it is what lets you do it.</p></div>
+        <div class="rs-panel" role="tabpanel" id="rsPanel3" aria-labelledby="rsTab3" hidden><h3>Emotional well-being</h3><p>Naming what you feel, sharing it with someone you trust, and knowing that every feeling is welcome here.</p></div>
+      </div>
+      <div class="rs-dots" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div>
     </div>
   </div>
 </section>
 
-<section class="band soft" aria-labelledby="s0Title">
-  <div class="wrap center">
-    <h2 id="s0Title" class="reveal">Four words, <em>one app</em></h2>
-    <ul class="in-acronym"><li class="reveal"><span>R</span><b>Resilience</b></li><li class="reveal"><span>I</span><b>Inner strength</b></li><li class="reveal"><span>S</span><b>Self-care</b></li><li class="reveal"><span>E</span><b>Emotional well-being</b></li></ul>
-    <p class="section-sub reveal">What the app does will be shared here when it launches.</p>
+<section class="band rs-msg" id="message" aria-labelledby="messageTitle">
+  <div class="wrap">
+    <h2 id="messageTitle" class="sr">Message</h2>
+    <article class="message solo reveal">
+      <img class="portrait" src="images/deepak-marla-portrait.webp" alt="Prof. Deepak Marla, Associate Dean, Student Wellness" width="480" height="579" loading="lazy">
+      <div class="message-body">
+        <h3>Associate Dean's Message</h3>
+        <blockquote>“No student should ever have to wonder where to turn.”</blockquote>
+        <p class="byline"><b>Prof. Deepak Marla</b><br>Professor In-Charge<br>Associate Dean, Student Wellness</p>
+        <p class="more-link"><a href="about.html">Read the full message</a></p>
+      </div>
+    </article>
   </div>
 </section>
 
-<section class="band" aria-labelledby="s1Title">
+<section class="band rs-now" id="now" aria-labelledby="nowTitle">
+  <div class="wrap rs-split">
+    <div class="rs-split-copy reveal">
+      <p class="rs-pill"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Until RISE arrives</p>
+      <h2 id="nowTitle">Help is already <em>in your pocket</em></h2>
+      <p>RISE will bring IIT Bombay's wellbeing support together in one place. Until it launches, every one of these is open to you today, free and confidential.</p>
+      <ul class="rs-checks"><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>One-to-one counselling at CARE</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Online sessions from your own room</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>A 24x7 team for when it cannot wait</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Programmes that help you thrive, not just cope</li></ul>
+    </div>
+    <div class="rs-device reveal">
+      <span class="rs-device-icon"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg></span>
+      <h3>Help, right now</h3>
+      <p>Open any of these today</p>
+      <ul>
+        <li><a href="care.html"><span><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg></span><b>CARE: Counselling<small>In person, by appointment</small></b><em>Open</em></a></li>
+        <li><a href="online-counselling.html"><span><svg class="ic" aria-hidden="true"><use href="#i-laptop"/></svg></span><b>Online Counselling<small>Wherever you are</small></b><em>Open</em></a></li>
+        <li><a href="wellness-response-team.html"><span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span><b>Wellness Response Team<small>24x7</small></b><em>Open</em></a></li>
+        <li><a href="flourishing-hub.html"><span><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg></span><b>Flourishing Hub<small>Workshops and programmes</small></b><em>Open</em></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="for-you" aria-labelledby="forYouTitle">
   <div class="wrap">
-    <h2 id="s1Title" class="center reveal">Until RISE <em>arrives</em></h2>
-    <p class="section-sub center reveal">Help that is already in your pocket.</p>
-    <div class="cards in-next">
-      <a class="card summary reveal" href="online-counselling.html"><span class="card-icon" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-laptop"/></svg></span><h3>Online Counselling</h3><p>Support, wherever you are.</p><span class="learn" aria-hidden="true">Open</span></a>
-      <a class="card summary reveal" href="wellness-response-team.html"><span class="card-icon" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span><h3>24x7 Wellness Response Team</h3><p>When it cannot wait, we are already on our way.</p><span class="learn" aria-hidden="true">Open</span></a>
-      <a class="card summary reveal" href="flourishing-hub.html"><span class="card-icon" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg></span><h3>Flourishing Hub</h3><p>Beyond coping. Toward thriving.</p><span class="learn" aria-hidden="true">Open</span></a>
+    <h2 id="forYouTitle" class="center reveal">Designed for <em>everyone</em></h2>
+    <p class="section-sub center reveal">RISE is being built for the whole IIT Bombay community. Until it launches, here is where each of you can turn.</p>
+    <div class="rs-aud">
+      <article class="rs-aud-card reveal"><span class="rs-aud-icon"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span><h3>Students</h3><p>Your wellbeing, alongside your studies and campus life.</p>
+        <ul class="rs-checks"><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Book a counselling session</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Talk to a counsellor online</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Join Flourishing Hub programmes</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Reach your Wellbeing Ambassador</li></ul>
+        <a class="btn outline" href="get-help.html">Get help</a></article>
+      <article class="rs-aud-card reveal"><span class="rs-aud-icon"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span><h3>Parents and guardians</h3><p>Know who is looking out for your child on campus.</p>
+        <ul class="rs-checks"><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>The 24x7 Wellness Response Team</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Who to write to, and when</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>How support works at IIT Bombay</li></ul>
+        <a class="btn outline" href="wellness-response-team.html">The 24x7 team</a></article>
+      <article class="rs-aud-card reveal"><span class="rs-aud-icon"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><h3>Faculty and staff</h3><p>Notice early, and know where to point a student.</p>
+        <ul class="rs-checks"><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Student Mentors and Faculty Team</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Wellbeing Ambassadors</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Every service, with timings</li></ul>
+        <a class="btn outline" href="student-mentors.html">Mentors and Faculty Team</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="download" aria-labelledby="downloadTitle">
+  <div class="wrap">
+    <div class="rs-get reveal">
+      <h2 id="downloadTitle">Ready to <em>RISE</em>?</h2>
+      <p>The app is on its way. Store links and details will appear here the day it launches.</p>
+      <div class="rs-stores">
+        <span class="rs-store" aria-disabled="true"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span><small>Coming soon on</small>App Store</span></span>
+        <span class="rs-store" aria-disabled="true"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span><small>Coming soon on</small>Google Play</span></span>
+      </div>
+      <p class="rs-note">Until then, every service is one tap away on <a href="get-help.html">Get Help</a>.</p>
     </div>
   </div>
 </section>

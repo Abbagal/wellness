@@ -432,6 +432,36 @@ const HIGHLIGHTS = [
     byId.forEach((a, id) => { const s = document.getElementById(id); if (s) spy.observe(s); });
   }
 
+  // RISE: the four pillars turn every few seconds until someone picks one; arrow keys move between them
+  const rsTabs = $$(".rs-tabs [role=tab]");
+  if (rsTabs.length) {
+    const dots = $$(".rs-dots span");
+    let cur = 0, timer = null;
+    const show = (n, focus) => {
+      cur = (n + rsTabs.length) % rsTabs.length;
+      rsTabs.forEach((t, i) => {
+        const on = i === cur;
+        t.setAttribute("aria-selected", on);
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+        if (dots[i]) dots[i].classList.toggle("on", on);
+      });
+      if (focus) rsTabs[cur].focus();
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    rsTabs.forEach((t, i) => {
+      t.addEventListener("click", () => { stop(); show(i); });
+      t.addEventListener("keydown", (e) => {
+        const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+        if (d) { e.preventDefault(); stop(); show(cur + d, true); }
+      });
+    });
+    if (!reduced) {
+      const box = $(".rs-eco");
+      timer = setInterval(() => { if (!box.matches(":hover, :focus-within")) show(cur + 1); }, 5000);
+    }
+  }
+
   // testimonials: arrows, swipe and a dot for each quote
   const voices = $("#voices-track");
   if (voices) {
